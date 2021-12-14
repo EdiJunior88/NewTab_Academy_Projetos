@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta</title>
+  <style>
+    div {
+      background: rgb(218, 218, 218);
+      padding: 20px 0px 20px 20px;
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meta</h1>
+  &ltmeta&gt
+
+  <p>
+    Essa é uma tag um pouco marota de se entender no início, mas muito importante mesmo assim. Conceitualmente, essa tag serve para escrever os chamados “metadados” da página, isto é, informações que descrevem a mesma ou algum de seus aspectos. Agora, por que isso é importante?
+
+  </p>
+
+  <p>
+    Imagine que você está no Google, por exemplo, pesquisando sobre cursos HTML. O que você faz? Provavelmente escreve um conjunto de palavras-chave relacionadas ao assunto, ou a expressão “curso de HTML” na íntegra, certo? Bom, nada na computação é magia, então o Google executa um programa que busca páginas com termos parecidos com o que foi pesquisado. Mas o algoritmo precisa ser ligeiro (afinal, há muitas, mas muitas páginas web por aí), então um dos atalhos usados para puxar e organizar o conteúdo é, ao invés de varrer a página toda, dar preferência a termos presentes em lugares especiais… como as tags &ltmeta&gt. Porque elas descrevem algo sobre o documento HTML em si, elas são um bom parâmetro para descobrir sobre o quê aquela página é, e portanto, se é relevante à pesquisa ou não. Claro, o que descrevemos agora é uma GRANDE simplificação de como o Google funciona, mas o conceito aqui é o mesmo: as informações contidas nesse tipo de elemento são de grande uso para ferramentas externas analisando seu site e, se ausentes, podem afetar a visibilidade da página que você está escrevendo. Chamamos esse conceito de descrever melhor a página para aumentar sua visibilidade de SEO.
+  </p>
+
+  <p>
+    Aqui vai um exemplo demonstrando o uso básico do elemento: &ltmeta name="author" content="Bruno"&gt. Aqui, temos dois atributos do elemento: name e content. No nosso caso, eles definem o nome da nossa meta tag e o seu conteúdo, isto é, o que tem de fato dentro dela. As meta tags, ao contrário do título, não formatam texto, então não é necessário fechá-las.
+  </p>
+
+  <p>
+    Uma última meta tag que vale a pena lembrar é a seguinte: &ltmeta charset=""&gt. Esse atributo charset define qual o conjunto de caracteres que está à disposição do navegador para renderizar o conteúdo da página. Isso é importante porque o padrão de alguns navegadores não inclui certos caracteres, como: "ç", "^", "´", etc. quebrando trechos de texto na página que usam desses caracteres. Para o português, o valor charset="UTF-8" já é o padrão, e pode ser usado sem preocupações.
+  </p>
+</body>
+</html>
