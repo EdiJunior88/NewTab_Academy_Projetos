@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Script</title>
+  <style>
+    div {
+      background: rgb(218, 218, 218);
+      padding: 20px 0px 20px 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Script</h1>
+  &ltscript&gt&lt/script&gt
+
+  <p>
+    A última coisa que vamos ver aqui é a tag &ltscript&gt. Sabemos que o HTML é uma linguagem de marcação, o que na verdade a torna, basicamente, um editor de texto de internet. Isso quer dizer que, estritamente falando, não podemos programar em HTML, isto é, ele sozinho não consegue executar as operações necessárias para tornar a página "viva". Para isso, precisamos de ferramentas externas para executar nossos programas na web: os scripts, e o trabalho desse elemento é justamente incluí-los e integrá-los à sua página.
+
+  </p>
+
+  <p>Vamos aprender depois deste módulo sobre o Javascript, que é a linguagem padrão usada na web, então não vamos nos prender muito sobre como ele funciona, ou a sua sintaxe, mas para fins de exemplo vamos usar o comando alert(), que exibe uma mensagem de alerta (o famigerado popup).
+
+  </p>
+  
+  <p>
+    Existem dois jeitos de usar essa tag: um que se assemelha à &ltstyle&gt e outra mais parecida com a &ltlink&gt. Pareceu confuso? Talvez um pouquinho, mas vamos lá, que não é tão difícil assim. Na primeira, simplesmente abrimos a tag e, dentro dela, adicionamos nosso código, que nem com o &ltstyle&gt. Fica mais ou menos assim:
+  </p>
+  
+  <div>
+    <code>
+      &ltscript type="text/javascript"&gt
+      <br>
+        &nbsp;&nbsp;alert("Dentro da página!");
+        <br>
+      &lt/script&gt
+    </code>
+  </div>
+
+  <p>
+    Já no segundo método, simplesmente abrimos e fechamos a tag, sem nada mesmo, e usamos o atributo src para ligar um documento .js externo, como fazemos no <link>:
+  </p>
+  
+  <div>
+    <code>
+      &lt!-- aqui dentro tem o comando: alert("Fora da página!") --&gt;
+      <br>
+      &ltscript type="text/javascript" src="script.js"&gt;&lt/script&gt;
+    </code>
+  </div>
+
+  <p>
+    Quando fazemos isso, é como se o navegador pegasse o código do script de fora e colocasse dentro da tag. Assim, se tentarmos fazer:
+  </p>
+  
+  <div>
+    <code>
+      &lt!-- aqui dentro tem o comando: alert("Fora da página!") --&gt
+      <br>
+      &ltscript type="text/javascript" src="script.js"&gt
+        <br>
+        &nbsp;&nbsp;alert("Dentro da página!");
+        <br>
+      &lt/script&gt
+    </code>
+  </div>
+
+  <p>
+    e entrarmos na página, não será exibida a caixa com: “Dentro da página!”, pois o comando foi sobrescrito pelo conteúdo importado.
+  </p>
+  
+  <p>
+    Um último aviso: por conta de preocupações com o tempo de carregamento da página, geralmente declaramos os scripts ao fim da página, já que a renderização dos elementos HTML é bem mais rápida que a importação e execução dos scripts, o que pode passar a ideia de lentidão, especialmente à medida que acrescentamos mais e mais JavaScript.
+  </p>
+</body>
+</html>
