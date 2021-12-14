@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style</title>
+  <style>
+    div {
+      background: rgb(218, 218, 218);
+      padding: 20px 0px 20px 20px;
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Style</h1>
+  &ltstyle&gt&lt/style&gt
+
+  <p>
+    Acabamos de comentar que, para fins de organização, é legal usar o link para adicionar conteúdo .css. Mas… sabemos que nem tudo são flores e às vezes o melhor é colocar os estilos na própria página. O que fazer, então? Usar a tag &ltstyle&gt. Esse elemento abre uma espécie de “janela” no nosso documento HTML, permitindo tratar tudo dentro dela como se fosse um arquivo CSS. Não vamos entrar muito no mérito do CSS em si porque vamos vê-lo com mais detalhes mais pra frente, mas é bom sabermos dessa estrutura desde agora.
+  </p>
+
+  <p>
+    Como é um elemento que vai encapsular um conteúdo (no caso, código) precisamos abrir e fechar, assim:
+  </p>
+  
+  <div>
+    <code>
+      &lthead&gt
+      <br>
+        &nbsp;&lttitle&gtExemplo&lt/title&gt
+        <br>
+        &nbsp;&ltstyle type="text/css"&gt
+        <br>
+          &nbsp;&nbsp;/*Todo código aqui dentro é CSS!*/
+          <br>
+          &nbsp;&nbsp;body {
+            <br>
+            &nbsp;&nbsp;&nbsp;background: red;
+            <br>
+          &nbsp;&nbsp;}
+          <br>
+        &nbsp;&lt/style&gt
+        <br>
+      &lt/head&gt
+    </code>
+  </div>
+</body>
+</html>
