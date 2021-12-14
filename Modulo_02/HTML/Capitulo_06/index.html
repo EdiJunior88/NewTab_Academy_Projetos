@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atributos e elementos</title>
+  <style>
+    div {
+      background: rgb(218, 218, 218);
+      padding: 20px 0px 20px 20px;
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Atributos e elementos</h1>
+  <h2>Atributos</h2>
+  <p>
+    Agora você pode estar pensando: “legal aprender sobre tags e tudo… mas minha página é apenas uma tela branca chata!”. E com toda razão, no momento não temos nenhum conteúdo para adicionar. Antes de passarmos para como adicionarmos e manipularmos conteúdo na página, vamos explicar algumas coisas importantes que afetam a página como um todo pelos bastidores.
+
+  </p>
+
+  <p>
+    Já vimos como usamos tags no HTML para definir elementos da página, certo? Por enquanto vimos elementos tão gerais que só precisamos declará-los uma vez. Mas pense em uma página normal: quantas imagens, parágrafos e links não aparecem? Como diferenciamos entre eles, ou atribuímos características diferentes para certos elementos, mas não para outros? Por meio de dos chamados atributos.
+
+  </p>
+
+  <p>
+    Pense neles como dados pessoais: você possui características individuais, como CPF, RG, personalidade, etc. e outras que você compartilha com outras pessoas, como primeiro nome, data de nascimento ou altura. Da mesma forma, os atributos definem características dos elementos HTML, podendo ajudar a descrevê-lo ou identificá-lo.
+  </p>
+
+  <p>
+    Nós os declaramos dentro das tags, e com isso queremos dizer dentro mesmo, antes de fechar a primeira metade da tag, e seguindo o formato: 
+
+  </p>
+
+  <div>
+    <code>
+      &ltnome do atributo&gt="&ltvalor do atributo&gt".
+    </code>
+  </div>
+
+  <p>
+    Vamos dar um exemplo simples: se temos uma tag de parágrafo (vamos vê-la com mais detalhes mais pra frente) e queremos identificá-la, podemos usar o atributo id, que vai associar aquele elemento a um texto único (isto é, não podemos repeti-lo em outro elemento) de identificação, assim:
+
+  </p>
+
+  <div>
+    <code>
+      &ltp id="primeiro"&gt
+      <br>
+          &nbsp;&nbsp;Lorem ipsum, dolor sit amet...
+          <br>
+      &lt/p&gt
+      <br>
+      &ltp id="segundo"&gt
+      <br>
+          &nbsp;&nbsp;Lorem ipsum, dolor sit amet...
+          <br>
+      &lt/p&gt
+    </code>
+  </div>
+
+  <p>
+    No momento, isso não nos é tão útil assim, mas mais para frente veremos que esse atributo é um dos mais cruciais quando manipulamos a estrutura/estética do HTML com Javascript e CSS. Cada elemento possui um conjunto de atributos, alguns universais, outros únicos, e na exposição dos elementos abaixo veremos mais atributos. Mas o que importa para nós neste momento é que você entenda a “fórmula” para declarar os atributos e o seu conceito, para não se perder. Se você tiver dúvidas sobre os atributos de uma tag específica, ou os mais globais que não forem abordados nesta capacitação, basta pesquisá-los, é bem fácil de achá-los.
+
+  </p>
+
+  <h2>Elementos</h2>
+
+  <p>
+    Você se lembra do &lthead&gt, certo? Ótimo! Comentamos na seção passada que usamos esse espaço para usar tags especiais que não aparecem para o usuário diretamente. Vamos ver rapidinho algumas das mais importantes delas, e como podemos incorporá-las em nossas aplicações, confira a seguir…
+  </p>
+</body>
+</html>
