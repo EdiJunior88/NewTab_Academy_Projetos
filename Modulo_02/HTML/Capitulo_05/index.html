@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reforçando os conceitos básicos</title>
+  <style>
+    div {
+      background: rgb(218, 218, 218);
+      padding: 20px 0px;
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Reforçando os conceitos básicos</h1>
+  <p>
+    HTML é, formalmente, definido como uma linguagem de marcação (seu nome é um acróstico em inglês para: “linguagem de marcação de hipertexto”). Esse monte de termos podem parecer difíceis, mas calma, são bem mais fáceis do que parecem. Linguagem de marcação quer dizer que, ao invés de enviar para o computador um conjunto de instruções a serem executadas (definição do que fazem linguagens de programação), apenas marcamos no texto algumas regras especiais sobre como aquele texto deve ser exibido. Assim, se escrevemos: &ltstrong&gtTexto&lt/strong&gt, o computador (no caso, o browser) sabe que “Texto” deve ser exibido em negrito, ao invés de exibir toda essa parafernália para o leitor do seu site.
+  </p>
+
+  <p>
+    Existem outras linguagens de marcação bem legais por aí, como LateX e XML, e mesmo não trabalhando com elas diretamente, sinta-se livre para fuçar sobre elas, se quiser.
+
+  </p>
+
+  <p>
+    O que diferencia o HTML, então? É esse último trecho do seu nome: hipertexto. Vamos ver sobre isso mais pra frente, mas basicamente esse termo é usado para um tipo especial de texto que direciona o usuário para outro conteúdo: outra página, trecho, etc. É exatamente essa capacidade de ligar conteúdo que tornou o HTML o padrão para páginas da internet.
+
+  </p>
+
+  <h2>Tags</h2>
+
+  <p>
+    Para começarmos então a entender o HTML precisamos entender esse sistema especial de notação de texto, que no nosso caso são as chamadas tags. Aliás, no conteúdo anterior já vimos um exemplo de uma tag. Explicando um pouco melhor: uma tag é um comando especial, colocado entre os símbolos “&lt” e “&gt”. No exemplo que vimos anteriormente, essa tag é a &ltstrong&gt. Algumas tags indicam um elemento único, e não precisam ser “fechadas”. Mas para casos em que a tag está interagindo com texto ou outros elementos, precisamos indicar quando aquele conteúdo acaba. Fazemos isso escrevendo novamente a tag, mas adicionando uma barra “/” antes do nome, como em: &lt/strong&gt.
+  </p>
+
+  <p>
+    Já de cara então, vamos passar por algumas tags super importantes que, praticamente, estão presentes em todo documento HTML, e mostrar alguns exemplos para fixar um pouco melhor essas ideias na cabeça:
+
+  </p>
+
+  <p>
+    &lthtml&gt&lt/html&gt: Esse é o elemento “pai” ou raíz do seu documento. Dentro dele vamos colocar os demais elementos e conteúdo da página. É uma diferença mais “semântica”, mas auxilia bastante na organização em aplicações que integram outras linguagens como Javascript ou PHP;
+    &lthead&gt&lt/head&gt: Esse elemento agrupa “tudo” que não queremos exibir para o usuário, isto é, não faz parte do conteúdo principal, mas que ainda é necessário para a página. Há exceções, claro, mas vamos abordar quais elementos mais comumente vão aqui e seu uso mais tarde;
+    &ltbody&gt&lt/body&gt: Aqui é que fica o “corpo” do conteúdo que a página vai exibir, como o nome dá a entender. Basicamente, se o usuário vai ver ou interagir no site, deve estar aqui dentro.
+    Assim, uma página html comum quase sempre terá uma estrutura básica semelhante a essa:
+  </p>
+
+  <div>
+    <code>
+      &nbsp; &lthtml&gt
+      <br>
+          &nbsp; &nbsp; &lt!-- Cabeça --&gt
+          <br>
+          &nbsp; &nbsp; &lthead&gt
+          <br>
+            &nbsp; &nbsp; &nbsp; &lt!-- Metadados vêm aqui --&gt
+            <br>
+          &nbsp; &nbsp; &lt/head&gt
+          <br><br>
+          &nbsp; &nbsp; &lt!-- Corpo --&gt
+          <br>
+          &nbsp; &nbsp; &ltbody&gt
+          <br>
+              &nbsp; &nbsp; &nbsp; &lt!-- Conteúdo vem aqui --&gt
+              <br>
+              &nbsp; &nbsp; &nbsp; Olá mundo!
+              <br>
+          &nbsp; &nbsp; &lt/body&gt
+          <br>
+      &nbsp; &lt/html&gt
+   </code>
+  </div>
+
+  <p>
+    Você deve ter reparado que usamos uma tag um pouco “diferente” no exemplo acima: <!– –>. Esse elemento na verdade é o modo como o HTML cria comentários, como já havia sido citado sua importância no conteúdo de boas práticas do Ambiente de Desenvolvimento.
+  </p>
+
+  <p>
+    Outra coisa que você deve ter percebido é como dentro de certas tags não há somente texto e comentários como também outras tags. Esse conceito chamado de aninhamento é muito importante para entender a estrutura do HTML. Isso porque certas tags alteram a estrutura ou a ordem em que os elementos aparecem, ou podem estar estilizadas de uma maneira que não seja a desejada. Assim, se você não tomar cuidado, pode acontecer de você criar todos os seus elementos corretamente, mas ainda assim sua página, ou o seu código estar uma bagunça. Isso ficará mais evidente mais pra frente, mas por enquanto apenas guarde que você pode agrupar certas tags dentro de umas das outras, criando uma espécie de hierarquia, ou “boneca russa”.
+
+  </p>
+  </body>
+</html>
