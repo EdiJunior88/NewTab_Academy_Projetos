@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link</title>
+  <style>
+    div {
+      background: rgb(218, 218, 218);
+      padding: 20px 0px 20px 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Link</h1>
+  &ltlink&gt
+
+  <p>
+    Como veremos mais tarde no módulo de CSS, podemos importar estilos para a página de arquivos externos. Isso é muito útil para mantermos nosso código limpinho e fácil de ler, e acredite, você vai querer um código limpinho e fácil de ler. A tag <link> serve para ligar esses (entre outros) arquivos à nossa página. Pense neles como um ctrl+c, ctrl+v que a sua página vai fazer desses arquivos, para daí usar seus recursos.
+  </p>
+
+  <p>
+    Para que essa tag funcione certinho vamos usar alguns novos atributos: href, rel e type. Vamos um por um:
+  </p>
+
+  <ul>
+    <li><strong>href</strong>: recebe referência ou “caminho” para arquivo que vamos incorporar, isto é, ele vai dizer ao nosso documento onde pegar o recurso externo. Dentro dele vai uma  referência feita com protocolo http, então você deve descrever o caminho para a requisição, não a localização “física” do arquivo. Pode parecer confuso falando desse jeito, mas na verdade é só colocar essa string como o endereço de um site que você escreveria no seu browser para acessar um site (https://&ltseu siteglt.com/&gt&ltseu arquivo&gt.css, por exemplo). Se o arquivo que você deseja adicionar estiver no mesmo domínio que seu site, é só colocar o caminho relativo dele em relação à index do site (usando o exemplo anterior, bastaria colocar: &ltseu arquivo&gt.css para realizar a importação).</li>
+    <li><strong>rel</strong>: estabelece a relação do elemento com a página, isto é, o que ele está fazendo lá dentro.</li>
+    <li><strong>type</strong>: diz qual o tipo, isto é, a extensão do arquivo. Os dois últimos não são requisitos (a tag vai continuar funcionando sem elas), mas contribuem no SEO (lembra dele?) da página como um todo.</li>
+  </ul>
+
+    <p>
+      Ufa, foi bastante coisa, não? Mas tudo bem, com alguns exemplos vai ficar mais fácil de entender, então vamos lá:
+    </p>
+
+  <div>
+    <code>
+      &lthead&gt
+      <br>
+        &nbsp;&lttitle&gtExemplo&lt/title&gt
+        <br>
+        &nbsp;&lt!-- aqui fazemos uma chamada para o domínio local →
+        <br>
+            &nbsp;&lt!-- equivalente a http://<meudominio.com>/assets/images/favicon.ico --&gt
+              <br>
+        &nbsp;&ltlink rel="icon" href="/assets/images/favicon.ico"&gt
+        <br><br>
+            &nbsp;&lt!-- aqui fazemos uma chamada para outro domínio --&gt
+            <br>
+        &nbsp;&ltlink rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"&gt
+        <br>
+      &lt/head&gt
+    </code>
+  </div>
+
+  <p>
+    Repare que como essa tag não manipula texto/elementos não precisamos abri-la e fechá-la.
+  </p>
+</body>
+</html>
