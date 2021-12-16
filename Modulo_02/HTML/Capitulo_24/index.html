@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elementos do formulário</title>
+  <style>
+    div {
+      background: rgb(218, 218, 218);
+      padding: 20px 0px 20px 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Elementos do formulário</h1>
+
+  <p>
+    Muitas vezes precisamos de dados que não somos nós quem geramos, mas que devem vir de quem está utilizando nossa solução. Nesses casos, precisamos nos valer de formulários para coletá-los de nossos usuários.
+  </p>
+
+  <h2>&ltform&gt&lt/form&gt</h2>
+
+  <p>
+    Com esse elemento declaramos o espaço onde estará nosso form, bem como algumas configurações importantes do seu comportamento que regulamos por dois de seus atributos específicos: action e method.
+  </p>
+
+  <p>
+    Especificamente, eles definem como nosso formulário se comunicará com o servidor. Como comentamos antes, não é possível programar, no sentido estrito da palavra, em HTML. Isso quer dizer que toda manipulação, processamento e armazenamento dos dados do formulário deve ser feita fora da página, e esses atributos nos dizem como é realizada essa comunicação. O action define a URL do serviço ou endpoint para onde serão enviados os dados, enquanto method nos diz qual o tipo de chamada que será feito. Lembra do módulo de arquitetura web quando explicamos POST, GET, etc.? São exatamente esses os tipos que definiremos aqui: se enviaremos os dados por POST, GET, PUT, etc.
+  </p>
+
+  <h2>&ltinput&gt</h2>
+
+  <p>
+    Se o &ltform&gt&lt/form&gt é o alicerce de nossos formulários, elementos &ltinput&gt podem ser considerados tijolos: estes são a unidade mais básica de interação com o usuário. Basicamente, eles são as “caixinhas” onde o usuário pode preencher os dados.
+  </p>
+
+  <p>
+    Existem diversos tipos de input, de caixas de texto a opções de múltipla escolha, e estes são definidos pelo atributo type. Assim, &ltinput type="text"&gt representa, como veremos a seguir, um campo de texto simples, para registrar um nome, por exemplo. Abaixo, vamos listar alguns dos tipos mais úteis e usados no dia a dia.
+  </p>
+
+  <p>
+    Uma coisa importante de se citar é que, enquanto o HTML suporta diversos tipos de &ltinput&gt, vamos cobrir apenas os universais ou mais úteis. O HTML5 introduziu vários tipos novos bem legais e convenientes, mas ainda não suportados em todos os navegadores. Caso você queira experimentar com tipos novos, consulte primeiro se os navegadores onde você espera que sua aplicação seja usada dão suporte ao que você deseja usar, usando sites como o Caniuse.
+  </p>
+
+  <p>Bom, com isso claro, vamos lá:</p>
+
+  <ul>
+    <li>
+      <strong>text</strong>: Tipo mais básico de input, e o tipo padrão. É simplesmente uma caixa de texto onde se pode digitar uma linha de texto;
+    </li>
+    <li>
+      <strong>submit</strong>: Cria um botão que sinaliza para o form enviar os dados. Podemos customizar seu texto interno com o atributo value (mais sobre ele mais tarde).
+    </li>
+    <li>
+      <strong>reset</strong>: Limpa o formulário, retornando todos os elementos para seu valor padrão. Seu texto também pode ser editado com o value;
+    </li>
+    <li>
+      <strong>password</strong>: Idêntico ao tipo text, mas oculta o texto digitado, próprio para senhas;
+    </li>
+    <li>
+      <strong>hidden</strong>: Elemento oculto, para enviar dados para o servidor, mas sem que o usuário saiba. Precisa ter name e value definidos, ou no código ou por Javascript;
+    </li>
+    <li>
+      <strong>checkbox</strong>: Cria uma caixa de marcação que você pode “ticar” ou não. Como o elemento só tem dois possíveis valores (marcado ou não), é muito bom para valores de sim ou não. Pode receber o atributo checked para vir marcado por padrão;
+    </li>
+    <li>
+      <strong>radio</strong>: Cria um elemento de uma lista de múltipla escolha. Para definir que elementos radio diferentes pertencem a qual lista, os agrupamos pelo atributo name: elementos com o mesmo valor de name pertencem à mesma lista. Também pode receber o atributo checked;
+    </li>
+    <li>
+      <strong>file</strong>: Esse tipo é um pouco complicado, mas mesmo assim é bem útil: ele é usado para enviar arquivos para o destino do formulário. Ao clicar nele, é aberta uma janela de seleção de arquivo, que então irá compor o valor do campo. O atributo accept, se presente, recebe uma lista de tipos de arquivos (separados por vírgula) e filtra a janela de seleção para apenas receber arquivos cujo tipo pertença à lista.
+    </li>
+  </ul>
+
+  <p>
+    Há ainda outros atributos importantes nos inputs:
+  </p>
+
+  <ul>
+    <li>
+      <strong>name</strong>: É um atributo global, mas que em formulários ganha uma significância ainda maior. O seu valor define o nome do campo ao ser enviado para o servidor. Isso é importante porque, do outro lado, o sistema pode estar esperando valores com um nome determinado que, se estiver errado, pode gerar problemas. Assim, é fundamental prestar atenção aos valores atribuídos a esse atributo;
+    </li>
+    <li>
+      <strong>value</strong>: Usamos este atributo para definir valores padrões aos campos. Como vimos, nem sempre é ele que é usado para essa função, mas via de regra, se precisamos de um valor pré-definido o usaremos;
+    </li>
+    <li>
+      <strong>placeholder</strong>: Texto de “exemplo” que aparece no campo quando o mesmo está vazio. Ao contrário do value, esse texto é puramente visual, e não define nenhum dado padrão a ser enviado;
+    </li>
+    <li>
+      <strong>maxlength</strong>: Define um tamanho máximo de caracteres que podem ser digitados, ignorando valores inseridos após atingir o limite. Aplicável a textareas (veremos mais sobre isso mais tarde) e inputs tipo text;
+    </li>
+    <li>
+      <strong>size</strong>: Define o comprimento do elemento na tela, em caracteres. Pode ser usado em selects para definir altura, e nesse caso define o tamanho em número de elementos visíveis por vez;
+    </li>
+    <li>
+      <strong>readonly</strong>: Elementos com esse atributo são mostrados na tela, e se tiverem um valor configurado pelo atributo value enviam dados junto com o resto do formulário, mas o usuário não pode interagir com ele. Mais útil para informar valores dinâmicos manipulados via JS;
+    </li>
+    <li>
+      <strong>disabled</strong>: Similar ao anterior, com a diferença de que os dados contidos nele não são enviados;
+    </li>
+    <li>
+      <strong>autofocus</strong>: Se presente, automaticamente dá foco ao elemento, eliminando a necessidade de clicar no mesmo para editar seu valor quando o form é iniciado.
+    </li>
+  </ul>
+
+  <h2>&ltselect&gt&lt/select&gt</h2>
+
+  <p>
+    O elemento input é uma ferramenta poderosa e flexível na construção de formulários. No entanto, ele não é o único, ou necessariamente melhor modo de coletar dados. Pense no tipo radio, por exemplo: se tivermos algumas poucas opções é uma opção excelente para uma caixa de seleção, mas à medida que as opções crescem, o conjunto ocupa mais espaço de tela, potencialmente comprometendo o layout e a legibilidade do resto do formulário. Uma forma como podemos resolver isso é com o elemento &ltselect&gt&lt/select&gt.
+  </p>
+
+  <p>
+    Ele renderiza um lista suspensa com diversas opções, que se fecha após a seleção de um valor. As opções são definidas usando a tag &ltoption&gt&lt/option&gt, que envolve o texto que aparecerá na lista para o usuário. Essa tag é que recebe o atributo value, que define o valor que será atribuído à lista quando selecionada. Para definir um valor padrão então podemos usar o atributo selected na opção cujo valor desejamos que seja o inicialmente selecionado.
+  </p>
+
+  <p>
+    Além disso, podemos ainda usar o &ltoptgroup&gt&lt/optgroup&gt para agrupar opções em categorias para melhor visualizá-las. Basta colocar opções da mesma categoria dentro dela e usar o atributo label para definir qual o nome da categoria. Note que quando esse nome aparece na lista não conseguimos selecioná-lo: ele serve apenas para dividir os elementos visualmente.
+  </p>
+
+  <p>Um exemplo simples:</p>
+
+  <div>
+    <code>
+      &ltselect id="vegetais"&gt
+        <br>
+        &nbsp;&nbsp;&ltoptgroup label="Frutas"&gt
+          <br>
+          &nbsp;&nbsp;&nbsp;&ltoption value="a">Banana&lt/option&gt
+          <br>
+          &nbsp;&nbsp;&nbsp;&ltoption value="b" selected>Laranja&lt/option&gt
+          <br>
+          &nbsp;&nbsp;&nbsp;&ltoption value="c">Manga&lt/option&gt
+          <br>
+        &lt/optgroup&gt
+
+        <br><br>
+
+        &nbsp;&nbsp;&ltoptgroup label="Legumes"&gt
+          <br>
+          &nbsp;&nbsp;&nbsp;&ltoption value="d">Brócolis&lt/option&gt
+          <br>
+          &nbsp;&nbsp;&nbsp;&ltoption value="e" selected&gtChuchu&lt/option&gt
+          <br>
+          &nbsp;&nbsp;&nbsp;&ltoption value="f"&gtCenoura&lt/option&gt
+          <br>
+        &nbsp;&nbsp;&lt/optgroup&gt
+        <br>
+      &lt/select&gt
+    </code>
+  </div>
+
+  <img src="img/img01.png" alt="">
+
+  <h2>&lttextarea&gt&lt/textarea&gt</h2>
+
+  <p>
+    Com o tipo text já vimos como o usuário pode escrever uma linha de texto. Mas se for necessário escrever um bloco muito grande rapidamente escrever naquela uma linha se tornará em uma tarefa árdua, com o usuário tendo pouco espaço para ir e voltar dentro do que ele escreveu. É aqui que o &lttextarea&gt&lt/textarea&gt entra. Ele define um espaço para entrada de texto, mas com múltiplas linhas, de modo que é mais fácil escrever trechos mais extensos, como mensagens ou recados.
+  </p>
+
+  <p>
+    Ao invés de receber um atributo value para definir um valor pré definido, este último é o texto que envolvemos com a tag. Também pode receber valores em cols e rows, ditando o número de colunas e linhas visíveis respectivamente. Exemplo:
+  </p>
+
+  <div>
+    <code>
+      &lttextarea id="lipsum" cols="40" rows="10"&gtLorem ipsum dolor sit amet...&lt/textarea&gt
+    </code>
+  </div>
+
+  <img src="img/img02.png" alt="">
+
+  <h2>&ltlabel&gt&lt/label&gt</h2>
+
+  <p>
+    Vimos bastante coisa nesse módulo, não é? Mas calma, tem mais uma coisinha. Se apenas irmos jogando os elementos de nosso formulário, nossos usuários não terão nenhuma referência do que aqueles campos representam. Uma solução rápida é simplesmente adicionar texto ao lado ou em cima de cada elemento. No entanto, há uma solução superior: a tag &ltlabel&gt&lt/label&gt. Com ela podemos ligar um trecho do nosso documento envolto por ela a um elemento do formulário.
+  </p>
+
+  <p>
+    Isso é feito como atributo for, que recebe o id do input, select, ou textarea que queremos descrever. A vantagem dessa abordagem é que, além de tornar o código mais descritivo e organizado, podemos selecionar o elemento clicando no conteúdo da label, o que tem muitas aplicações, principalmente ao lidar com checkboxes e radios.
+  </p>
+
+  <div>
+    <code>
+      Nome: &ltinput type="text" id="nome" name="nome" placeholder="Nome"&gt
+    </code>
+  </div>
+  
+  <p>vs.</p>
+
+  <div>
+    <code>
+      &ltlabel for="labelNome"&gtNome:&lt/label&gt
+      <br>
+      &ltinput type="text" id="labelNome" name="labelNome" placeholder="Nome"&gt
+    </code>
+  </div>
+</body>
+</html>
