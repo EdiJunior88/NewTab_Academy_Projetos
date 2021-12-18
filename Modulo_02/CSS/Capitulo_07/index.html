@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estados e pseudo-seletores</title>
+</head>
+<body>
+  <h1>Estados e pseudo-seletores</h1>
+  <p>
+    Em CSS temos pseudo-seletores e pseudo-classes (também chamadas de estados). Enquanto a primeira categoria seleciona uma certa porção de um conteúdo, a segunda seleciona o conteúdo inteiro em uma certa condição estabelecida.
+  </p>
+
+  <p>
+    Você vai perceber que os pseudo seletores usam “::” enquanto os estados são representados por apenas “:”
+
+  </p>
+
+  <p>
+    Os principais pseudo-seletores são:
+  </p>
+
+  <strong>::after</strong> – Insere algo após o conteúdo selecionado.
+  <br>
+  <strong>::before</strong> – Funciona da mesma forma que o ::after, porém insere algo antes.
+  <br>
+  <strong>::first-letter</strong> – Insere algo após a primeira letra do conteúdo selecionado.
+  <br>
+  <strong>::first-line</strong> – Similar ao ::first-letter, porém neste caso o pseudo-seletor insere após a primeira linha de conteúdo
+  <br>
+  <strong>::selection</strong> – Este pseudo-seletor muda o que foi selecionado pelo usuário.
+
+  <p>
+    Os estados ou pseudo-classes separamos em categorias relacionadas a certos elementos para facilitar.
+  </p>
+
+  <ul><li><strong>Links:</strong></li></ul>
+  <strong>:link</strong> – Apesar de todos os &lta&gt serem links, este seleciona o elemento com a propriedade href, é útil para elementos que não são &lta&gt e ainda assim contam com um href (direcionador).
+  <br>
+  <strong>:visited</strong> – Seleciona o elemento após ele ser visitado (quando clicamos em um link e ele muda de cor por exemplo).
+  <br>
+  <strong>:hover </strong>– Seleciona o elemento quando o mouse está em cima dele.
+  <br>
+  <strong>:active</strong> – Seleciona o elemento quando ele está ativo (usando <a> como exemplo, é o momento em que clicamos).
+
+  <ul><li><strong>Entrada e links:</strong></li></ul>
+  <strong>:focus</strong> – Seleciona o elemento quando ele está em foco na tela, esse tipo de estado acontece quando há a navegação pelo teclado ou em campos de entrada.
+  <br>
+  <strong>:target</strong> – Uma pseudo-classe muito usada, seleciona o elemento que tenha a mesma ID que um fragmento da URL atual. 
+  <br>
+  <strong>:enabled</strong> – Seleciona o elemento quando este está apto a receber uma entrada (como por exemplo uma caixa de texto).
+  <br>
+  <strong>:disabled</strong> – É o inverso do :enabled e seleciona o elemento quando ele está impossibilitado de receber entradas.
+  <br>
+  <strong>:checked</strong> – Seleciona as caixas de seleção quando elas estão no estado de “selecionado”.
+
+  <ul><li><strong>Posição e número:</strong></li></ul>
+  <strong>:first-child</strong> – Seleciona o primeiro filho daquele elemento não importando qual elemento é esse.
+  <br>
+  <strong>:first-of-type </strong>– Similar ao :first-child, porém seleciona o primeiro de um tipo específico, como o primeiro &lth1&gt ou primeiro &lta&gt.
+  <br>
+  <strong>:last-child </strong>– Seleciona o último filho do elemento, independentemente do tipo.
+  <br>
+  <strong>:last-of-type</strong> – Seleciona o último filho de um certo tipo daquele elemento.
+  <br>
+  <strong>:nth-child()</strong> – Seleciona o n filho ou filhos do elemento, esta pseudo-classe aceita também funções aritméticas como 2n ou 3n-1 para fazer seleções e pode selecionar múltiplos filhos também.
+  <br>
+  <strong>:nth-of-type()</strong> – Segue o mesmo conceito da :nth-child, porém seleciona apenas o tipo especificado.
+  <br>
+  <strong>:only-of-type</strong> – Seleciona o elemento apenas se ele for o único de seu tipo no contexto inserido, por exemplo, esta pseudo-classe selecionará uma imagem dentro de um div apenas se ela for a única imagem contida ali.
+</body>
+</html>
