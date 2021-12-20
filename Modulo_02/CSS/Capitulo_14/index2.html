@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elementos na tela</title>
+</head>
+<body>
+  <h1>Para reforçar</h1>
+  <p>Um elemento pode se apresentar na tela como uma “caixa” (no caso de elementos com display: flex; ou display: block;, por exemplo) ou como uma “linha” (nos elementos como display: inline; por exemplo). Esses elementos possuem propriedades que os compõem e também definem como irão se apresentar e comportar na tela, os principais são:</p>
+
+  <img src="img/img01.png" alt="">
+
+  <p>width é a largura da parte visível do elemento, assim como height é a altura da mesmo.</p>
+
+  <p>padding é o espaço entre o elemento e a borda dele. Este espaço conta como uma camada interna e caso o elemento tenha uma cor de fundo, ou um preenchimento, aumentar o padding fará com que a área adicionada seja preenchida também.</p>
+
+  <p>border é a borda do elemento, é a fronteira entre o padding e a margin, esta pode ser customizada: <a href="https://www.w3schools.com/css/css_border.asp">https://www.w3schools.com/css/css_border.asp</a></p>
+
+  <p>margin é o espaçamento exterior do elemento, neste espaço não haverá preenchimento ou estilização, ele serve para organizar e espaçar elementos. Pode ser negativo caso haja a necessidade de sobrepor elementos.</p>
+
+  <p>z-index é a propriedade que define a posição de sobreposição de elementos, por exemplo, um elemento com z-index:3 ficará na frente de um elemento com z-index:2 e atrás de um elemento com z-index:4, como se fossem “camadas” na tela. </p>
+
+  <p>Com exceção do z-Index, todos os elementos citados acima utilizam valores com medidas, e no CSS temos dois tipos: relativas e absolutas.</p>
+
+  <p>As medidas absolutas são baseadas em um valor padrão, o que as tornam fixas independentemente de onde estão sendo visualizadas. Já as relativas dependem da tela onde está ocorrendo a visualização ou de outro elemento. Algumas das medidas mais comuns são:</p>
+
+  <h2>Absolutas</h2>
+
+  <ul>
+    <li>in = inches = polegadas</li>
+    <li>px = pixels (1px = 1/96 in)</li>
+    <li>pt = points (1pt = 1/72 in)</li>
+    <li>pc = picas (1pc = 12pt)</li>
+  </ul>
+
+  <p>Também podem ser usados cm ou mm.</p>
+
+  <h2>Relativas</h2>
+
+  <ul>
+    <li>em = é usada em elementos textuais, relativa ao font-size do elemento, ou seja, 2em é 2 vezes o tamanho do font-size daquele elemento.</li>
+    <li>rem = relativa ao font-size do elemento raiz (o caso mais comum é o body).</li>
+    <li>vw = chamada de viewport width, uma unidade dessa equivale a 1% da largura da tela em que o conteúdo está sendo visualizado.</li>
+    <li>vh = segue a mesma lógica do vw, porém na altura (height), 1vh é 1%  da altura da tela.</li>
+    <li>% = é uma medida relativa ao elemento pai do elemento referido. Por exemplo, se temos um div com 500px de largura e inserimos um container dentro dele com width = 50%, esse container ocupará metade da área do div.</li>
+  </ul>
+
+  <p>Medidas fixas normalmente são usadas para definir elementos que independem do tamanho da tela ou são fixos, já as relativas são normalmente usadas para criar a responsividade (aliás, responsividade é o conceito de que o site poderá ser visualizado sem problemas ou quebras de layout independentemente da tela onde está sendo mostrado) do site.</p>
+
+  <p>overflow define o que acontece com elementos que estão dentro de outros e acabam “ultrapassando” seu tamanho, “transbordando”.</p>
+
+  <p>overflow: visible; deixa os elementos que “escapam” do container a mostra:</p>
+
+  <img src="img/img02.png" alt="">
+  
+  <p>overflow: hidden; escondem os elementos que transbordam:</p>
+
+  <img src="img/img03.png" alt="">
+
+  <p>overflow: auto; coloca uma barra de rolagem para o lado (horizontal ou vertical) que os elementos transbordam:</p>
+
+  <img src="img/img04.png" alt="">
+
+  <p>overflow: overlay; coloca uma barra de rolagem para o lado (horizontal ou vertical) que os elementos transbordam, porém com a barra de rolagem ficando DENTRO do container:</p>
+
+  <img src="img/img05.png" alt="">
+
+  <p>overflow: scroll; adiciona barras de rolagem em ambos os lados do container (horizontal e vertical), mesmo não tendo elementos ultrapassando para algum desses sentidos:</p>
+
+  <img src="img/img06.png" alt="">
+
+</body>
+</html>
