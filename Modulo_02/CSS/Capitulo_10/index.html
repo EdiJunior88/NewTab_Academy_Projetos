@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Flex</title>
+  <style>
+    .flex {
+      background-color: rgb(150, 136, 226);
+      width: 100%;
+      min-height: 250px;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .flex-child {
+      padding: 20px;
+      background-color: rgb(76, 0, 255);
+      margin: 10px;
+      color: #fff;
+      font-size: 25px;
+    }
+
+    .one {
+      flex-grow: 0;
+      order: 2;
+      align-self: center;
+    }
+
+    .two {
+      flex-grow: 1;
+      order: 1;
+    }
+
+    .three {
+      flex-grow: 5;
+      order: 5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Display Flex</h1>
+
+  <div class="flex">
+    <div class="flex-child one">1</div>
+    <div class="flex-child two">2</div>
+    <div class="flex-child three">3</div>
+  </div>
+</body>
+</html>
