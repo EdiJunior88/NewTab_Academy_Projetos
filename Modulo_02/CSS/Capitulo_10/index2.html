@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display flex</title>
+</head>
+<body>
+  <h1>Para reforçar</h1>
+  <p>Um tipo de display que vale a pena ser reforçado e merece uma atenção especial é o display flex. Com ele é possível criar o que chamamos de flexbox.</p>
+
+  <p>O display: flex; irá afetar diretamente as children do elemento que for aplicado e não o elemento em si (que permanecerá como um bloco).</p>
+
+  <p>O que ele faz: distribui os elementos internos (children) de modo flexível por dentro do elemento parent.</p>
+
+  <p>O elemento abaixo mostra um container com display: flex; aplicado e agindo sobre suas children:</p>
+
+  <img src="img/img.png" alt="">
+
+  <p>No HTML:</p>
+
+  <img src="img/img01.png" alt="">
+
+  <p>No CSS:</p>
+
+  <img src="img/img02.png" alt="">
+
+  <p>Junto com o display: flex; podemos aplicar outras propriedades que interagem com esta. Veja as principais:</p>
+
+  <p>flex-direction: column;</p>
+  <p>Define a direção dos elementos internos como coluna:</p>
+
+  <img src="img/img03.png" alt="">
+
+  <p>flex-direction: column-reverse;</p>
+  <p>Define a direção dos elementos internos como coluna, porém na ordem contrária:</p>
+
+  <img src="img/img04.png" alt="">
+
+  <p>flex-direction: row;</p>
+  <p>Define a direção dos elementos internos como linha:</p>
+
+  <img src="img/img05.png" alt="">
+
+  <p>flex-direction: row-reverse;</p>
+  <p>Define a direção dos elementos internos como linha, porém na ordem contrária:</p>
+
+  <img src="img/img06.png" alt="">
+
+  <p>justify-content</p>
+  <p>Usado para alinhar os flex-items (children do elemento que possui display: flex;). Alguns valores:</p>
+
+  <p>justify-content: center; centraliza os flex-items:</p>
+
+  <img src="img/img07.png" alt="">
+
+  <p>justify-content: flex-start; alinha os itens no começo do container (é a opção default do display flex):</p>
+
+  <img src="img/img08.png" alt="">
+
+  <p>justify-content: flex-end; alinha os itens ao final do container:</p>
+
+  <img src="img/img09.png" alt="">
+
+  <p>justify-content: space-around; distribui os itens com espaço antes, ao meio e depois das linhas:</p>
+
+  <img src="img/img10.png" alt="">
+
+  <p>justify-content: space-between; distribui os itens com espaço entre as linhas:</p>
+
+  <img src="img/img11.png" alt="">
+
+  <p>justify-content: space-evenly; distribui com espaços iguais entre eles e as extremidades do container:</p>
+
+  <img src="img/img12.png" alt="">
+
+  <p>align-items</p>
+  <p>Usado para alinhar os flex-items (children do elemento que possui display: flex;) verticalmente. Nos exemplos a seguir a altura dos elementos foi alterada para melhor ilustrar essa propriedade. Alguns valores:</p>
+
+  <p>align-items: center; centraliza os flex-items no meio do container:</p>
+
+  <img src="img/img13.png" alt="">
+
+  <p>align-items: flex-start; alinha os flex-items no topo do container:</p>
+
+  <img src="img/img14.png" alt="">
+
+  <p>align-items: flex-end; alinha os flex-items na base do container:</p>
+
+  <img src="img/img15.png" alt="">
+
+  <p>align-items: stretch; “estica” os flex-items (desde que não possuam uma altura fixa) para preencher o container:</p>
+
+  <img src="img/img16.png" alt="">
+
+  <p>align-items: baseline; alinha os flex-items de acordo com a base do texto que eles contêm:</p>
+
+  <img src="img/img17.png" alt="">
+
+  <p>flex-wrap</p>
+  <p>Especifica se a linha dos flex-items irá “quebrar” ao atingir a largura máxima do container. Alguns valores:</p>
+
+  <p>flex-wrap: wrap; “quebra” a linha se necessário:</p>
+
+  <img src="img/img18.png" alt="">
+
+  <p>flex-wrap: nowrap; não “quebra” a linha se necessário. Caso os itens tenham largura fixa, irão ultrapassar o container, se não tiverem, poderão “encolher” para caber no container. No caso abaixo, o texto dentro dos itens “força” uma largura mínima, fazendo os itens ultrapassarem o limite do container:</p>
+
+  <img src="img/img19.png" alt="">
+
+  <p>flex-wrap: wrap-reverse; “quebra” a linha se necessário, na direção contrária:</p>
+
+  <img src="img/img20.png" alt="">
+
+  <p>flex-flow</p>
+  <p>É uma propriedade “atalho” que especifica tanto a flex-direction quanto a flex-wrap. Exemplo:</p>
+
+  <img src="img/img21.png" alt="">
+
+  <p>align-content</p>
+  <p>Usada para alinhar as linhas de itens de um flex box (como as linhas criadas ao colocarmos flex-wrap: wrap;). Alguns valores:</p>
+
+  <p>align-content: center; centraliza as linhas dos flex-items em relação ao container:</p>
+
+  <img src="img/img22.png" alt="">
+
+  <p>align-content: flex-start; alinha as linhas dos itens no começo do container:</p>
+
+  <img src="img/img23.png" alt="">
+
+  <p>align-content: flex-end; alinha as linhas dos itens ao final do container:</p>
+
+  <img src="img/img24.png" alt="">
+
+  <p>align-content: space-around; distribui as linhas com espaço antes, ao meio e depois das linhas:</p>
+
+  <img src="img/img25.png" alt="">
+
+  <p>align-content: space-between; distribui as linhas com espaço entre elas:</p>
+
+  <img src="img/img26.png" alt="">
+
+  <p>align-content: space-evenly; distribui as linhas com espaços iguais entre elas e as extremidades do container:</p>
+
+  <img src="img/img27.png" alt="">
+
+  <p>align-content: stretch; “estica” os flex-items (desde que não possuam uma altura fixa) para preencher a altura da linha, preenchendo assim o container:</p>
+
+  <img src="img/img28.png" alt="">
+
+  <p>Essas são as características principais do flex-box – aliás muito útil no dia a dia. Dentro do flex-box existem os flex-items (nos exemplos acima os retângulos azuis com os números dentro) são flexíveis e também possuem propriedades próprias. Elas são:</p>
+
+  <p>Order: define a ordem dos itens dentro do flexbox. Por exemplo:</p>
+
+  <img src="img/img29.png" alt="">
+
+  <p>flex-grow e flex-shrink: como o item dentro de um flex-box torna-se flexível se não tiver medidas declaradas fixas, ele pode tanto crescer (em inglês, grow) ou encolher (em inglês, shrink). As propriedades flex-grow (crescimento) e flex-shrink (encolhimento) definem quanto um item pode crescer ou encolher em relação aos outros. Exemplos:</p>
+
+
+  <img src="img/img31.png" alt="">
+  <img src="img/img30.png" alt="">
+
+
+  <p>No exemplo acima todos os itens estão com uma largura em porcentagem, encolhendo para caber no container, menos o item número 2, que apresenta um flex-shrink de 0, logo acaba não encolhendo, enquanto o item 5 apresenta flex-shrink de 2, encolhendo levemente.</p>
+
+  <p>align-self: com essa propriedade aplicada a um item, é possível sobrepor o align-itens do flexbox para alinhar o item específico da forma especificada. No exemplo abaixo temos um flexbox com align-items: stretch; e o item 3 com align-self: center;. Veja como fica:</p>
+
+  <img src="img/img32.png" alt="">
+
+</body>
+</html>
