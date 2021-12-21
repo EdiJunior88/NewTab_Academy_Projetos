@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sass</title>
+</head>
+<body>
+  <h1>Sass</h1>
+  <p>Sass é um pré-processador CSS que reduz repetições, permitindo escrever um código CSS mais curto e de forma mais rápida.</p>
+
+  <p>Ele permite criar variáveis, armazenar e reutilizar informações – o que ajuda muito quando, por exemplo, temos um site ou sistema em que a cor principal é #9c27b0 e queremos mudá-la. Ao invés de mudar todos os códigos #9c27b0 do site, podemos mudar só uma vez o valor da variável, e encaixar esta variável em todos os lugares que a cor for aplicada.</p>
+
+  <p>Como é um pré-processador, browsers não são capazes de lê-lo. Portanto, você precisa <a href="https://sass-lang.com/install">instalá-lo antes</a>.</p>
+
+  <h2>Variáveis</h2>
+
+  <p>É um modo de armazenar informações com Sass para utilizá-las posteriormente (como no exemplo da cor principal do site dado acima). Armazenam valores como cores, fontes, medidas… Para declarar as variáveis usa-se um $ à sua frente com o valor, como no exemplo abaixo:</p>
+
+  <img src="img/img01.png" alt="">
+
+  <p>As variáveis funcionam apenas no nível em que estão, <a href="https://www.w3schools.com/sass/showsass.php?filename=demo_sass_var2">como neste exemplo</a>, a não ser que sejam definidas como globais (atuando então em todos os níveis. <a href="https://www.w3schools.com/sass/showsass.php?filename=demo_sass_var3">Ex.: $color: green!global</a>).</p>
+
+  <h2>Hierarquia</h2>
+
+  <p>Vimos quando os elementos ficam “dentro” de outros (parent e child), não é? No Sass isso também acontece! No exemplo abaixo, selecionamos apenas o <p> do container para aplicar a cor vermelha.</p>
+
+  <p>No HTML estaria assim:</p>
+
+  <img src="img/img02.png" alt="">
+
+  <p>No Sass ficaria assim:</p>
+
+  <img src="img/img03.png" alt="">
+
+  <p>Traduzindo para CSS puro, ficaria assim:</p>
+
+  <img src="img/img04.png" alt="">
+
+  <h2>Mixins</h2>
+
+  <p>Permite criar códigos CSS que podem ser reutilizados em todo o site. Exemplo:</p>
+
+  <img src="img/img05.png" alt="">
+
+  <p>Criamos um mixin (@mixin “nome do mixin”) com propriedades de cor, tamanho e peso da fonte. Onde colocarmos @inclue “nome do mixin”, as propriedades dentro desse mixin serão escritas. Então o container fica assim ao ser traduzido para CSS puro:</p>
+
+  <img src="img/img06.png" alt="">
+
+  <p>Viu como dá uma economizada?</p>
+
+  <p>Vale lembrar que Sass não é regra. Existem outros pré-processadores, e às vezes CSS puro também é uma boa escolha. O Sass foi feito para dar uma facilitada na vida dos desenvolvedores. Aqui você encontra a documentação Sass oficial caso se interesse em conhecer mais: <a href="https://sass-lang.com/documentation">https://sass-lang.com/documentation</a></p>
+</body>
+</html>
