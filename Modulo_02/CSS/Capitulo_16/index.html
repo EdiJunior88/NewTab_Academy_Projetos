@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float e clear</title>
+</head>
+<body>
+  <h1>Float e clear</h1>
+  <p>Existem também duas propriedades que influenciam no posicionamento de um elemento na página:</p>
+
+  <p><strong>float</strong>: elementos com float “flutuam” na página, ou seja, deixam de ocupar o espaço que ocupavam antes e passam a ficar em cima (ou embaixo, dependendo do z-index) dos elementos à sua volta. Possui os seguintes valores:</p>
+
+  <ul>
+    <li>float: none; o elemento não flutua.</li>
+    <li>float: left; o elemento flutua à direita do container que estiver.</li>
+    <li>float: right; o elemento flutua à esquerda do container que estiver.</li>
+  </ul>
+
+  <p><strong>clear</strong>: especifica em quais lados de um elemento elementos flutuantes não irão flutuar. Qual lado ficará “limpo” de outros elementos. Possui os seguintes valores:</p>
+
+  <ul>
+    <li>clear: none; os elementos flutuantes continuam à volta do elemento com clear:none.</li>
+    <li>clear: left; a esquerda do elemento será “limpa” de elementos flutuantes, que não serão “permitidos”.</li>
+    <li>clear: right; elementos não serão permitidos “flutuarem” à direita do elemento com essa propriedade.</li>
+    <li>clear: both; ambos os lados (direita e esquerda) ficarão sem outros elementos.</li>
+  </ul>
+
+  <p>Aqui podemos ver um exemplo: <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_class-clear">https://www.w3schools.com/cssref/tryit.asp?filename=trycss_class-clear</a>. Remova a “class=”clear”” da tag &ltp&gt para ver o efeito.</p>
+</body>
+</html>
