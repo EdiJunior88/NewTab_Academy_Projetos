@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positions</title>
+</head>
+<body>
+  <h1>Positions</h1>
+  <p>Para posicionarmos um elemento na tela, usamos a propriedade position, que possui os seguintes valores:</p>
+
+  <p><strong>position: static</strong>; valor padrão, faz o elemento ocupar seu espaço na tela. Os elementos renderizam na ordem que estão no código HTML.</p>
+
+  <p><strong>position: relative</strong>; o elemento ocupa seu espaço na tela e está posicionado relativamente ao seu próprio lugar. Ou seja, se definirmos um elemento relativo e colocarmos “top: 10px”, ele irá 10px para baixo de onde está, sem interferir (“empurrar”)  a posição dos elementos à sua volta.</p>
+
+  <p><strong>position: absolute</strong>; o elemento deixa de ocupar seu espaço na tela (torna-se “flutuante”). É posicionado relativamente com o elemento que está “dentro” (seu parent), desde que este não esteja com uma posição static. Fica onde está (na página) quando a mesma é rodada.</p>
+
+  <p><strong>position: fixed</strong>; o elemento deixa de ocupar seu espaço na tela (torna-se “flutuante”). É posicionado relativamente com o elemento que está “dentro” (seu parent), desde que este não esteja com uma posição static. Fica fixo, exatamente no ponto em que foi renderizado, quando a página é rodada.</p>
+
+  <p><strong>position: sticky</strong>; é uma “mistura” entre position: relative; e position: fixed;. Ele alterna entre os dois estados (relative e fixed) de acordo com a posição do scroll (rolagem) da página. Ele fica posicionado relativamente (position: relative;) até certa altura da tela, e quando o usuário roda até essa parte, sua posição torna-se fixa (position: fixed;).</p>
+</body>
+</html>
