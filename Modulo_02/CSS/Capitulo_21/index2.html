@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para reforçar</title>
+  <style>
+    div {
+      background: rgb(204, 204, 204);
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Para reforçar</h1>
+
+  <p>As Media Queries definem em quais condições um determinado CSS será aplicado.</p>
+
+  <p>É possível usá-las no HTML, ao linkar a folha de estilo:</p>
+
+  <div>
+    <code>
+      &ltlink rel=”stylesheet” href=”style.css” media=”screen and (max-width: 768px)”&gt
+    </code>
+  </div>
+
+  <p>No caso acima, o CSS só será carregado em dispositivos com a largura de tela menor à 768 pixels.</p>
+
+  <p>Mas também podemos utilizá-las diretamente dentro de uma folha de estilos. <a href="https://codepen.io/anna-erbetta-furlan/pen/gOpxvzo">Aqui temos um exemplo de como podemos mudar propriedades de acordo com o tamanho da tela</a>.</p>
+
+  <p>No dia a dia, aplicamos muito as media queries para tornar um site mais responsivo. Ali no exemplo mostrado acima, usamos media queries para aplicar propriedades em telas menores às medidas determinadas, mas também podemos:</p>
+
+  <ul>
+    <li>Definir para telas maiores que tal medida:</li>
+  </ul>
+
+  <i>
+    <p><i>@media screen and (min-width: 992px)</i> – neste exemplo, o CSS que estiver dentro desta media query será aplicado a telas maiores que 992 pixels.</p>
+  </i>
+
+  <ul>
+    <li>Definir para altura da tela:</li>
+  </ul>
+  
+  <i>
+    <p><i>@media screen and (max-height: 500px)</i> – neste exemplo, o CSS que estiver dentro desta media query será aplicado quando a altura da tela ou browser estiver menor que 500 pixels. O mesmo vale para min-height.</p>
+  </i>
+
+  <ul>
+    <li>Definir para larguras ou alturas específicas:</li>
+  </ul>
+
+  <p><i>@media screen and (width: 500px)</i> – neste exemplo, o CSS que estiver dentro desta media query será aplicado quando a tela ou browser tiver exatos 500 pixels de largura. O mesmo vale para height, que no caso trata da altura.</p>
+
+  <ul>
+    <li>Também podem ser usadas combinações:</li>
+  </ul>
+
+  <p><i>@media screen and (min-width: 700px) and (orientation: landscape)</i> – neste exemplo, o CSS que estiver dentro desta media query será aplicado quando a tela for maior ou igual 700 pixels, em dispositivos com orientação landscape.</p>
+
+  <ul>
+    <li>Também podem ser usadas outras mídias:</li>
+  </ul>
+
+  <p><i>@media print</i> – neste exemplo, o CSS que estiver dentro desta media query será aplicado ao imprimir uma página web.</p>
+
+  <p>📁 Fonte e para saber mais:</p>
+
+  <p>A seguir você pode encontrar a documentação completa dos media queries: https://developer.mozilla.org/pt-BR/docs/Web/Guide/CSS/CSS_Media_queries.</p>
+</body>
+</html>
