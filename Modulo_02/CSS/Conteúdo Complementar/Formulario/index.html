@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Formulário de Exemplo</title>
+</head>
+<body>
+  <div class="content">
+    <div class="form-exemplo">
+      <div class="form-header">
+        <div class="form-title">
+          Formulário de Contato
+        </div>
+
+        <div class="form-desc">
+          Preencha os campos abaixo para receber nossa newsletter!
+        </div>
+      </div>
+
+      <div class="form-body">
+        <form action="index.html" method="get">
+          <input placeholder="Nome" type="text" id="name" name="name">
+          <input placeholder="Telefone" type="tel" id="phone" name="phone">
+          <input placeholder="E-mail" type="email" id="email" name="email">
+          <textarea placeholder="Descrição" type="text" id="desc" name="desc"></textarea>
+          <label for="terms-and-service">
+            Aceito os termos de uso
+          </label>
+          <input type="checkbox" id="terms-and-service" name="terms-and-service">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
