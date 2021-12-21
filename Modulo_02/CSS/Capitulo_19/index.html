@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animação simples</title>
+</head>
+<body>
+  <h1>Animação simples</h1>
+  <p>Com CSS é possível animar elementos sem o uso de Javascript. Uma animação é a transição de um estado para outro, no CSS funciona assim: tenho um elemento, com tais propriedades. Ao passar o mouse (por exemplo, já que animações podem ocorrer sem o usuário interagir com um elemento) sobre ele, quero que mude de propriedades gradualmente. Na prática, um elemento de fundo vermelho ficaria gradualmente com fundo azul no :hover, e não mudaria de repente para o azul, sem transição nenhuma, por exemplo.</p>
+
+  <p>No CSS, podemos fazer animações simples (de um estado para outro, “dois passos”) bem como animações mais complexas (vários “passos” dentro de uma mesma animação).</p>
+
+  <p>Para uma animação simples, podemos usar apenas transições entre dois estados, que já chegaremos ao resultado esperado.</p>
+
+  <p><strong>A seguir você encontra uma animação em funcionamento, bem como seu código</strong>: <a href="https://codepen.io/anna-erbetta-furlan/pen/YzXxxYK">https://codepen.io/anna-erbetta-furlan/pen/YzXxxYK</a>. As transições sempre são colocadas no estado inicial (ou seja, no caso do exemplo, o estado sem o hover).</p>
+
+  <p><strong>Um bom lugar para fazer transições, animações e transformações é nesse gerador</strong>: <a href="https://www.css3maker.com/css3-transition.html">https://www.css3maker.com/css3-transition.html</a>. Note que além de propriedades como transition, há propriedades como -webkit-transition, -moz-transition… Elas fazem o mesmo, porém cada uma é “adaptada” para diferentes browsers.</p>
+
+  <p>Dentro de uma transição, você pode notar mais de um valor, exemplo:</p>
+
+  <p>transition: all 1s 16 ease;</p>
+
+  <p><strong>all</strong>: indica a propriedade que será atingida por essa transição. No caso, “all” indica que todas as propriedades que mudam de um elemento para outro serão afetadas por essa transição. Se tivéssemos um elemento em que a cor do texto e a cor do fundo mudam, mas só quiséssemos que a mudança da cor do fundo fosse afetada pela transição, escreveríamos: transition: background 1s ease;</p>
+
+  <p><strong>1s</strong>: indica o tempo, em segundos, que a transição irá durar. </p>
+
+  <p><strong>ease</strong>: o modo como essa transição se dará. Você pode encontrar todos os modos e seus <a href="https://easings.net/">exemplos aqui</a>. Também é possível “brincar” com essas curvas e gerar uma transição personalizada (<a href="https://cubic-bezier.com/#.17,.67,.83,.67">aqui podemos ter acesso a um gerador</a>).</p>
+</body>
+</html>
