@@ -83,3 +83,47 @@ h3 {
   -ms-flex-align: center;
   align-items: center;
 }
+
+.container.hero-container {
+  width: 85%;
+}
+
+.hero-contents-wrapper {
+  width: 34vw;
+  margin-left: auto;
+}
+
+.btn {
+  padding: 11px 25px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fff;
+  border-radius: 100px;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.no-border {
+  padding-right: 35px;
+  padding-left: 35px;
+  margin-top: 15px;
+  border-width: 0px;
+}
+
+.hero-subtitle {
+  margin-bottom: 35px;
+}
+
+.work-section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background-color: #f1f1f3;
+  background-image: url('images/MEUSTRABALHOS.svg');
+  background-position: 100% 0%;
+  background-size: 50vw;
+  background-repeat: no-repeat;
+}
