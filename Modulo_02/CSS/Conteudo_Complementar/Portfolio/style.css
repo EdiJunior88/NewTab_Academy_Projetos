@@ -9,7 +9,7 @@ body {
 h1 {
   margin-top: 20px;
   margin-bottom: 10px;
-  font-family: inherit;
+  font-family: Montserrat, sans-serif;
   color: #fff;
   font-size: 1.5em;
   line-height: 1.2em;
@@ -21,7 +21,7 @@ h1 {
 h2 {
   margin-top: 20px;
   margin-bottom: 10px;
-  font-family: inherit;
+  font-family: Montserrat, sans-serif;
   color: #fff;
   font-size: 5.6em;
   line-height: 1.1em;
@@ -31,7 +31,7 @@ h2 {
 
 h3 {
   margin-top: 20px;
-  margin-bottom: 110px;
+  margin-bottom: 10px;
   color: #4b1f4f;
   font-size: 2.5em;
   line-height: 30px;
@@ -53,9 +53,10 @@ h3 {
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url('images/divisao-hero.svg'), url('images/imagem-hero.jpg');
+  background-image: url('../images/divisao-hero.svg'), url('../images/imagem-hero.jpg');
   background-position: 50% 101%, 50% 50%;
   background-size: 100%, cover;
   background-repeat: no-repeat, repeat;
@@ -73,18 +74,18 @@ h3 {
   flex: 0 0 auto;
 }
 
-.container.colums-container {
+.container.columns-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-itens: center;
+  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-.container.hero-container {
+.container.hero-conatiner {
   width: 85%;
 }
 
@@ -123,7 +124,7 @@ h3 {
   padding-top: 75px;
   padding-bottom: 75px;
   background-color: #f1f1f3;
-  background-image: url('images/MEUSTRABALHOS.svg');
+  background-image: url('../images/MEUSTRABALHOS.svg');
   background-position: 100% 0%;
   background-size: 50vw;
   background-repeat: no-repeat;
@@ -158,44 +159,44 @@ h3 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
+  transition: All 0.5s ease;
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
 }
 
 .work.one {
-  background-image: url('images/trabalho-um.jpg');
+  background-image: url('../images/trabalho-um.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.two {
-  background-image: url('images/trabalho-dois.jpg');
+  background-image: url('../images/trabalho-dois.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.three {
-  background-image: url('images/trabalho-tres.jpg');
+  background-image: url('../images/trabalho-tres.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.four {
-  background-image: url('images/trabalho-quatro.jpg');
+  background-image: url('../images/trabalho-quatro.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.five {
-  background-image: url('images/trabalho-cinco.jpg');
+  background-image: url('../images/trabalho-cinco.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.six {
-  background-image: url('images/trabalho-seis.jpg');
+  background-image: url('../images/trabalho-seis.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -213,14 +214,14 @@ h3 {
   padding: 35px;
   background-color: rgba(87, 25, 82, 0.83);
   opacity: 0;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
+  transition: All 0.5s ease;
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
 }
 
 .work:hover .work-cover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .website-name {
@@ -279,8 +280,8 @@ h3 {
 .about-section {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-image: url('images/SOBREMIM.svg');
-  background-position: 100% 71%;
+  background-image: url('../images/SOBREMIM.svg');
+  background-position: 100% 17%;
   background-size: 28vw;
   background-repeat: no-repeat;
 }
@@ -311,3 +312,90 @@ h3 {
   margin-right: 10px;
 }
 
+@media screen and (max-width: 991px) {
+  .hero {
+    background-position: 50% 101%, 50% 50%;
+  }
+  .hero-contents-wrapper {
+    width: 71%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .work {
+    height: 27vw;
+  }
+  .website-name {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    background-position: 50% 101%, 100% 50%;
+  }
+  .container.columns-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .hero-contents-wrapper {
+    width: 100%;
+  }
+  .work-section {
+    background-size: 82vw;
+  }
+  .works-wrapper {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .work {
+    width: 48%;
+  }
+  .column {
+    width: 90%;
+  }
+  .profile-pic {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  h2 {
+    font-size: 3.7em;
+  }
+  .container.hero-conatiner {
+    width: 100%;
+  }
+  .hero-contents-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .hero-subtitle {
+    font-size: 1em;
+  }
+  .work {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 15px;
+  }
+}
