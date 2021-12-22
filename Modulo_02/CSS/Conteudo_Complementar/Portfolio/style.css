@@ -26,7 +26,7 @@ h2 {
   font-size: 5.6em;
   line-height: 1.1em;
   font-weight: 700;
-  letter-spacing: 0.12;
+  letter-spacing: 0.12em;
 }
 
 h3 {
@@ -73,7 +73,7 @@ h3 {
   flex: 0 0 auto;
 }
 
-.container .colums-container {
+.container.colums-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -103,6 +103,7 @@ h3 {
   font-size: 1em;
   font-weight: 600;
   letter-spacing: 2px;
+  color: #fff;
   text-decoration: none;
   display: inline-block;
 }
@@ -264,7 +265,7 @@ h3 {
 }
 
 .social-wrapper {
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .social-icon {
@@ -274,3 +275,39 @@ h3 {
 .social-icon img {
   width: 24px;
 }
+
+.about-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-image: url('images/SOBREMIM.svg');
+  background-position: 100% 71%;
+  background-size: 28vw;
+  background-repeat: no-repeat;
+}
+
+.contact-heading {
+  color: #fff;
+  text-align: center;
+}
+
+.contact-links-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.contact-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.contact-link img {
+  width: 30px;
+  margin-right: 10px;
+}
+
