@@ -56,7 +56,7 @@ h3 {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url('../images/divisao-hero.svg'), url('../images/imagem-hero.jpg');
+  background-image: url('images/divisao-hero.svg'), url('images/imagem-hero.jpg');
   background-position: 50% 101%, 50% 50%;
   background-size: 100%, cover;
   background-repeat: no-repeat, repeat;
@@ -124,7 +124,7 @@ h3 {
   padding-top: 75px;
   padding-bottom: 75px;
   background-color: #f1f1f3;
-  background-image: url('../images/MEUSTRABALHOS.svg');
+  background-image: url('images/MEUSTRABALHOS.svg');
   background-position: 100% 0%;
   background-size: 50vw;
   background-repeat: no-repeat;
@@ -166,37 +166,37 @@ h3 {
 }
 
 .work.one {
-  background-image: url('../images/trabalho-um.jpg');
+  background-image: url('images/trabalho-um.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.two {
-  background-image: url('../images/trabalho-dois.jpg');
+  background-image: url('images/trabalho-dois.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.three {
-  background-image: url('../images/trabalho-tres.jpg');
+  background-image: url('images/trabalho-tres.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.four {
-  background-image: url('../images/trabalho-quatro.jpg');
+  background-image: url('images/trabalho-quatro.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.five {
-  background-image: url('../images/trabalho-cinco.jpg');
+  background-image: url('images/trabalho-cinco.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .work.six {
-  background-image: url('../images/trabalho-seis.jpg');
+  background-image: url('images/trabalho-seis.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -280,7 +280,7 @@ h3 {
 .about-section {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-image: url('../images/SOBREMIM.svg');
+  background-image: url('images/SOBREMIM.svg');
   background-position: 100% 17%;
   background-size: 28vw;
   background-repeat: no-repeat;
