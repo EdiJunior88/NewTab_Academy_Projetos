@@ -221,3 +221,56 @@ h3 {
 .work:hover .work-cover {
   opacity: 1;
 }
+
+.website-name {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.website-link {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.contact-section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background-color: #751d6d;
+}
+
+.column {
+  width: 50%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.profile-pic {
+  width: 90%;
+}
+
+.about-paragraph {
+  margin-top: 35px;
+  font-size: 1.2em;
+  line-height: 1.7em;
+}
+
+.social-wrapper {
+  margin-top: 30px;
+}
+
+.social-icon {
+  margin-right: 30px;
+}
+
+.social-icon img {
+  width: 24px;
+}
