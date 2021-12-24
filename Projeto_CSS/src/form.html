@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/form.css">
   <title>Projeto Exemplo</title>
 </head>
 <body>
@@ -17,6 +18,31 @@
     <a href="form.html">Cadastrar</a>
   </div>
 
+  <section>
+    <form class="formulario">
+      <div class="linha-formulario">
+        <label class="label-grande" for="name">Nome:</label>
+        <input type="text" id="name" name="name">
+      </div>
 
+      <div class="linha-formulario">
+        <label class="label-grande" for="phone">Telefone:</label>
+        <input type="text" id="phone" name="phone">
+      </div>
+
+      <div class="linha-formulario" style="display: flex;">
+        <label class="label-grande">Experiência prévia:</label>
+        <div style="display: inline-block; width: 40%;">
+          <input type="radio" name="xp-yes" id="xp-yes">
+          <label for="xp-yes">Sim</label>
+          <br>
+          <input type="radio" name="xp-no" id="xp-no">
+          <label for="xp-no">Não</label>
+        </div>
+      </div>
+
+      <input type="submit" value="Salvar">
+    </form>
+  </section>
 </body>
 </html>
