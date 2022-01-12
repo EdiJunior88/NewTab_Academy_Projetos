@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Teste de mesa</title>
+</head>
+<body>
+  <h1>Teste de mesa</h1>
+
+  <p>Quando estamos lendo algoritmos, uma das atividades mais comum de fazermos é irmos anotando em um papel ou mentalmente o estado de cada uma das variáveis, esse processo é denominado teste de mesa e é muito útil para identificação de erros em algoritmos. Exemplo:</p>
+
+  <pre>
+    <code>
+      i = 0
+      ENQUANTO i != 11 FACA
+          i = i + 2.
+          escreva("Ainda não chegamos no onze")
+      //Teste de mesa
+      /*
+      i = 0
+      i = 2
+      i = 4
+      i = 6
+      i = 8
+      i = 10
+      i = 12
+      i = 14
+      ....
+      */
+    </code>
+  </pre>
+
+  <p>No código acima pelo teste de mesa identificamos que o critério de parada para o loop nunca será atingido, visto que i nunca será igual a 11, resultando em um <strong>loop infinito</strong>. Podemos corrigir o critério para algo como <code>"i &lt= 11"</code> para que o mesmo volte a ser atingível.</p>
+</body>
+</html>
