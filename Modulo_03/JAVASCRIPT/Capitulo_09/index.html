@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Lógica proposicional</title>
+</head>
+<body>
+  <h1>Lógica proposicional</h1>
+
+  <p>A maioria dos problemas pode ser simplificados em várias proposições com valores lógicos.</p>
+
+  <p>O valor lógico de uma proposição pode ser o de VERDADE, se a proposição for VERDADEIRA, e de FALSIDADE, se a proposição é FALSA. Podemos abreviar esses valores lógicos (FALSIDADE e VERDADE) utilizando somente as letras V e F.</p>
+
+  <p>Um dos princípios fundamentais decorrentes desses valores lógicos é que “Toda proposição tem um, e um só, dos valores, ou V ou F”. Ou seja, toda proposição é falsa ou verdadeira. Ela não pode ser verdade e mentira ao mesmo tempo.</p>
+
+  <h2>Tabela verdade</h2>
+
+  <p>Quando combinamos valores lógicos, podemos estabelecer condições que podem ser validadas ou invalidadas de acordo com o valor de cada uma das preposições.</p>
+
+  <p>Vamos usar um exemplo: antes de sairmos de casa, nós sempre conferimos se estamos levando as chaves, o celular e nossos documentos. Vamos dividir esses itens como preposições:</p>
+
+  <ul>
+    <li>Preposição 1 (P1) – Estamos com as chaves.</li>
+    <li>Preposição 2 (P2) – Estamos com nossos documentos.</li>
+    <li>Preposição 3 (P3) – Estamos com o celular.</li>
+  </ul>
+
+  <p>Agora vamos considerar que “sair de casa” é nosso resultado.</p>
+
+  <p>O que consideramos como tabela verdade é uma esquematização de todos os resultados possíveis dependendo do valores das preposições. Nesse nosso caso seria:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>P1</th>
+        <th>P2</th>
+        <th>P3</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+      </tr>
+
+      <tr>
+        <td>V</td>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+      </tr>
+
+      <tr>
+        <td>V</td>
+        <td>V</td>
+        <td>F</td>
+        <td>F</td>
+      </tr>
+
+      <tr>
+        <td>V</td>
+        <td>V</td>
+        <td>V</td>
+        <td>V</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Caso alguma das proposições seja falsa, então não saímos de casa. Ou seja, só sairemos de casa quando todas as proposições forem verdadeiras.</p>
+</body>
+</html>
