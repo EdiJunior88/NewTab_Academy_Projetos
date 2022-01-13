@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Exercícios de Algoritmo e lógica de programação</title>
+</head>
+<body>
+  <h1>Exercícios de Algoritmo e lógica de programação</h1>
+
+  <p><strong>1 – Na programação podemos definir algoritmos como:</strong></p>
+  
+  <p>a) Sequência de procedimento não utilizada para realizar e desenvolver cálculo de forma automatizada, sem muito esforço lógico.</p>
+  <p>b) Sequência de passos finitos, e mal estruturados que podem ser automatizados e implementados utilizando linguagens de programação.</p>
+  <p>c) Sequência de passos finitos, e bem estruturados que podem ser automatizados e implementados utilizando linguagens de programação.</p>
+  <p>d) Sequência de procedimento utilizada para realizar e desenvolver cálculo de forma automatizada, sem muito esforço lógico.  </p>
+  <p>e) Sequência de passos infinitos, e bem estruturados que podem ser automatizados e implementados utilizando linguagens de programação. </p>
+
+  <pre>
+    RESPOSTA:
+
+    C
+  </pre>
+
+  <p><strong>2- Assinale a alternativa que apresenta  APENAS operadores relacionais.</strong></p>
+
+  <p>a) && , || e ~</p>
+  <p>b) +, – e *</p>
+  <p>c) && , &gt= e ||</p>
+  <p>d) &lt, &gt e &gt=</p>
+  <p>e) =, &gt e ||</p>
+
+  <pre>
+    RESPOSTA:
+
+    D
+  </pre>
+
+  <p><strong>3 – Marque a alternativa que apresenta uma sequência lógica para fritar ovo:</strong></p>
+
+  <p>a) Coloque manteiga na frigideira – quebre o ovo – despeje-o na frigideira – retire-o quando estiver frito.</p>
+  <p>b) Quebre o ovo – retire-o quando estiver frito – coloque manteiga na frigideira – quebre o ovo.</p>
+  <p>c) Despeje-o na frigideira – retire-o quando estiver frito – coloque-o no prato – salpique  queijo ralado.</p>
+  <p>d) Retire-o quando estiver frito – coloque manteiga na frigideira – quebre o ovo –  quebre o ovo .</p>
+  <p>e) Coloque manteiga na frigideira – quebre o ovo – retire-o quando estiver frito – despeje-o na frigideira.</p>
+
+  <pre>
+    RESPOSTA:
+
+    E
+  </pre>
+
+  <p><strong>4 – Qual dos algoritmos abaixo explicita todos os passos que devem ser seguidos para encontrar um dado livro numa biblioteca? (suponha que o livro exista)</strong></p>
+
+  <p>a) Pegar o nome do livro – procurar o livro – se dirigir até o corredor referente à área – identificar a área – pegar o livro.</p>
+  <p>b) Identificar a área – pegar o nome do livro – se dirigir até o corredor referente à área – procurar o livro – pegar o livro.</p>
+  <p>c) Pegar o nome do livro – identificar a área – se dirigir até o corredor referente à área – procurar o livro – pegar o livro.</p>
+  <p>d) Pegar o nome do livro – se dirigir até o corredor referente à área – identificar a área – procurar o livro – pegar o livro.</p>
+  <p>e) Pegar o nome do livro – identificar a área – se dirigir ao corredor referente à área – pegar o livro – procurar o livro.</p>
+
+  <pre>
+    RESPOSTA:
+
+    C
+  </pre>
+
+  <p><strong>5 – Elabore um algoritmo em pseudocódigo que leia um número. Se positivo, armazene-o em uma variável chamada “A”, se for negativo, em uma variável chamada “B”. No final, deve mostrar o resultado das duas variáveis.</strong></p>
+
+  <pre>
+    RESPOSTA:
+
+    algoritmo "exemplo1"
+    
+    var n1
+
+    inicio
+
+    escreva("digite um número: ")
+    leia(n1)
+
+    se n1 % 2 então
+        escreva("A")
+    senão
+          escreva("B")
+    fim-se
+
+    fimalgoritmo
+  </pre>
+
+  <p><strong>6 – Elabore um algoritmo em pseudocódigo que efetue a leitura de um valor que esteja entre a faixa de 1 a 9. Após a leitura do valor fornecido pelo usuário, o programa deverá indicar uma de duas mensagens: “O valor está na faixa permitida”, caso o usuário forneça o valor nesta faixa, ou a mensagem “O valor está fora da faixa permitida”, caso o usuário forneça valores menores que 1 ou maiores que 9.</strong></p>
+
+  <pre>
+    RESPOSTA:
+
+    Algoritmo "exemplo1"
+
+    num:inteiro
+
+    Inicio
+
+    escreva("Digite um número: ")
+    leia(num)
+
+    se (num &lt= 1) e (num &gt= 9) entao
+        escreva("O valor está na faixa permitida")
+    senão
+        escreva("O valor está fora da faixa permitida")
+    fimse
+
+    Fimalgoritmo
+  </pre>
+
+  <p><strong>7 – Faça um algoritmo em pseudocódigo para ler o ano de nascimento de uma pessoa, calcular e mostrar sua idade e, também, verificar e mostrar se ela já tem idade para votar (16 anos ou mais) e para conseguir a Carteira de Habilitação (18 anos ou mais).</strong></p>
+
+  <pre>
+    RESPOSTA:
+
+    Algoritmo "exemplo2"
+
+    Var
+
+    anoNascimento:inteiro
+    anoAtual:inteiro
+    idade:inteiro
+
+    Inicio
+
+
+    escreval("Digite o seu ano de nascimento: ")
+    leia(anoNascimento)
+
+    escreval("Digite o ano atual: ")
+    leia(anoAtual)
+
+    idade &lt- anoAtual - anoNascimento
+
+
+    se (idade &lt= 16) e (idade &lt= 18) entao
+      escreva("Você já tem idade para votar e de ter Carteira de Habilitação")
+    senão
+      se (idade &lt= 16) e (idade &gt 18) entao
+          escreva("Você já tem idade para votar mas não pode ter Carteira de Habilitação")
+            senão
+                se (idade &gt 16) e (idade &gt 18) entao
+                  escreva("Você não tem idade para votar e não pode ter Carteira de Habilitação")
+                fimse
+        fimse
+    fimse
+
+    Fimalgoritmo
+  </pre>
+
+  <p><strong>8 – Zezinho comprou um microcomputador para controlar o rendimento diário de seu trabalho como pescador. Toda vez que ele traz um peso de peixes maior que o estabelecido pelo regulamento de pesca do estado de Santa Catarina (50 quilos) deve pagar um multa de R$ 4,00 por quilo excedente. Zezinho precisa que você faça um algoritmo que leia o peso de peixes e verifique se há excesso. Se houver, o excesso e o valor da multa que Zezinho deverá pagar. Caso contrário, deve mostrar uma mensagem que ele não deve pagar nada.</strong></p>
+
+  <p><strong>9 – Faça um algoritmo que conte de 1 a 100 e a cada múltiplo de 10 emita uma mensagem: “Múltiplo de 10”.</strong></p>
+
+  <p><strong>10 – Elabore um algoritmo que gere e escreva os números ímpares entre números de 100 e 200.</strong></p>
+</body>
+</html>
