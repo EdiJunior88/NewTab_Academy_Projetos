@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Conceitos de renderização</title>
+</head>
+<body>
+  <h1>Conceitos de renderização</h1>
+
+  <p>Vários são os termos: “navegador”, “navegadores”, “navegadores web”, “browser”, “browsers”, “web browsers”, etc. Mas então o que exatamente é tudo isso? </p>
+
+  <h2>Navegador</h2>
+
+  <p>Um navegador é um software que carrega arquivos de um servidor remoto ou do disco local e o disponibiliza para visualização.</p>
+
+  <p>A principal função de um navegador é apresentar o recurso da web que você escolher, fazendo a solicitação ao servidor e exibição na janela do navegador. O recurso geralmente é um documento HTML, mas também pode ser um PDF, imagem ou outro tipo de conteúdo.</p>
+
+  <p>A maneira como o navegador interpreta e exibe arquivos HTML é especificada nas especificações HTML e CSS. Essas especificações são mantidas pela organização W3C (World Wide Web Consortium), que é a organização de padrões para a web. Durante anos, os navegadores obedeceram apenas a uma parte das especificações e desenvolveram suas próprias extensões. Isso causou sérios problemas de compatibilidade no passado, hoje, a maioria dos navegadores está mais ou menos em conformidade com as especificações.</p>
+
+  <h2>Mas do que um navegador é feito?</h2>
+
+  <p>Dentro de um navegador (que sabemos que é um software), podem haver outros pequenos softwares, onde cada um possui sua responsabilidade. Um desses “pequenos” softwares é o motor do navegador (browser engine).</p>
+
+  <h2>Browser engine</h2>
+
+  <p>Dentro de cada navegador (Chrome, Firefox, Opera, etc.) existe uma implementação do motor (engine). Ele é o responsável por descobrir quais são e como renderizar as informações dos arquivos que ele recebeu para que você visualize ou interaja com eles.</p>
+
+  <p>Exemplos de motores: Gecko, Blink, Webkit.</p>
+
+  <h2>O mecanismo de renderização</h2>
+
+  <p>A responsabilidade do mecanismo de renderização é a exibição do conteúdo solicitado na tela do navegador.</p>
+
+  <p>Por padrão, o mecanismo de renderização pode exibir documentos e imagens HTML e XML. Ele pode exibir outros tipos de dados via plug-ins ou extensões; por exemplo, exibindo documentos PDF usando um plug-in visualizador de PDF. </p>
+
+  <p>A engine de renderização recebe o conteúdo do documento solicitado da camada de rede.</p>
+
+  <p>A primeira etapa da engine de renderização é analisar o documento HTML e converter os elementos analisados ​​em nós DOM (Document Object Model) reais em uma árvore DOM.</p>
+
+  <p>Imagine que você tenha a seguinte entrada textual:</p>
+
+  <pre>
+    <code>
+      &lthtml&gt
+        &lthead&gt
+          &ltmeta charset="UTF-8"&gt
+          &ltlink rel="stylesheet" type="text/css" href="tema.css"&gt
+        &lt/head&gt
+        &ltbody&gt
+          &ltp&gt Hello, &ltspan&gt friend! &lt/span&gt &lt/p&gt
+          &ltdiv&gt
+            &ltimg src="imagem.gif" alt=imagem" height="50" width="50"&gt
+          &lt/div&gt
+        &lt/body&gt
+      &lt/html&gt
+    </code>
+  </pre>
+  
+  <p>❗ Calma, você ainda não precisa entender tudo o que significa isso, é apenas um exemplo para explicar o conceito deste módulo.</p>
+
+  <p>A árvore DOM deste HTML será parecida com esta:</p>
+
+  <img src="img/img01.png" alt="">
+
+  <h2>Construindo a árvore</h2>
+
+  <p>Enquanto o navegador estava construindo o DOM da página, encontrou uma tag de link na seção head que estava referenciando a folha de estilos CSS tema.css externa (você vai ver mais disso nos próximos módulos também). Antecipando que possa precisar desse recurso para renderizar a página, ele imediatamente enviou uma solicitação para ele. Vamos imaginar que o arquivo tema.css tenha o seguinte conteúdo:</p>
+
+  <pre>
+    <code>
+      body {
+        font-size: 16px;
+      }
+      p {
+        font-weight: bold;
+      }
+    
+      span {
+        color: red;
+      }
+    
+      p span {
+        display: none;
+      }
+    
+      img {
+        float: right;
+      }
+    </code>
+  </pre>
+
+  <p>É assim que a árvore de renderizadores das árvores DOM se parecerá:</p>
+
+  <img src="img/img02.png" alt="">
+
+  <p>Assim como no HTML, o mecanismo precisa converter o CSS em algo com o qual o navegador possa trabalhar. O objetivo desta árvore é permitir a pintura do conteúdo em sua ordem correta. Cada nó na árvore de renderização é conhecido como renderizador ou objeto de renderização no Webkit. É dessa forma que a W3C vem tentando especificar um padrão para que os diferentes webkits renderizem da mesma forma uma página web.</p>
+
+  <p>🔎 Fonte e/ou material complementar:</p>
+
+  <a href="https://www.html5rocks.com/pt/tutorials/internals/howbrowserswork/">
+    <p>Como os navegadores funcionam: bastidores dos navegadores modernos (Tali Garsiel)</p>
+  </a>
+</body>
+</html>
