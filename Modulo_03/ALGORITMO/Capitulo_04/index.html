@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>APIs - SOAP e Rest</title>
+</head>
+<body>
+  <h1>APIs - SOAP e Rest</h1>
+
+  <p>Com a proliferação das APIs web, uma especificação de protocolo foi desenvolvida para ajudar a padronizar a troca de informações: o <i>Simple Object Access Protocol</i>, mais conhecido como SOAP. As APIs projetadas com SOAP usam o XML como formato de mensagem e recebem solicitações por HTTP ou SMTP. O SOAP facilita o compartilhamento de informações por aplicações executadas em ambientes diferentes ou escritos em linguagens diferentes.</p>
+
+  <p>Já o REST é uma arquitetura criada para ser mais simples de se usar que o SOAP. Este pode ser usado em vários formatos de texto, como CSV (<i>Comma-separated Values</i>), RSS (<i>Really Simple Syndication</i>), JSON e YAML. Porém, só pode ser utilizado com o protocolo HTTP/HTTPS, por exemplo, utilizando os métodos GET, POST, PUT e DELETE (calma, vamos comentar sobre eles a seguir). Por este motivo, o REST comporta-se como se fosse um navegador que sabe como usar um protocolo e seus métodos padronizados, sendo que o aplicativo deve se adequar a isto.</p>
+
+  <p>Agora sim, o que são esses métodos GET, POST, PUT e DELETE que foram citados acima:</p>
+
+  <ul>
+    <li><strong>GET</strong> –  é o mais comum. Tem o mesmo papel de seu browser que realiza consultas de dados a todo instante só pelo ato de visitar uma URL de certo servidor. Como o nome sugere, ele serve para recuperar dados de um recurso específico.</li>
+    <li><strong>POST</strong> – usado diariamente pela maioria dos usuários da Internet. Ele permite o envio de dados para serem processadas por um recurso específico. Toda vez que você preenche um formulário web você está realizando um requerimento POST, por exemplo.</li>
+    <li><strong>PUT</strong> –  requerimento usado para atualizar um recurso específico. Normalmente, você precisa enviar requerimentos a uma das extremidades comunicantes (endpoints), para que o servidor saiba qual recurso você está tentando atualizar.</li>
+    <li><strong>DELETE</strong> – como o próprio nome também sugere, consiste no requerimento direcionado a apagar um recurso específico.</li>
+  </ul>
+
+  <p>A seguir, temos uma comparação das duas tecnologias, com as principais vantagens de cada uma:</p>
+
+  <h2>SOAP</h2>
+
+  <ul>
+    <li>Protocolo de transporte independente (REST utiliza somente HTTP).</li>
+    <li>Trabalha melhor com sistemas distribuídos (pois REST trabalha com comunicação ponto-a-ponto).</li>
+    <li>O arquivo WSDL pode gerar um certo tipo de automação quando usado com determinadas ferramentas.</li>
+  </ul>
+
+  <h2>REST</h2>
+
+  <ul>
+    <li>Menor curva de aprendizado.</li>
+    <li>Mensagens menores e mais eficientes, como o formato JSON comparado ao XML.</li>
+    <li>Os dados podem ser colocados em cache, retornando sempre a mesma resposta para a mesma requisição.</li>
+  </ul>
+
+  <p>🔎 Fonte e/ou material complementar:</p>
+
+  <p><a href="https://aws.amazon.com/pt/api-gateway/api-management/">Gerenciamento de APIs (AWS)</a></p>
+  <p><a href="https://www.redhat.com/pt-br/topics/api/what-are-application-programming-interfaces">O que significa API e como ela funciona (Red Hat)</a></p>
+</body>
+</html>
