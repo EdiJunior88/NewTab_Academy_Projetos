@@ -1,0 +1,26 @@
+pre {
+  font-weight: bold;
+  background: rgb(224, 224, 224);
+}
+
+img {
+  width: 100%;
+}
+
+table, thead, tbody, th, tr, td{
+  padding: 15px 150px 15px 8px;
+  border-collapse: collapse;
+  border: 1px solid rgb(212, 211, 211);
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* thead tr:nth-child(1),
+tbody tr:nth-child(2),
+tbody tr:nth-child(4) {
+  background: rgb(216, 215, 215);
+}
+ */
+table td:nth-child(4) {
+  font-weight: bolder;
+}
