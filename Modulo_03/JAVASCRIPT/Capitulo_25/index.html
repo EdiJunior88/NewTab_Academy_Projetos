@@ -49,7 +49,7 @@
   <pre>
     RESPOSTA:
 
-    E
+    A
   </pre>
 
   <p><strong>4 – Qual dos algoritmos abaixo explicita todos os passos que devem ser seguidos para encontrar um dado livro numa biblioteca? (suponha que o livro exista)</strong></p>
@@ -66,27 +66,30 @@
     C
   </pre>
 
-  <p><strong>5 – Elabore um algoritmo em pseudocódigo que leia um número. Se positivo, armazene-o em uma variável chamada “A”, se for negativo, em uma variável chamada “B”. No final, deve mostrar o resultado das duas variáveis.</strong></p>
+  <p><strong>5 – Elabore um algoritmo em pseudocódigo que leia um número. Se positivo, armazene-o em uma variável chamada "A", se for negativo, em uma variável chamada "B". No final, deve mostrar o resultado das duas variáveis.</strong></p>
 
   <pre>
     RESPOSTA:
 
-    algoritmo "exemplo1"
-    
-    var n1
+    algoritmo "Armazenamento"
+
+    var
+    n,a,b :real
 
     inicio
 
-    escreva("digite um número: ")
-    leia(n1)
+    escreval("Digite um número: ")
+    leia(n)
+    
+    se(n &gt= 0) entao
+      a &lt- n
+      escreval(“O número :",a," é variável de A")
+    senao
+      b &lt- n
+      escreval(“O número :",b," é variável de B")
+    fimse
 
-    se n1 % 2 então
-        escreva("A")
-    senão
-          escreva("B")
-    fim-se
-
-    fimalgoritmo
+    Fimalgoritmo
   </pre>
 
   <p><strong>6 – Elabore um algoritmo em pseudocódigo que efetue a leitura de um valor que esteja entre a faixa de 1 a 9. Após a leitura do valor fornecido pelo usuário, o programa deverá indicar uma de duas mensagens: “O valor está na faixa permitida”, caso o usuário forneça o valor nesta faixa, ou a mensagem “O valor está fora da faixa permitida”, caso o usuário forneça valores menores que 1 ou maiores que 9.</strong></p>
@@ -95,6 +98,8 @@
     RESPOSTA:
 
     Algoritmo "exemplo1"
+
+    Var
 
     num:inteiro
 
@@ -127,7 +132,6 @@
 
     Inicio
 
-
     escreval("Digite o seu ano de nascimento: ")
     leia(anoNascimento)
 
@@ -135,7 +139,6 @@
     leia(anoAtual)
 
     idade &lt- anoAtual - anoNascimento
-
 
     se (idade &lt= 16) e (idade &lt= 18) entao
       escreva("Você já tem idade para votar e de ter Carteira de Habilitação")
@@ -154,8 +157,79 @@
 
   <p><strong>8 – Zezinho comprou um microcomputador para controlar o rendimento diário de seu trabalho como pescador. Toda vez que ele traz um peso de peixes maior que o estabelecido pelo regulamento de pesca do estado de Santa Catarina (50 quilos) deve pagar um multa de R$ 4,00 por quilo excedente. Zezinho precisa que você faça um algoritmo que leia o peso de peixes e verifique se há excesso. Se houver, o excesso e o valor da multa que Zezinho deverá pagar. Caso contrário, deve mostrar uma mensagem que ele não deve pagar nada.</strong></p>
 
+  <pre>
+    RESPOSTA:
+
+    Algoritmo "exemplo3"
+
+    Var
+
+    peso:inteiro
+    multa:inteiro
+    limite:inteiro
+
+    Inicio
+
+    escreva("Digite o peso do peixe: ")
+    leia(peso)
+
+    se peso &gt 50 entao
+      limite &lt- 50
+      multa &lt- (peso - limite) * 4
+      escreva("multa de R$", multa, " reais")
+    senão
+      escreva("Não pagará multa")
+    fimse
+
+    Fimalgoritmo
+  </pre>
+
   <p><strong>9 – Faça um algoritmo que conte de 1 a 100 e a cada múltiplo de 10 emita uma mensagem: “Múltiplo de 10”.</strong></p>
 
+  <pre>
+    RESPOSTA:
+
+    algoritmo “Multiplos de 10”
+
+    var
+
+    n: vetor[1..100] de inteiro
+    i: inteiro
+
+    inicio
+
+    escreval(“Os multiplos de 10 de 1 a 100 são:”)
+    
+    para i de 1 ate 100 faca
+      se(i mod 10 = 0) entao
+        escreval(i)
+      fimse
+    fimpara
+    
+    Fimalgoritmo
+  </pre>
+
   <p><strong>10 – Elabore um algoritmo que gere e escreva os números ímpares entre números de 100 e 200.</strong></p>
+
+  <pre>
+    algoritmo “Numeros Impares de 100 a 200”
+
+    var
+
+    n: vetor[100..200] de inteiro
+    i, impar: inteiro
+
+    inicio
+
+    escreval(“Os números impares de 100 a 200 são:”)
+
+    para i de 100 ate 200 faca
+      se(i mod 2 &lt&gt 0) entao
+        escreval(i)
+      fimse
+    fimpara
+    
+    Fimalgoritmo
+  </pre>
 </body>
 </html>
