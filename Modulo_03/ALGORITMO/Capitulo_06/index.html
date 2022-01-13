@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>APIs - CORS</title>
+</head>
+<body>
+  <h1>APIs - CORS</h1>
+
+  <p>Por que já incluímos esse conteúdo por aqui? Porque provavelmente você vai se deparar com algo relacionado durante a execução dos projetos simulados. Não precisa estudar a fundo isso no momento, quando esse erro acontecer, lembre-se de voltar aqui e consultar este material.</p>
+
+  <p>O CORS (<i>Cross-origin Resource Sharing</i>) é um mecanismo utilizado pelos navegadores para compartilhar recursos entre diferentes origens. O CORS é uma <a href="https://fetch.spec.whatwg.org/">especificação do W3C</a> e faz uso de headers do HTTP para informar aos navegadores se determinado recurso pode ser ou não acessado.</p>
+
+  <p>Para compreender melhor, imagine que você está desenvolvendo uma aplicação web que consiste em um aplicativo e uma API. Tudo ocorre sem problemas no seu ambiente produção, mas ao fazer ao executar localmente você se depara com isso:</p>
+
+  <img src="img/img01.png" alt="">
+
+  <p>Isso acontece devido a um mecanismo de segurança presentes nos navegadores chamado de same-origin policy. Por motivos de segurança, navegadores restringem requisições cross-origin HTTP a partir de scripts. Assim, um aplicativo web que faz uso dessas APIs só poderá fazer requisições HTTP da mesma origem da qual o aplicativo foi carregado, a menos que a resposta da outra origem inclua os cabeçalhos CORS corretos.</p>
+
+  <h2>Como resolver problemas de CORS</h2>
+
+  <p>Quando encontramos um erro de CORS, é importante verificar qual requisição está causando esse problema diretamente no console do seu navegador. Geralmente o problema é causado pela ausência de headers no lado do servidor.</p>
+
+  <p>Para corrigir esse problema, garanta que o servidor está enviando os seguintes headers na sua resposta:</p>
+
+  <pre>
+    <code>
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST, GET
+      Access-Control-Allow-Headers: *
+      Access-Control-Max-Age: 86400
+    </code>
+  </pre>
+
+  <p>Nesse exemplo, estamos permitindo que a qualquer origem acesse os recursos daquele servidor, sendo possível o uso dos métodos HTTP GET e POST, juntamente com qualquer header adicional. </p>
+
+  <p>Uma outra alternativa para desenvolvedores front-end que não querem se preocupar com esses passos de adicionar parâmetros no headers e que usamos muito quando estamos desenvolvendo é usar um serviço já pronto que faça um proxy para qualquer site que quisermos acessar, já colocando esses headers de permissão. Um que já utilizamos é o <a href="https://cors.eu.org/">https://cors.eu.org/</a> por exemplo.</p>
+
+  <p>Você também pode buscar outras soluções na internet e mandar em nosso Discord que nossos facilitadores buscarão te auxiliar, caso isso aconteça por aí.</p>
+</body>
+</html>
