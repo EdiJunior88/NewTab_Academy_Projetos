@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Conceito de repetição</title>
+</head>
+<body>
+  <h1>Conceito de repetição</h1>
+
+  <h2>“Enquanto, até que, para todos…”</h2>
+
+  <p>Apesar de nosso novo algoritmo estar verificando a necessidade de trocar a lâmpada antes de ser executado completamente, em momento algum verificamos se a lâmpada nova que foi instalada funciona. Porém, apenas adicionar novos condicionais, pode não ser suficiente para garantir que o algoritmo funcione, veja só:</p>
+
+  <pre>
+    <code>
+      Ligue o interruptor.
+        Se a lâmpada não acender:
+            Pegue uma escada;
+            Posicione a escada embaixo da lâmpada;
+            Pegue uma lâmpada nova;
+            Suba na escada;
+            Retire a lâmpada velha;
+            Coloque a lâmpada nova;
+            Se a lâmpada não acender:
+              Retire a lâmpada;
+              Coloque uma outra lâmpada;
+              Se a lâmpada ainda não acender;
+              Retire a lâmpada;
+              Coloque uma outra lâmpada;
+              Se a lâmpada não acender:
+                  Retire a lâmpada...
+    </code>
+  </pre>
+
+  <p>Precisamos indicar ao algoritmo que devemos testar a lâmpada indefinidamente, usamos então palavras que indiquem essa continuidade:</p>
+
+  <pre>
+    <code>
+      Ligue o interruptor;
+        Se a lâmpada não acender:
+            Pegue uma escada;
+            Posicione a escada embaixo da lâmpada;
+            Pegue uma lâmpada nova;
+            Suba na escada;
+            Retire a lâmpada velha;
+            Coloque a lâmpada nova.
+            Enquanto a lâmpada não acender:
+              Retire a lâmpada;
+              Coloque uma outra lâmpada.
+    </code>
+  </pre>
+          
+  <p>Agora os últimos itens desta lista vão ser executados até que a lâmpada acenda.</p>
+
+  <p>❗ Ah, vale reforçar que a repetição só termina se a lâmpada acender, esse condicional que encerra a repetição também pode ser chamado de critério de parada e sem ele nosso algoritmo entraria em uma repetição infinita.</p>
+</body>
+</html>
