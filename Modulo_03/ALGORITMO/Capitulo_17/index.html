@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Comentários e funções</title>
+</head>
+<body>
+  <h1>Comentários e funções</h1>
+
+  <h2>Comentários</h2>
+
+  <p>No código usado para ordenação que vimos há pouco, uma das linhas é a seguinte:</p>
+
+  <pre>
+    <code>
+      ...
+      // Insere cartasSobreAMesa[j] na sequência correta
+      ...
+    </code>
+  </pre>
+
+  <p>Esse “//” indica que essa linha não vai ser interpretada pelo computador, é apenas uma forma de fazer anotações para que outra pessoa que leia seu código consiga entender de forma mais detalhada o que está acontecendo. Os comentários nos códigos são muito importantes e você vai ter provas disso quando estivermos desenvolvendo projetos.</p>
+
+  <h2>Funções</h2>
+
+  <p>Muitas vezes um programa é constituído de vários blocos de código que se repetem várias vezes. Imagine que no exemplo anterior, em vez de um baralho possuímos 10 baralhos sobre a mesa, alguns com cartas faltando, o algoritmo deverá então ser executado várias vezes, porém com diretrizes iniciais diferente. Dentro de programação, podemos tratar esse algoritmo com uma função:</p>
+
+  <pre>
+    <code>
+      Algoritmo ordenarCartas(cartasSobreAMesa)
+      inicio
+            tamanhoPilha = Tamanho(cartasSobreAMesa)
+            PARA j = 2 ATE tamanhoPilha FACA
+                carta = cartasSobreAMesa[j]
+                // Insere cartasSobreAMesa[j] na sequência correta
+        i = j - 1
+        ENQUANTO i > 0 E cartasSobreAMesa[i] > carta
+          cartasSobreAMesa[i + 1] = cartasSobreAMesa[i]
+                      i = i - 1
+        cartasSobreAMesa[i + 1] = carta
+      fim
+      baralhos = [[8,2,4],[6,8,3,2,9],[9,3]]
+      i = 0
+      ENQUANTO i < Tamanho(baralhos) FACA
+        ordenarCartas(baralhos[i])
+    </code>
+  </pre>
+    
+  <p>Dessa forma, a nossa função “Ordenar cartas” vai ser executada no momento que precisarmos de acordo com os <strong>parâmetros</strong> que passamos, no caso, qual baralho estamos tratando. Dentro da nossa função também indicamos uma função “Tamanho()” que vai contar o número de cartas dentro do baralho.</p>
+</body>
+</html>
