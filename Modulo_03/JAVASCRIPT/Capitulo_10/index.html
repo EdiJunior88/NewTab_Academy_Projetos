@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Variáveis</title>
+</head>
+<body>
+  <h1>Variáveis</h1>
+
+  <p>Quando apresentamos variáveis, falamos sobre o uso const, let e var. Escopo é o conjunto de variáveis visíveis para uma parte do programa. Em JavaScript temos um escopo global, escopo de bloco e escopo de função.</p>
+
+  <p>Se uma variável é definida fora de uma função ou bloco, ela é anexada ao objeto global e possui um escopo global, o que significa que está disponível em todas as partes de um programa.</p>
+  
+  <p>Há uma diferença muito importante entre var, let e const. Uma variável definida como var dentro de uma função é visível apenas dentro dessa função, semelhante aos parâmetros de uma função. Uma variável definida como const ou let, por outro lado, só é visível dentro do bloco em que está definida.</p>
+  
+  <p>Um bloco é um conjunto de instruções agrupadas em um par de chaves, como as que podemos encontrar em um if, um for ou uma função.</p>
+  
+  <p>É importante entender que um bloco não define um novo escopo para var, mas sim para let e const. Isso tem implicações muito práticas.</p>
+  
+  <p>Suponha que você defina uma var variável dentro de um if condicional em uma função:</p>
+  
+  <pre>
+    <code>
+      function getData() {
+        if (true) {
+          var data = 'olá mundo';
+          console.log(data)
+        }
+      }
+    </code>
+  </pre>
+
+  <p>Se você chamar essa função, será olá mundo impresso no console.</p>
+  
+  <p>Se você tentar mover console.log (data) após o arquivo if, ele ainda funcionará:</p>
+  
+  <pre>
+    <code>
+      function getData() {
+        if (true) {
+          var data = 'olá mundo';
+        }
+        console.log(data)
+      }
+    </code>
+  </pre>
+    
+  <p>Mas se você alternar var data para let data:</p>
+
+  <pre>
+    <code>
+      function getData() {
+        if (true) {
+          let data = 'olá mundo';
+        }
+        console.log(data)
+      }
+    </code>
+  </pre>
+    
+  <p>Você obterá um erro: ReferenceError: data is not defined.</p>
+  
+  <p>Pode ser complicado no começo, mas depois que você perceber essa diferença, verá porque var hoje em dia é considerada uma má prática em comparação ao let, já que eles têm menos partes móveis e seu escopo é limitado ao bloco, o que também os torna muito bons Como variáveis de loop porque deixam de existir após o encerramento de um loop:</p>
+  
+  <pre>
+    <code>
+      function doLoop() {
+        for (var i = 0; i &gt 10; i++) {
+          console.log("valor de i: " + i);
+        }
+        console.log(i);
+      }
+      doLoop();
+    </code>
+  </pre>
+
+  <p>Quando você sair do loop, i será uma variável válida com o valor 10.</p>
+  
+  <p>Se você alternar para let, quando tentar console.log(i), resultará em um erro ReferenceError: i is not defined.</p>
+</body>
+</html>
