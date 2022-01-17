@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>O que é e para que serve</title>
+</head>
+<body>
+  <h1>Como adicionar JavaScript no HTML</h1>
+
+  📍 Reforçando:
+
+  <p>Para adicionar códigos JavaScript à uma página devemos usar a tag &ltscript&gt, podendo fazer essa inserção de duas formas:</p>
+
+  <h2>1. Inserindo códigos na própria página <i>(inline)</i>:</h2>
+
+  <p>Cria-se uma tag &ltscript&gt, informando que o valor do atributo 'type' é 'text/javascript', então, coloca-se o código JavaScript dentro dessa tag.</p>
+
+  <p>O código JS pode ser adicionado:</p>
+
+  <p>Entre as tags &lthead&gt</p>
+
+  <p>Entre as tags &ltbody&gt</p>
+
+  <p>Dependendo de onde você adicionar o código JavaScript no arquivo HTML, o carregamento é diferente. A prática recomendada é inseri-lo na seção &lthead&gt, pois ele ficará separado do conteúdo real do arquivo HTML.</p>
+
+  <p>Mas saiba que, colocá-lo na seção &ltbody&gt poderá melhorar a velocidade de carregamento, já que o conteúdo do site atual será carregado mais rapidamente, e somente então o JavaScript será analisado.</p>
+
+  <p>Exemplo:</p>
+
+  <pre>
+    <code>
+      &lthtml&gt
+      &lthead&gt
+      &ltmeta charset="UTF-8"&gt
+      &ltmeta name="viewport" content="width=device-width, initial-scale=1"&gt
+      &ltscript type="text/javascript"&gt
+        alert('Olá mundo 1!');
+      &lt/script&gt
+      &lt/head&gt
+      &ltbody&gt
+        &ltscript type="text/javascript"&gt
+          alert('Olá mundo 2!');
+        &lt/script&gt
+      &lt/body&gt
+      &lt/html&gt
+    </code>
+  </pre>
+
+  <p>Mas não esqueça de indentar este código. 😉</p>
+
+  <h2>2. Relacionando um arquivo externo na página:</h2>
+
+  <p>Essa forma é bem parecida com a inserção de códigos JavaScript inline, a maior diferença é que não coloca-se o código JavaScript dentro da tag, visto que esse código estará em um arquivo externo. Assim, simplesmente é preenchido o atributo 'src' da tag &ltscript&gt com o caminho para o arquivo em questão.</p>
+
+  <p>Essa forma também permite carregar arquivos JavaScript sem ter que baixá-los para o seu projeto. Isso é bastante utilizado como uma forma de fazer com que arquivos que são usados por muitos projetos, como por exemplo a jQuery, fiquem armazenados em cache, sendo então carregados de forma mais rápida.</p>
+
+  <p>Assim, se queremos que a página 'index.html' carregue o arquivo 'meu-javascript.js', utilizamos a seguinte marcação:</p>
+
+  <pre>
+    <code>
+      &ltscript type="text/javascript" src="meu-javascript.js"&gt&lt/script&gt
+    </code>
+  </pre>
+
+  <p>Podemos também adicionar o código JavaScript hospedado em algum outro site, esse tipo é muito comum em bibliotecas externas onde não precisamos adicionar o arquivo js em nosso projeto.</p>
+
+  Exemplo:
+
+  <pre>
+    <code>
+      &lthtml&gt
+      &lthead&gt
+      &ltmeta charset=“UTF-8”&gt
+      &ltmeta name="viewport" content="width=device-width, initial-scale=1"&gt
+      &ltscript
+      type="text/javascript"
+      src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt
+      &lt/script&gt
+      &lt/head&gt
+      &ltbody&gt
+      &lt/body&gt
+      &lt/html&gt
+    </code>
+  </pre>
+
+  <p>E novamente, lembre-se de indentar o código.</p>
+</body>
+</html>

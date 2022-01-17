@@ -1,0 +1,1 @@
+console.log('Esse código veio de outro arquivo');
