@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Objetos</title>
+</head>
+<body>
+  <h1>Objetos</h1>
+
+  <p>📍 Para reforçar:</p>
+
+  <p>Qualquer valor que não seja do tipo primitivo (uma sequência, um número, um booleano, nulo ou indefinido) é um objeto.</p>
+
+  <p>Aqui está como definimos um objeto:</p>
+
+  <pre>
+    <code>
+      const car = { }
+    </code>
+  </pre>
+
+  <p>Essa é a sintaxe literal do objeto, que é uma das coisas mais agradáveis do JavaScript.</p>
+
+  <p>Você também pode usar a new Object – sintaxe de new Object:</p>
+
+  <pre>
+    <code>
+      const car = new Object();
+    </code>
+  </pre>
+
+  <p>Outra sintaxe é usar Object.create():</p>
+
+  <pre>
+    <code>
+      const car = Object.create();
+    </code>
+  </pre>
+
+  <p>Você também pode inicializar um objeto usando a new palavra-chave antes de uma função com letra maiúscula. Esta função serve como um construtor para esse objeto. Lá, podemos inicializar os argumentos que recebemos como parâmetros, para configurar o estado inicial do objeto:</p>
+
+  <pre>
+    <code>
+      function Car(brand, model) {
+        this.brand = brand;
+        this.model = model;
+      }
+    </code>
+  </pre>
+
+  <p>Inicializamos um novo objeto usando:</p>
+
+  <pre>
+    <code>
+      const myCar = new Car('Ford', 'Fiesta');
+      myCar.brand; //'Ford'
+      myCar.model; //'Fiesta'
+    </code>
+  </pre>
+
+  <p>Mesmo arrays ou funções são objetos ocultos, por isso é muito importante entender como eles funcionam.</p>
+</body>
+</html>
