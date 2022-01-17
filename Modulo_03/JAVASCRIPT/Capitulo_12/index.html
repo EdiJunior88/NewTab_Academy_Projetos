@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Operadores</title>
+</head>
+<body>
+  <h1>Operadores</h1>
+
+  <p>Os operadores permitem obter duas expressões simples e combiná-las para formar uma expressão mais complexa. Podemos classificar operadores com base nos operandos com os quais trabalham. Alguns operadores trabalham com 1 operando. A maioria trabalha com 2 operandos. Apenas um operador trabalha com 3 operandos.</p>
+
+  <p>Nesta primeira introdução aos operadores, apresentaremos os operadores com os quais você provavelmente está familiarizado: operadores com 2 operandos.</p>
+
+  <p>Na verdade já mostramos uma ao falar sobre variáveis: o operador de atribuição = . Você usa = para atribuir um valor a uma variável:</p>
+
+  <pre>
+    <code>
+      let b = 2;
+    </code>
+  </pre>
+
+  <p>Vamos agora apresentar outro conjunto de operadores binários com os quais você já está familiarizado com a matemática básica.</p>
+
+  Operador de adição (+)
+
+  <pre>
+    <code>
+      const three = 1 + 2;
+      const four = three + 1;
+    </code>
+  </pre>
+
+  <p>O operador + também faz concatenação de strings se você usar strings, portanto, preste atenção:</p>
+
+  <pre>
+    <code>
+      const three = 1 + 2;
+      three + 1; // 4
+      'three' + 1; // three1
+    </code>
+  </pre>
+
+  <p>Operador de subtração (-)</p>
+
+  <pre>
+    <code>
+      const two = 4 – 2;
+    </code>
+  </pre>
+
+  <p>Operador de divisão (/)</p>
+
+  <p>Retorna o quociente do primeiro operador e o segundo:</p>
+
+  <pre>
+    <code>
+      const result = 20 / 5; //result === 4
+      const result = 20 / 7; //result === 2.857142857142857
+    </code>
+  </pre>
+
+  <p>Se você dividir por zero, o JavaScript não gera nenhum erro, mas retorna o valor Infinity (ou -Infinity se o valor for negativo).</p>
+
+  <pre>
+    <code>
+      1 / 0; //Infinity -1 / 0 //-Infinity
+    </code>
+  </pre>
+
+  <p>Operador restante (%)</p>
+
+  <p>O restante é um cálculo muito útil em muitos casos de uso:</p>
+
+  <pre>
+    <code>
+      const result = 20 % 5; //result === 0
+      const result = 20 % 7; //result === 6
+    </code>
+  </pre>
+  
+  <cp>Um restante por zero é sempre NaN , um valor especial que significa “Não é um número”:</cp>
+
+  <pre>
+    <code>
+      1 % 0; //NaN
+      -1 % 0; //NaN
+    </code>
+  </pre>
+
+  <p>Operador de multiplicação (*)</p>
+
+  <p>Multiplique dois números assim:</p>
+
+  <pre>
+    <code>
+      1 * 2; //2
+      -1 * 2; //-2
+    </code>
+  </pre>
+
+  <p>Operador de exponenciação (**)</p>
+
+  <p>Eleve o primeiro operando à potência do segundo operando:</p>
+
+  <pre>
+    <code>
+      1 ** 2; //1
+      2 ** 1; //2
+      2 ** 2; //4
+      2 ** 8; //256
+      8 ** 2; //64
+    </code>
+  </pre>
+
+  <h2>Regras de precedência</h2>
+
+  <p>Toda declaração complexa com vários operadores na mesma linha apresentará problemas de precedência. Veja este exemplo:</p>
+
+  <pre>
+    <code>
+      let a = 1 * 2 + 5 / 2 % 2;
+    </code>
+  </pre>
+
+  <p>O resultado é 2,5, mas por quê?</p>
+
+  <p>Quais operações são executadas primeiro e quais precisam esperar?</p>
+
+  <p>Algumas operações têm mais precedência que as outras. As regras de precedência estão listadas nesta tabela:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>OPERADOR</th>
+        <th>DESCRIÇÃO</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>* / %</td>
+        <td>Multiplicação divisão</td>
+      </tr>
+      <tr>
+
+        <td>+ -</td>
+        <td>Adição / subtração</td>
+      </tr>
+
+      <tr>
+        <td>=</td>
+        <td>Tarefa</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Operações no mesmo nível (como + e – ) são executadas na ordem em que são encontradas, da esquerda para a direita.</p>
+
+  <p>Seguindo estas regras, a operação acima pode ser resolvida desta maneira:</p>
+
+  <pre>
+    <code>
+      let a = 1 * 2 + 5 / 2 % 2;
+      let a = 2 + 5 / 2 % 2;
+      let a = 2 + 2.5 % 2;
+      let a = 2 + 0.5;
+      let a = 2.5;
+    </code>
+  </pre>
+
+  <h2>Operadores de comparação</h2>
+
+  <p>Após os operadores de atribuição e matemática, o terceiro conjunto de operadores que vamos falar são os operadores condicionais. Você pode usar os seguintes operadores para comparar dois números ou duas strings.</p>
+
+  <p>Os operadores de comparação sempre retornam um booleano, um valor true ou false).</p>
+
+  <p>Esses são operadores de comparação de desigualdade:</p>
+
+  <pre>
+    <code>
+      &lt significa “menor que”
+      &lt= significa “menor ou igual a”
+      &gt significa “maior que”
+      &gt= significa “maior ou igual a”
+    </code>
+  </pre>
+
+  <p>Exemplo:</p>
+
+  <pre>
+    <code>
+      let a = 2;
+      a >= 1; //true
+    </code>
+  </pre>
+
+  <p>Além desses, temos 4 operadores de igualdade. Eles aceitam dois valores e retornam um booleano:</p>
+
+  <pre>
+    <code>
+      === verifica a igualdade
+      !== verifica se há desigualdade
+    </code>
+  </pre>
+
+  <p>Observe que também temos == e !=. Em JavaScript, mas sugerimos usar apenas === e !== porque eles podem evitar alguns problemas sutis.</p>
+  </body>
+</html>
