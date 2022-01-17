@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Variáveist</title>
+</head>
+<body>
+  <h1>Variáveist</h1>
+
+  <p>Uma variável é um valor atribuído a um identificador para que você possa fazer referência e usá-lo posteriormente no programa.</p>
+
+  <p>Isso ocorre porque o JavaScript é pouco tipado, um conceito sobre o qual você ouvirá com frequência. Uma variável deve ser declarada antes que você possa usá-la. Temos duas maneiras principais de declarar variáveis. </p>
+
+  <p>O primeiro é usar const:</p>
+
+  <pre>
+    <code>
+      const a = 0;
+    </code>
+  </pre>
+
+  <p>A segunda maneira é usar let:</p>
+
+  <pre>
+    <code>
+      let a = 0;
+    </code>
+  </pre>
+
+  <p>Qual é a diferença? const define uma referência constante a um valor. Isso significa que a referência não pode ser alterada. Você não pode reatribuir um novo valor a ele. Com a opção let você pode atribuir um novo valor a ele.</p>
+
+  <p>Por exemplo, você não pode fazer isso:</p>
+
+  <pre>
+    <code>
+      const a = 0;
+      a = 1;
+    </code>
+  </pre>
+
+  <p>Porque você receberá um erro: TypeError: Assignment to constant variable.</p>
+
+  <p>Por outro lado, você pode fazer isso usando let:</p>
+
+  <pre>
+    <code>
+      let a = 0;
+      a = 1;
+    </code>
+  </pre>
+
+  <p>Const não significa “constante” da maneira que outras línguas como C significam. Em particular, isso não significa que o valor não pode ser alterado – significa que não pode ser novamente atribuído. Se a variável apontar para um objeto ou um array (veremos mais sobre objetos e arrays posteriormente), o conteúdo do objeto ou de um array poderá ser alterado livremente.</p>
+
+  <p>Variáveis const devem ser inicializadas no momento da declaração:</p>
+
+  <pre>
+    <code>
+      const a = 0;
+    </code>
+  </pre>
+
+  <p>Mas let valores possam ser inicializados posteriormente:</p>
+
+  <pre>
+    <code>
+      let a;
+      a = 0;
+    </code>
+  </pre>
+
+  <p>Você pode declarar várias variáveis ​​ao mesmo tempo na mesma instrução:</p>
+
+  <pre>
+    <code>
+      const a = 1, b = 2;
+      let c = 1, d = 2;
+    </code>
+  </pre>
+
+  <p>Mas você não pode redeclarar a mesma variável mais de uma vez:</p>
+
+  <pre>
+    <code>
+      let a = 1;
+      let a = 2;
+    </code>
+  </pre>
+
+  <p>Porque você receberá um erro “duplicate declaration“.</p>
+
+  <p>Conselho: use sempre const e use somente let quando souber que precisará atribuir um valor a essa variável. Por quê? Porque quanto menos energia o nosso código tiver, melhor. Se sabemos que um valor não pode ser novamente atribuído, é uma fonte a menos para erros.</p>
+
+  <p>Agora que vimos como trabalhar com const e let, vamos mencionar var.</p>
+
+  <p>Até 2015, var era a única maneira de declarar uma variável em JavaScript. Hoje, uma base de código moderna provavelmente usará const e let . Existem algumas diferenças fundamentais citadas neste módulo, mas se você está apenas começando, pode não se importar com elas. Basta usar const e let.</p>
+</body>
+</html>
