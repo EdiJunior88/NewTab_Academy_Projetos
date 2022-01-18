@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>String</title>
+</head>
+<body>
+  <h1>String</h1>
+
+  <p>Uma string é uma sequência de caracteres. Também pode ser definido como uma string literal, entre aspas ou aspas duplas:</p>
+
+  <pre>
+    <code>
+      'A string'
+      “Outra string”
+    </code>
+  </pre>
+
+  <p>Pessoalmente, preferimos aspas simples o tempo todo e usamos aspas duplas apenas em HTML para definir atributos.</p>
+  
+  <p>Você atribui um valor de string a uma variável como esta:</p>
+  
+  <pre>
+    <code>
+      const name = 'Flavio';
+    </code>
+  </pre>
+
+  <p>Você pode determinar o comprimento de uma string usando a propriedade length:</p>
+  
+  <pre>
+    <code>
+      'Bruno'.length; //5
+      const name = 'Bruno';
+      name.length; //5
+    </code>
+  </pre>
+
+  <p>Esta é uma string vazia: ” . Sua propriedade length é 0:</p>
+  
+  <pre>
+    <code>
+      ".length; //0
+    </code>
+  </pre>
+
+  <p>Duas strings podem ser unidas usando o operador + :</p>
+  
+  <pre>
+    <code>
+      "A " + "string";
+    </code>
+  </pre>
+
+  <p>Você pode usar o operador + para <i>interpolar</i> variáveis:</p>
+  
+  <pre>
+    <code>
+      const name = 'Junior';
+      "Meu nome é " + name; //Meu nome é Junior
+    </code>
+  </pre>
+
+  <p>Os literais de modelo também são ótimos, pois fornecem uma maneira fácil de concatenar variáveis e expressões em seqüências de caracteres.</p>
+  
+  <p>Você faz isso usando a sintaxe ${…} :</p>
+  
+  <pre>
+    <code>
+      const var = 'teste';
+      const string = 'Isso é um ${var}'; //Isso é um teste
+    </code>
+  </pre>
+
+  <p>Dentro do ${} você pode adicionar qualquer coisa, até expressões:</p>
+  
+  <pre>
+    <code>
+      const string = Soma ${1 + 2 + 3}';
+    </code>
+  </pre>
+</body>
+</html>
