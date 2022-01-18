@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Exemplo
+    </title>
+    <script src="exemplo.js"></script>
+  </head>
+  <body>
+    <div>
+      Texto
+
+      <div class="form" style="display: flex; flex-direction: column; width: 50%; margin-left: auto; margin-right: auto;">
+        <form onsubmit="return validarForm()">
+          <div class="mensagem">
+
+          </div>
+          <input id="nome" required name="nome" placeholder="Nome">
+          <input type="password" required id="senha" name="senha" placeholder="Senha">
+          <input type="password" required id="senha2" name="senha2" placeholder="Confirmar senha">
+          <button>Enviar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
