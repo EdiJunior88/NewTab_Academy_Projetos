@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Funções</title>
+</head>
+<body>
+  <h1>Funções</h1>
+
+  <p>Em qualquer programa JavaScript moderadamente complexo, tudo acontece dentro das funções. As funções são uma parte essencial e essencial do JavaScript.</p>
+
+  <p>Mas o que é uma função?</p>
+
+  <p>Uma função é um bloco de código independente.</p>
+
+  <p>Aqui está uma declaração de função:</p>
+
+  <pre>
+    <code>
+      function getData() {
+      // faz algo
+      }
+    </code>
+  </pre>
+
+  <p>Uma função pode ser executada a qualquer momento, invocando-a, assim:</p>
+
+  <pre>
+    <code>
+      getData();
+    </code>
+  </pre>
+  
+  <p>Uma função pode ter um ou mais parâmetros:</p>
+
+  <pre>
+    <code>
+      function getData() {
+      // faz algo
+      }
+    </code>
+  </pre>
+  
+  <pre>
+    <code>
+      function getData(color) {
+      // faz algo
+      }
+    </code>
+  </pre>
+  
+  <pre>
+    <code>
+      function getData(color, age) {
+      // faz algo
+      }
+    </code>
+  </pre>
+
+  <p>Quando podemos passar um parâmetro, chamamos a função que passa os parâmetros:</p>
+
+  <pre>
+    <code>
+      function getData(color, age) {
+      // faz algo
+      }
+      getData('green', 24);
+      getData('black');
+    </code>
+  </pre>
+
+  <p>Observe que, na segunda chamada, passamos o parâmetro string black como argumento de color, mas sem age. Nesse caso, a age dentro da função é undefined.</p>
+
+  <p>Podemos verificar se um valor não é indefinido usando esta condicional:</p>
+
+  <pre>
+    <code>
+      function getData(color, age) {
+        if (typeof age !== 'undefined') {
+        // faz algo
+        }
+      }
+    </code>
+  </pre>
+
+  <p>Você pode passar qualquer valor como parâmetro: números, sequências de caracteres, booleanos, arrays, objetos e também funções.</p>
+
+  <p>Uma função tem um valor de retorno. Por padrão, uma função retorna undefined, a menos que você adicione uma palavra-chave de return com um valor:</p>
+
+  <pre>
+    <code>
+      function getData() {
+        return 'olá mundo!';
+      }
+    </code>
+  </pre>
+
+  <p>Podemos atribuir esse valor de retorno a uma variável quando chamamos a função:</p>
+
+  <pre>
+    <code>
+      function getData() {
+        return 'hi!';
+      }
+      let result = getData();
+    </code>
+  </pre>
+
+  <p>Você pode retornar apenas um valor.</p>
+
+  <p>Para retornar vários valores, você pode retornar um objeto ou um array, assim:</p>
+
+  <pre>
+    <code>
+      function getData() {
+        return ['Flavio', 37];
+      }
+      let [name, age] = getData();
+    </code>
+  </pre>
+</body>
+</html>
