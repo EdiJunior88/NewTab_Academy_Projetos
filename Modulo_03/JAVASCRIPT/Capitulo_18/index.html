@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Condicionais</title>
+</head>
+<body>
+  <h1>Condicionais</h1>
+
+  <p><strong>📍 Para reforçar:</strong></p>
+
+  <p>Os loops são uma das principais estruturas de controle do JavaScript. Com um loop, podemos automatizar e repetir um bloco de código quantas vezes quisermos que ele seja executado, mesmo que indefinidamente.</p>
+
+  <p>O JavaScript fornece várias maneiras de percorrer loops.</p>
+
+  <p>Vamos nos concentrar em três maneiras:</p>
+
+  <pre>
+    <code>
+      while loops
+      for loops
+      for..of loops
+    </code>
+  </pre>
+
+  <h2>While</h2>
+
+  <p>O loop while é a estrutura de loop mais simples que o JavaScript nos fornece. Adicionamos uma condição após a palavra-chave while e fornecemos um bloco que é executado até que a condição seja avaliada como true.</p>
+
+  <p>Exemplo:</p>
+
+  <pre>
+    <code>
+      const list = ['a', 'b', 'c'];
+      let i = 0;
+      while (i &lt list.length) {
+        console.log(list[i]) //value
+        console.log(i) //index
+        i = i + 1
+      }
+    </code>
+  </pre>
+
+  <p>Você pode interromper um loop while usando a palavra break, assim:</p>
+
+  <pre>
+    <code>
+      while (true) {
+        if (true)
+          break
+      }
+    </code>
+  </pre>
+
+  <p>E se você decidir que, no meio de um loop, deseja pular a iteração atual, poderá pular para a próxima iteração usando continue:</p>
+
+  <pre>
+    <code>
+      while (true) {
+        if (true)
+          continue
+      }
+    </code>
+  </pre>
+
+  <h2>do..while</h2>
+
+  <p>Muito parecido com while, nós temos loops do..while. É basicamente o mesmo que while, exceto que a condição é avaliada após a execução do bloco de código. Isso significa que o bloco é sempre executado pelo menos uma vez .</p>
+
+  <p>Exemplo:</p>
+
+  <pre>
+    <code>
+      const list = 'a', 'b', 'c'];
+      let i = 0;
+      do {
+        console.log(list[i]) //value
+        console.log(i) //index
+        i = i + 1
+      } while (i &lt list.length)
+    </code>
+  </pre>
+
+  <h2>for</h2>
+
+  <p>Outra estrutura de loop muito importante no JavaScript é o loop for. Usamos a palavra-chave for e passamos um conjunto de três instruções: a inicialização, a condição e a parte do incremento.</p>
+
+  <p>Exemplo:</p>
+
+  <pre>
+    <code>
+      const list = ['a', 'b', 'c'];
+      for (let i = 0; i &lt list.length; i++) {
+        console.log(list[i]); //value
+        console.log(i); //index
+      }
+    </code>
+  </pre>
+
+  <p>Assim como com os loops while, você pode interromper um loop for usando break e avançar rapidamente para a próxima iteração de um loop for usando continue.</p>
+
+  <h2>for…of</h2>
+
+  <p>Esse loop é relativamente recente (introduzido em 2015) e é uma versão simplificada do loop for:</p>
+
+  <pre>
+    <code>
+      const list = 'a', 'b', 'c']
+      for (const value of list) {
+        console.log(value) //value
+      }
+    </code>
+  </pre>
+</body>
+</html>
