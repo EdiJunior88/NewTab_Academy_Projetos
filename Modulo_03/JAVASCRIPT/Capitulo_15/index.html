@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Arrays</title>
+</head>
+<body>
+  <h1>Arrays</h1>
+
+  <p>Um array é uma coleção de elementos. Arrays em JavaScript não são um tipo por si só, são objetos.</p>
+
+  <p>Podemos inicializar um array vazio dessas 2 maneiras diferentes:</p>
+
+  <pre>
+    <code>
+      const a = [];
+      const a = Array();
+    </code>
+  </pre>
+
+  <p>Você pode preencher previamente o array usando esta sintaxe:</p>
+
+  <pre>
+    <code>
+      const a = [1, 2, 3];
+      const a = Array.of(1, 2, 3);
+    </code>
+  </pre>
+
+  <p>Um array pode conter qualquer valor, mesmo valores de diferentes tipos:</p>
+
+  <pre>
+    <code>
+      const a = [1, 'Flavio', ['a', 'b']];
+    </code>
+  </pre>
+
+  <p>Como podemos adicionar um array a um array, podemos criar arrays multidimensionais, que têm aplicações muito úteis:</p>
+
+  <pre>
+    <code>
+      const arrayAux = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
+      arrayAux[0][0]; //1
+      arrayAux[2][0]; //7
+    </code>
+  </pre>
+
+  <p>Você pode acessar qualquer elemento do array referenciando seu índice, que começa do zero:</p>
+
+  <pre>
+    <code>
+      arrayAux[0]; //1
+      arrayAux[1]; //2
+      arrayAux[2]; //3
+    </code>
+  </pre>
+
+  <p>Você pode inicializar um novo array com um conjunto de valores usando esta sintaxe, que primeiro inicializa um array de 12 elementos e preenche cada elemento com o número 0:</p>
+
+  <pre>
+    <code>
+      Array(12).fill(0);
+    </code>
+  </pre>
+
+  <p>Você pode obter o número de elementos no array verificando sua propriedade length:</p>
+
+  <pre>
+    <code>
+      const a = [1, 2, 3];
+      a.length; //3
+    </code>
+  </pre>
+
+  <p>Como adicionar um item a um array</p>
+
+  <p>Podemos adicionar um elemento no final de um array usando o método push():</p>
+
+  <pre>
+    <code>
+      a.push(4);
+    </code>
+  </pre>
+
+  <p>Podemos adicionar um elemento no início de uma array usando o método unshift():</p>
+
+  <pre>
+    <code>
+      a.unshift(0);
+    </code>
+  </pre>
+
+  <p>Como remover um item de um array</p>
+
+  <p>Podemos remover um item do final de um array usando o método pop():</p>
+
+  <pre>
+    <code>
+      a.pop();
+    </code>
+  </pre>
+
+  <p>Podemos remover um item do início de um array usando o método shift():</p>
+
+  <pre>
+    <code>
+      a.shift();
+    </code>
+  </pre>
+
+  <p>Como juntar dois ou mais arrays</p>
+
+  <p>Você pode ingressar em vários arrays usando concat():</p>
+
+  <pre>
+    <code>
+      const a = [1, 2];
+      const b = [3, 4];
+      const c = a.concat(b); //[1,2,3,4] a //[1,2] b //[3,4]
+    </code>
+  </pre>
+
+  <p>Outro método é o includes():</p>
+
+  <pre>
+    <code>
+      a.includes(value);
+    </code>
+  </pre>
+
+  <p>Retorna true se a contiver value.</p>
+
+  <pre>
+    <code>
+      a.includes(value, i);
+    </code>
+  </pre>
+
+  <p>Retorna true se a contiver value após a posição i.</p>
+</body>
+</html>
