@@ -19,63 +19,65 @@
     Numero de vezes clicadas: <span>0</span>
   </div>
 
-  <script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.querySelector(".menu").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "conteudo.html", true);
-  xhttp.send();
+  <script>
+    $('.classe').html('Alguma coisa');  
+    document.querySelector('.classe').innerHTML = 'Alguma outra coisa'
+    
+    // Include via AJAX
+    // var xhttp = new XMLHttpRequest();
+    // xhttp.onreadystatechange = function() {
+    //   if (this.readyState == 4 && this.status == 200) {
+    //     document.querySelector(".menu").innerHTML =
+    //     this.responseText;
+    //   }
+    // };
+    // xhttp.open("GET", "conteudo.html", true);
+    // xhttp.send();
 
-  // Manipulação de eventos customizados
-  // let elementoDiv = document.querySelector('div.classe');
-  // let elementoAuxiliar = document.querySelector('div.auxiliar');
+    // Manipulação de eventos customizados
+    // let elementoDiv = document.querySelector('div.classe');
+    // let elementoAuxiliar = document.querySelector('div.auxiliar');
 
-  // let evento = new Event('incremento');
+    // let evento = new Event('incremento');
 
-  // elementoAuxiliar.addEventListener('incremento', function (e) {
-  //   console.log(e);
-  //   elementoAuxiliar.querySelector('span').innerHTML = numeroDeCliques;
-  // })
+    // elementoAuxiliar.addEventListener('incremento', function (e) {
+    //   console.log(e);
+    //   elementoAuxiliar.querySelector('span').innerHTML = numeroDeCliques;
+    // })
 
-  // let numeroDeCliques = 0
+    // let numeroDeCliques = 0
 
-  // elementoDiv.addEventListener('click', function() {
-  //   numeroDeCliques++;
-  //   elementoAuxiliar.dispatchEvent(evento);
-  // })
+    // elementoDiv.addEventListener('click', function() {
+    //   numeroDeCliques++;
+    //   elementoAuxiliar.dispatchEvent(evento);
+    // })
 
+    //Adicionar listener padrão
+    // let elementoDiv = document.querySelector('div.classe');
+    // let numeroDeCliques = 0 
 
+    // elementoDiv.addEventListener('click', function() {
+    //   numeroDeCliques++;
+    //   console.log('Obrigado por clicar na minha div', 'você já clicou ' + numeroDeCliques + ' vezes')
+    // })
 
-  //Adicionar listener padrão
-  // let elementoDiv = document.querySelector('div.classe');
-  // let numeroDeCliques = 0 
+    // let numero = 0;
 
-  // elementoDiv.addEventListener('click', function() {
-  //   numeroDeCliques++;
-  //   console.log('Obrigado por clicar na minha div', 'você já clicou ' + numeroDeCliques + ' vezes')
-  // })
+    // let elementoDiv = document.querySelector('div.classe');
+    // console.log(elementoDiv);
+    // elementoDiv.innerHTML = "Alguma coisa";
+    // let elementoSpan = document.createElement('span');
+    // elementoDiv.append(elementoSpan);
+    // elementoSpan.innerHTML = "conteúdo qualquer"
 
-
-  // let numero = 0;
-
-  // let elementoDiv = document.querySelector('div.classe');
-  // console.log(elementoDiv);
-  // elementoDiv.innerHTML = "Alguma coisa";
-  // let elementoSpan = document.createElement('span');
-  // elementoDiv.append(elementoSpan);
-  // elementoSpan.innerHTML = "conteúdo qualquer"
-
-  // for(let i = 0; i < 10; i++) {
-  //   numero += 1;
-  //   numero++;
-  //   numero = numero * 2;
-  //   console.log('Oi, o número vale ' + numero);
-  // }
+    // for(let i = 0; i < 10; i++) {
+    //   numero += 1;
+    //   numero++;
+    //   numero = numero * 2;
+    //   console.log('Oi, o número vale ' + numero);
+    // }
   </script>
 </body>
 </html>

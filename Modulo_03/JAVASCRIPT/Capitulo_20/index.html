@@ -5,109 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
-  <title>Condicionais</title>
+  <title>Revisando e complementando conteúdos</title>
 </head>
 <body>
-  <h1>Condicionais</h1>
+  <h1>Revisando e complementando conteúdos</h1>
 
   <p><strong>📍 Para reforçar:</strong></p>
 
-  📍 Para reforçar:
+  <p>O vídeo a seguir é mais longo e complementar, então opcional, mas acreditamos que possa ser importante para fazer algumas revisões dos conteúdos vistos até o momento, mostrar aplicações mais práticas e já trazer também alguns novos assuntos.</p>
 
-  <p>A validação de formulários em JavaScript é muito utilizada para garantir que os dados solicitados nos campos que o utilizador preenche em qualquer site sejam fiéis aos que o programador deseja. A validação de dados por meio de programação JavaScript é feita no browser (sem necessidade de ir até o servidor para transmitir dados) e garante a consistência dos dados quando são enviados para a base de dados.</p>
+  <p><iframe width="560" height="315" src="https://www.youtube.com/embed/Zp2YM6DYHb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
-  <p>A validação no cliente é necessária em várias situações: quando, por exemplo, o utilizador não preencheu corretamente o seu e-mail e colocou 2 invés de @. Se esta validação for no cliente, o utilizador recebe a mensagem de e-mail inválido antes do formulário ser enviado. A validação no cliente melhora a interação do utilizador com o site, mas é claro, que as validações no servidor também devem ser feitas.</p>
+  <p><strong>📁 Materiais complementares:</strong></p>
 
-  <p>Segue abaixo um exemplo de código HTML para criar o formulário:</p>
-
-<pre>
-  <code>
-    &ltform name="frmTeste" method="post" action="#" onsubmit="return validaForm(this);&gt
-      &ltp&gtValidação de formulário&lt/&gt
-      &ltp&gtNome: &ltinput type="text" name="nome" id="nome"&gt&lt/&gt
-      &ltp&gtEmail: &ltinput type="text" name="email" id="email"&gt&lt/&gt
-      &ltp>Sexo:
-      &ltlabe&gt
-        &ltinput type="radio" name="sexo" value="M" id="masc"&gtMasculino
-      &lt/labe&gt
-      &ltlabel>
-        &ltinput type="radio" name="sexo" value="F" id="masc"&gtFeminino
-      &lt/label&gt
-      &lt/p&gt
-        &ltinput type="submit" name="sbt" value="Enviar"&gt&lt/labe&gt
-    &lt/for&gt
-  </code>
-</pre>
-
-  O código acima deve ser colocado dentro do corpo do documento &ltbody&gt &lt/body&gt. Na tag form o evento onSubmit chama uma função denominada validaForm que é responsável pela validação dos dados do formulário. Se os dados estiverem corretos a função retorna true e o formulário é enviado. Caso contrário é mostrada uma mensagem que determina o local do erro.
-
-  Segue abaixo um exemplo de código de validação em JavaScript. Este código deve ser colocado dentro do cabeçalho do documento &lthead&gt &lt/head&gt:
-
+  <ul>
+    <li>Código usado no vídeo: <a href="https://github.com/newtab-academy/projeto-js">https://github.com/newtab-academy/projeto-js</a></li>
+  </ul>
   
-  <pre>
-    <code>
-      &ltscript type=“text/javascript”&gt
-      function validaForm(frm) {
-
-      /*o parâmetro frm desta função significa: this.form, pois a chamada da função – validaForm(this) foi definida na tag form.
-      */
-
-      //Verifica se o campo nome foi preenchido e
-      //contém no mínimo três caracteres.
-
-          if(frm.nome.value == "" || frm.nome.value == null || 
-          frm.nome.value.lenght &gt 3) {
-              //É mostrado um alerta, caso o campo esteja vazio.
-
-              alert("Por favor, indique o seu nome.");
-
-            //Foi definido um focus no campo.
-
-              frm.nome.focus();
-
-            //o form não é enviado.
-
-              return false;
-          }
-          //o campo e-mail precisa de conter: "@", "." e não pode estar vazio
-
-          if(frm.email.value.indexOf("@") == -1 ||
-            frm.email.valueOf.indexOf(".") == -1 ||
-            frm.email.value == "" ||
-            frm.email.value == null) {
-              alert("Por favor, indique um e-mail válido.");
-              frm.email.focus();
-              return false;
-          }
-      &lt/script&gt
-    </code>
-  </pre>
-
-  Há muito tempo a validação de um campo de formulário vem dando muito trabalho aos desenvolvedores. Muitos profissionais desenvolveram formas de validação em JavaScript, mas agora com o novo HTML5 as coisas ficaram muito, mas muito, mais fáceis, pois a validação tornou-se algo nativo da linguagem.
-
-  Na listagem a seguir veremos que é possível fazer o mesmo do exemplo anterior de umA maneira muito mais fácil e prática e escrevendo muito menos código:
-
-  <pre>
-    <code>
-      &ltform name="frmTeste" method="post" action="#"&gt
-        &ltp&gtValidação de formulário&lt/&gt
-        &ltp&gtNome: &ltinput type="text" name="nome" id="nome" required&gt&lt/&gt
-        &ltp&gtEmail: &ltinput type="text" name="email" id="email" required&gt&lt/&gt
-        &ltp>Sexo:
-        &ltlabe&gt
-          &ltinput type="radio" name="sexo" value="M" id="masc"&gtMasculino
-        &lt/labe&gt
-        &ltlabel>
-          &ltinput type="radio" name="sexo" value="F" id="masc"&gtFeminino
-        &lt/label&gt
-        &lt/p&gt
-          &ltinput type="submit" name="sbt" value="Enviar"&gt&lt/labe&gt
-      &lt/for&gt
-    </code>
-  </pre>
-
-  Reparem no formulário acima, usamos a tag required para indicar que o campo é obrigatório e definimos o type do email como type=”email” que valida se é um e-mail válido e assim não precisamos usar nenhum JavaScript.
-
-  Vimos que além de utilizar o antigo JavaScript, é possível usar tecnologia nova (html5) para realizar a mesma função e escrevendo muito menos código, mesmo que para algumas personalizações mais profundas, ainda seja necessário o uso de JavaScript.
+  <p>Ficou com alguma dúvida até aqui? Muitas? Já sabe, utilize o canal do Discord (<a href="https://discord.com/invite/4meUVETXr8">clique aqui</a>) e/ou mande no formulário para encontros!</p>
 </body>
 </html>
