@@ -8,12 +8,49 @@
 </head>
 <body>
   <!-- <div class="classe" onmousemove="alert('Oi');"> -->
-  <div class="classe"">
+  
+  <div class="menu"></div>
+
+  <div class="classe">
     Absolutamente nada
+  </div>
+
+  <div class="auxiliar" id="demo">
+    Numero de vezes clicadas: <span>0</span>
   </div>
 
   <script>
   
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.querySelector(".menu").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "conteudo.html", true);
+  xhttp.send();
+
+  // Manipulação de eventos customizados
+  // let elementoDiv = document.querySelector('div.classe');
+  // let elementoAuxiliar = document.querySelector('div.auxiliar');
+
+  // let evento = new Event('incremento');
+
+  // elementoAuxiliar.addEventListener('incremento', function (e) {
+  //   console.log(e);
+  //   elementoAuxiliar.querySelector('span').innerHTML = numeroDeCliques;
+  // })
+
+  // let numeroDeCliques = 0
+
+  // elementoDiv.addEventListener('click', function() {
+  //   numeroDeCliques++;
+  //   elementoAuxiliar.dispatchEvent(evento);
+  // })
+
+
+
   //Adicionar listener padrão
   // let elementoDiv = document.querySelector('div.classe');
   // let numeroDeCliques = 0 
