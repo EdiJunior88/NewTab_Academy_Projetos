@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamada externa</title>
+</head>
+<body>
+  <h1>Chamada externa</h1>
+  <div>
+    <pre></pre>
+  </div>
+
+  <button onclick="mudarTeste(1)">
+    Mudar teste
+  </button>
+
+  <button onclick="carregarInstagram('https://www.instagram.com/portalg1/?__a=1')">
+    Mudar de página
+  </button>
+</body>
+</html>
+
+<script>
+
+  function carregarInstagram(url) {
+    window.open(url);
+  }
+
+
+  function mudarTeste(numero) {
+    let jsonPre = JSON.parse(document.querySelector('pre').innerHTML);
+    jsonPre.teste += numero;
+
+    document.querySelector('pre').innerHTML = JSON.stringify(jsonPre, undefined, 4);
+    localStorage.setItem('json-exemplo', JSON.stringify(jsonPre, undefined, 4));
+  }
+
+  valorSalvo = localStorage.getItem('json-exemplo');
+
+  if (!valorSalvo) {
+    valorSalvo = '{"teste": 123.4, "outrovalor": "string qualquer"}';
+  }
+  document.querySelector('pre').innerHTML = valorSalvo;
+</script>
