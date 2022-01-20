@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Promise</title>
+</head>
+<body>
+  <h1>Promise</h1>
+
+  <p>📍 Para reforçar:</p>
+
+  <p>As Promises são uma maneira alternativa de lidar com código assíncrono. Como vimos na parte anterior, com callbacks estaríamos passando uma função para outra chamada de função que seria chamada quando terminasse o processamento.</p>
+
+  <p>Como isso:</p>
+
+  <pre>
+    <code>
+      doSomething(result =&gt {
+        console.log(result);
+      })
+    </code>
+  </pre>
+
+  <p>Quando o código doSomething() termina, chama a função recebida como um parâmetro:</p>
+
+  <pre>
+    <code>
+      const doSomething = callback =&gt {
+        //Faz algo
+        const result = /* .. */
+        callback(result)
+      }
+    </code>
+  </pre>
+
+  <p>O principal problema dessa abordagem é que, se precisarmos usar o resultado dessa função no restante do código, todo o código deverá estar aninhado dentro do retorno de chamada e, se precisarmos fazer 2-3 retornos de chamada, inserimos o que é geralmente definido “callback hell” com muitos níveis de funções recuados em outras funções:</p>
+
+  <pre>
+    <code>
+      doSomething(result =&gt {
+        doSomethingElse(anotherResult =&gt {
+          doSomethingElseAgain(yetAnotherResult =&gt {
+            console.log(result);
+          })
+        })
+      })
+    </code>
+  </pre>
+
+  <p>Promises são uma maneira de lidar com isso.</p>
+
+  <p>Em vez de fazer:</p>
+
+  <pre>
+    <code>
+      doSomething(result =&gt {
+        console.log(result);
+      })
+    </code>
+  </pre>
+
+  <p>Chamamos uma função baseada em promise desta maneira:</p>
+
+  <pre>
+    <code>
+      doSomething()
+        .then(result =&gt {
+          console.log(result);
+        })
+    </code>
+  </pre>
+
+  <p>Primeiro chamamos a função, então temos um método then() chamado quando a função termina.</p>
+
+  <p>É comum detectar erros usando um método catch():</p>
+
+  <pre>
+    <code>
+      doSomething()
+        .then(result =&gt {
+          console.log(result)
+        }) .catch(error =&gt {
+          console.log(error);
+        })
+    </code>
+  </pre>
+
+  <p>Agora, para poder usar essa sintaxe, a implementação da função doSomething() deve ser um pouco especial, deve usar Promises.    </p>
+
+  <p>Em vez de declarar como uma função normal:</p>
+
+  <pre>
+    <code>
+      const doSomething = () =&gt {
+      }
+    </code>
+  </pre>
+
+  <p>Nós o declaramos como um objeto de promises:</p>
+
+  <pre>
+    <code>
+      const doSomething = new Promise();
+    </code>
+  </pre>
+
+  <p>E passamos uma função no construtor Promise:</p>
+
+  <pre>
+    <code>
+      const doSomething = new Promise(() =&gt { })
+    </code>
+  </pre>
+
+  <p>Esta função recebe 2 parâmetros. A primeira é uma função que chamamos para resolver a promise, a segunda é uma função que chamamos para rejeitar a promise.</p>
+
+  <pre>
+    <code>
+      const doSomething = new Promise(
+        (resolve, reject) =&gt {
+      })
+    </code>
+  </pre>
+
+  <p>Resolver uma promise significa concluí-la com sucesso (o que resulta em chamar o método then() em qualquer que seja o uso). Rejeitar uma promise significa encerrá-la com um erro (o que resulta em chamar o método catch() no que quer que seja usado).</p>
+
+  <p>Aqui está como podemos passar um parâmetro para as funções de resolução e rejeição, de qualquer tipo que desejar: </p>
+
+  <pre>
+    <code>
+      const doSomething = new Promise(
+        (resolve, reject) =&gt {
+          //faz algo
+          const success = /* … */
+          if (success) {
+            resolve('ok');
+          } else {
+            reject('erro encontrado');
+          }
+        })
+    </code>
+  </pre>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XMLHttpRequest</title>
+</head>
+<body>
+  <h1>XMLHttpRequest</h1>
+  <div>
+    <pre></pre>
+  </div>
+
+  <button onclick="mudarTeste(1)">
+    Mudar teste
+  </button>
+
+  <button onclick="carregarInstagramFetch('https://www.instagram.com/portalg1/?__a=1')">
+    Carregar Instagram
+  </button>
+
+  <button onclick="carregarFoto()">
+    Carregar foto
+  </button>
+</body>
+</html>
+
+<script>
+
+  var perfilInstagram = {};
+
+  function carregarFoto() {
+    let img = document.createElement('img');
+    img.src = perfilInstagram.graphql.user.profile_pic_url;
+    document.querySelector('body').append(img);
+  }
+
+  function carregarInstagram(url) {
+    request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.querySelector('pre').innerHTML = this.responseText;
+        perfilInstagram = JSON.parse(this.responseText);
+        console.log('Mudando perfil', new Date());
+      }
+    }
+    request.open('GET', url);
+    request.send();
+    console.log('Final da função', new Date());
+  }
+
+  function carregarInstagramFetch(url) {
+    let promisse = fetch(url);
+    promisse.then((response) => { 
+      // response.json().then (
+      //   (texto) => {
+      //     console.log(texto)
+      //   },
+      //   (err2) => {
+      //     console.error(err2);
+      //   }
+      // );
+
+      response.text().then (
+        (texto) => {
+          console.log(JSON.parse(texto))
+        },
+        (err2) => {
+          console.error(err2);
+        }
+      );
+
+    }, 
+    (err) => { 
+      console.error(err) 
+    });
+    // console.log(promisse);
+  }
+
+
+  function mudarTeste(numero) {
+    let jsonPre = JSON.parse(document.querySelector('pre').innerHTML);
+    jsonPre.teste += numero;
+
+    document.querySelector('pre').innerHTML = JSON.stringify(jsonPre, undefined, 4);
+    localStorage.setItem('json-exemplo', JSON.stringify(jsonPre, undefined, 4));
+  }
+
+  valorSalvo = localStorage.getItem('json-exemplo');
+
+  if (!valorSalvo) {
+    valorSalvo = '{"teste": 123.4, "outrovalor": "string qualquer"}';
+  }
+  document.querySelector('pre').innerHTML = valorSalvo;
+</script>
