@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Assincronicidade*</title>
+</head>
+<body>
+  <h1>Assincronicidade*</h1>
+
+  <p>📍 Para reforçar:</p>
+
+  <p>Na maioria das vezes, o código JavaScript é executado de forma síncrona. Isso significa que uma linha de código é executada, a próxima é executada e assim por diante.</p>
+
+  <p>Tudo está como você espera e como funciona na maioria das linguagens de programação. No entanto, há momentos em que você não pode esperar apenas pela execução de uma linha de código. Você não pode esperar apenas 2 segundos para carregar um arquivo grande e interromper o programa completamente. Você não pode simplesmente esperar que um recurso de rede seja baixado antes de fazer outra coisa.</p>
+  
+  <p>JavaScript resolve esse problema usando callbacks. Um dos exemplos mais simples de como usar callbacks é com temporizadores. Os temporizadores não fazem parte do JavaScript, mas são fornecidos pelo navegador e pelo Node.js. Vamos falar sobre um dos temporizadores que temos: setTimeout().</p>
+  
+  <p>A função setTimeout() aceita 2 argumentos: uma função e um número. O número são os milissegundos que devem passar antes da execução da função.</p>
+  
+  <p>Exemplo:</p>
+  
+  <pre>
+    <code>
+      setTimeout(() =&gt {
+        console.log('olá mundo')
+      }, 2000)
+    </code>
+  </pre>
+
+  <p>A função que contém a linha console.log('olá mundo') será executada após 2 segundos. Se você adicionar um console.log('antes') antes da função e console.log('depois'):</p>
+  
+  <pre>
+    <code>
+      console.log('antes')
+        setTimeout(() =&gt {
+          console.log('olá mundo')
+      }, 2000)
+      console.log('depois')
+    </code>
+  </pre>
+
+  <p>Você verá isso acontecendo no seu console:</p>
+  
+  <pre>
+    <code>
+      antes
+      depois
+      olá mundo
+    </code>
+  </pre>
+
+  <p>A função de callbacks é executada assincronamente.</p>
+  
+  <p>Podemos implementar retornos de chamada em nosso código. Definimos uma função que aceita um parâmetro de callback, que é uma função. Quando o código está pronto para chamar o retorno de chamada, nós o chamamos passando o resultado:</p>
+  
+  <pre>
+    <code>
+      const doSomething = callback =&gt {
+        //Faz algo
+        const result = /* .. */
+        callback(result)
+      }
+    </code>
+  </pre>
+
+  <p>O código que usa essa função usaria assim:</p>
+  
+  <pre>
+    <code>
+      doSomething(result =&gt {
+        console.log(result);
+      })
+    </code>
+  </pre>
+</body>
+</html>
