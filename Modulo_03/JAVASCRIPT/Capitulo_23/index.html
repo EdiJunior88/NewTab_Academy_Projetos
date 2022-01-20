@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>XMLHttpRequest</title>
+</head>
+<body>
+  <h1>XMLHttpRequest</h1>
+
+  <p>📍 Para reforçar:</p>
+
+  <p>Abordamos em módulos anteriores APIs e como elas funcionavam, uma das formas de consumirmos as informações dela no front-end é usando uma API nativa do JavaScript chamada XMLHttpRequest. Apesar do nome XMLHttpRequest, os dados podem ser recebidos do servidor através de JSON, XML, HTML, ou como texto puro além disso ela pode ser usado para recuperar qualquer tipo de dado e fornece suporte aos protocolos HTTP, FILE e FTP.</p>
+
+  <p>A XMLHttpRequest tem um papel importante na técnica de desenvolvimento web Ajax, através dela conseguimos enviar requisições para determinadas URLs e obter suas respostas sem que as páginas sejam recarregadas, em outras palavras, quando o usuário clicar em um botão, a busca do mesmo será efetuada e as informações serão preenchidas para usuário sem que a página recarregue.</p>
+
+  <h2>Requisições com XMLHttpRequest</h2>
+
+  <p>Para facilitar o entendimento, vamos criar um pequeno formulário que conseguimos fazer a busca do endereço utilizando o CEP. Para isso vamos utilizar a API <a href="https://viacep.com.br">https://viacep.com.br</a> .</p>
+
+  <p>Vamos então criar uma instância do objeto para começarmos a utilizá-lo:</p>
+
+  <pre>
+    <code>
+      let xhr = new XMLHttpRequest();
+    </code>
+  </pre>
+
+  <p>Com o objeto criado, vamos utilizar o método open para começarmos a criar a nossa requisição:</p>
+
+  <pre>
+    <code>
+      xhr.open('GET', url, true);
+    </code>
+  </pre>
+
+  <p>O método open recebe três parâmetros, sendo eles:</p>
+
+  <ol>
+    <li>O verbo HTTP (conhecido também como os tipos GET, POST, PUT e etc) a ser utilizado para realizar a requisição, o mesmo deve seguir o padrão REST.</li>
+    <li>A URL que pretendemos obter os dados.</li>
+    <li>Um argumento booleano informando se a requisição deve ser assíncrona ou síncrona.</li>
+  </ol>
+
+  <p>Agora precisamos implementar a propriedade onreadystatechange que é disparada sempre que nossa requisição sofre alguma alteração durante seu processamento:</p>
+
+  <pre>
+    <code>
+      xhr.onreadystatechange = function() {
+      }
+    </code>
+  </pre>
+
+  <p>Repare que passamos uma função de callback, ou seja, uma função que sempre será executada assim que a requisição sofrer alguma alteração. Quando implementamos essa função precisamos tomar alguns cuidados, o primeiro é verificar se a mesma foi finalizada, mas como fazer essa verificação? Fazemos isso através do <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState">xhr.readyState</a>:</p>
+
+  <pre>
+    <code>
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+        //requisição finalizada
+        }
+      }
+    </code>
+  </pre>
+
+  <p>O código 4 nos informa que a requisição foi finalizada, porém ainda não é suficiente, afinal, finalizada não significa que foi bem sucedida, portanto, é necessário verificar se ela foi realizada com sucesso também! Para isso, faremos uso do <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status">xhr.status</a>:</p>
+
+  <pre>
+    <code>
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+        // faz alguma coisa
+        }
+      }
+    </code>
+  </pre>
+
+  <p>O código 200 nos informa que a requisição obteve sucesso durante seu processamento. Isso significa que agora podemos acessar a resposta que o servidor nos enviou e realizar alguma função desejada.</p>
+
+  <p>O primeiro passo será pegar a referência do campo CEP para obtermos seu valor:</p>
+
+  <pre>
+    <code>
+      let inputCep = document.getElementById('cep');
+      let cep = inputCep.value;
+    </code>
+  </pre>
+
+  <p>Feito isso já podemos começar construir nossa URL:</p>
+
+  <pre>
+    <code>
+      let url = 'https://viacep.com.br/ws/' + cep + '/json';
+    </code>
+  </pre>
+
+  <p>Com nossa URL pronta, podemos começar a implementar o XMLHttpRequest conforme visto anteriormente:</p>
+
+  <pre>
+    <code>
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+    
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          console.log(xhr.responseText);
+        }
+      }
+      xhr.send();
+    </code>
+  </pre>
+  
+  <p>Você pode ver esse exemplo completo funcionando em: https://newtab-academy.github.io/XMLHttpRequest-CEP/</p>
+
+  <p>Link citado no vídeo: https://www.w3schools.com/js/js_ajax_http.asp</p>
+</body>
+</html>

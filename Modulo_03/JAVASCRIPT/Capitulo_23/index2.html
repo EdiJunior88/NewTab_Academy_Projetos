@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XMLHttpRequest</title>
+</head>
+<body>
+  <h1>XMLHttpRequest</h1>
+  <div>
+    <pre></pre>
+  </div>
+
+  <button onclick="mudarTeste(1)">
+    Mudar teste
+  </button>
+
+  <button onclick="carregarInstagram('https://www.instagram.com/portalg1/?__a=1')">
+    Mudar de página
+  </button>
+
+  <button onclick="carregarFoto()">
+    Carregar foto
+  </button>
+</body>
+</html>
+
+<script>
+
+  var perfilInstagram = {};
+
+  function carregarFoto() {
+    let img = document.createElement('img');
+    img.src = perfilInstagram.graphql.user.profile_pic_url;
+    document.querySelector('body').append(img);
+  }
+
+  function carregarInstagram(url) {
+    request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.querySelector('pre').innerHTML = this.responseText;
+        perfilInstagram = JSON.parse(this.responseText);
+      }
+    }
+    request.open('GET', url);
+    request.send();
+  }
+
+
+  function mudarTeste(numero) {
+    let jsonPre = JSON.parse(document.querySelector('pre').innerHTML);
+    jsonPre.teste += numero;
+
+    document.querySelector('pre').innerHTML = JSON.stringify(jsonPre, undefined, 4);
+    localStorage.setItem('json-exemplo', JSON.stringify(jsonPre, undefined, 4));
+  }
+
+  valorSalvo = localStorage.getItem('json-exemplo');
+
+  if (!valorSalvo) {
+    valorSalvo = '{"teste": 123.4, "outrovalor": "string qualquer"}';
+  }
+  document.querySelector('pre').innerHTML = valorSalvo;
+</script>
