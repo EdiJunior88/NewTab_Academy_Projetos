@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Classes</title>
+</head>
+<body>
+  <h1>Classes</h1>
+
+  <p><strong>📍 Para reforçar:</strong></p>
+
+  <p>Conversamos sobre objetos, que são uma das partes mais interessantes do JavaScript.</p>
+
+  <p>E então o que são classes? </p>
+
+  <p>Eles são uma maneira de definir um padrão comum para vários objetos. Vamos pegar um objeto de pessoa:</p>
+
+  <pre>
+    <code>
+      const person = {
+        name: 'Flavio'
+      }
+    </code>
+  </pre>
+
+  <p>Podemos criar uma classe chamada Person (observe a letra P maiúscula, uma convenção ao usar classes), que possui uma propriedade name:</p>
+
+  <pre>
+    <code>
+      class Person { name }
+    </code>
+  </pre>
+
+  <p>Agora, a partir desta classe, inicializamos um objeto flavio como este:</p>
+
+  <pre>
+    <code>
+      const bruno = new Person();
+    </code>
+  </pre>
+
+  <p>bruno é chamado uma instância da classe Person.</p>
+
+  <p>Podemos definir o valor da propriedade name:</p>
+
+  <pre>
+    <code>
+      bruno.name = 'Bruno'
+    </code>
+  </pre>
+
+  <p>E podemos acessá-lo usando:</p>
+
+  <pre>
+    <code>
+      bruno.name
+    </code>
+  </pre>
+
+  <p>Como fazemos para as propriedades do objeto.</p>
+
+  <p>As classes podem conter propriedades, como names e métodos.</p>
+
+  <p>Os métodos são definidos desta maneira:</p>
+
+  <pre>
+    <code>
+      class Person {
+        hello() {
+          return 'Olá Bruno!';
+        }
+      }
+    </code>
+  </pre>
+
+  <p>E podemos invocar métodos em uma instância da classe:</p>
+
+  <pre>
+    <code>
+      class Person {
+        hello() {
+          return 'Olá Bruno!';
+        }
+      }
+      const bruno = new Person();
+      bruno.hello();
+    </code>
+  </pre>
+
+  <p>Existe um método especial chamado constructor() que podemos usar para inicializar as propriedades da classe quando criamos uma nova instância de objeto.</p>
+
+  <p>Funciona assim:</p>
+
+  <pre>
+    <code>
+      class Person {
+        constructor(name) {
+          this.name = name
+        }
+        hello() {
+          return 'Ola, eu sou o ' + this.name;
+        }
+      }
+    </code>
+  </pre>
+
+  <p>Observe como usamos this para acessar a instância do objeto.</p>
+
+  <p>Agora podemos instanciar um novo objeto da classe, passar uma string e, quando chamarmos hello, receberemos uma mensagem personalizada:</p>
+
+  <pre>
+    <code>
+      const bruno = new Person('Bruno')
+      bruno.hello(); //'Olá eu sou o Bruno'
+    </code>
+  </pre>
+
+  <p>Quando o objeto é inicializado, o método constructor é chamado com todos os parâmetros passados.</p>
+</body>
+</html>
