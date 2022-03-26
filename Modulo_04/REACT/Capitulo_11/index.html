@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Listas</title>
+</head>
+<body>
+  <h1>Listas</h1>
+
+  <p>Do mesmo modo como não temos diretivas para condicionais, também não temos recursos para diretamente iterar elementos em um <i>array</i>. O que fazer, então? Aqui podemos usar o mesmo recurso que acabamos de usar acima e, dentro do interpolador, forçar a iteração de um <i>array</i> para gerar listas de dados!</p>
+
+  <p>Como não podemos também (por enquanto) estruturas de repetição padrões (limitações da ferramenta), devemos usar métodos disponíveis pela própria interface de <i>arrays</i> do Javascript, como a função <i>map</i>.</p>
+
+  <p>Assim, se temos um array: var frutasFavoritas = ['Abacaxi', 'Tangerina', 'Pêssego']; e queremos exibir seus elementos em uma lista, podemos abrir o interpolador e dentro dele executar algo assim:</p>
+
+  <pre>
+    &lidiv&gt
+      &lth1&gtMinhas frutas favoritas (atualmente)!&lt/h1&gt
+        &ltul&gt
+          {frutasFavoritas.map((fruta,index)=&gt{
+            return &ltli key={index}&gt{fruta}&lt/li&gt
+            }
+          })
+          &lt/ul&gt
+    &lt/div&gt
+  </pre>
+
+  <p>Explicando melhor o código acima: o método <i>map</i> recebe uma função que deve ser executada em todos os itens de um <i>array</i> (no caso, frutasFavoritas). Como no fim das contas o que nos importa é que, para cada item, seja retornado um item (ou seja, um <li>) na lista, essa função simplesmente retorna o código JSX referente ao elemento que queremos criar. </p>
+
+  <p>Repare que essa função recebe dois parâmetros: fruta  e index. Aqui, o primeiro é o conteúdo do <i>array</i> na posição que está sendo trabalhada pelo <i>map</i>, enquanto o segundo é a posição em si. Assim, dentro da "tag" colocamos o valor do array (a fruta). </p>
+
+  <p>Um detalhe importante: no React é bom sempre definirmos um identificador em elementos que são gerados por iteração. Em vez de usarmos o tradicional id aqui usamos key, um atributo especial do React usado para controlar o estado da lista (vamos ver mais sobre isso mais tarde). E atenção: é muito importante esses elementos terem valores únicos. Aqui usamos o próprio index, mas use um padrão de nomeação que você saiba que sempre será único. Assim, evitamos problemas com a aplicação futuramente.</p>
+</body>
+</html>
