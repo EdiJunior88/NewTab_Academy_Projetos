@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Usando componentes e propriedades</title>
+</head>
+<body>
+  <h1>Usando componentes e propriedades</h1>
+
+  <p>Até agora só criamos um elemento fixo e o importamos dentro de nosso App. Em um cenário real para que de fato possamos reutilizar nossos componentes em múltiplos lugares seria mais interessante que o componente recebesse partes do conteúdo e simplesmente determinasse como ele se comporta. Vamos supor por exemplo que temos uma lista de compras e uma lista de tarefas na mesma página. Seria muito trabalhoso e nem um pouco eficiente criarmos outro componente para a lista de tarefas quando temos um praticamente idêntico com nossas compras. Como resolvemos esse problema? Com propriedades.</p>
+
+  <p>Propriedades são “atributos” que atrelamos ao nosso componente quando o usamos no componente “pai” e que podemos acessar através de uma variável especial chamada props (aquela mesma que temos como parâmetro na declaração de nosso componente). Ela retorna um objeto JS que contém todos esses “atributos”, o que nos permite criar uma lógica mais inteligente ao renderizar os elementos.</p>
+
+  <p>Para exemplificar vamos criar duas variáveis em App.js:</p>
+
+  <pre>
+    class App extends Component {
+      render()
+      {
+        var listaCompras = ["Alface", "Tomate", "Queijo", "Macarrão", "Arroz"],
+        listaTarefas = ["Lavar louça", "Varrer sala", "Levar o lixo para fora", "Estudar React"];
+     
+        return (
+          &ltdiv className="App"&gt
+  </pre>
+
+  <p>Que deve ficar assim:</p>
+
+  <img src="img/img01.png">
+
+  <p>Para cada uma delas vamos chamar uma lista:</p>
+
+  <pre>
+    &lth3&gtLista de Compras&lt/h3&gt
+    &ltLista elementos={listaCompras} /&gt
+    &lth3&gtLista de Tarefas&lt/h3&gt
+    &ltLista elementos={listaTarefas} /&gt
+    
+    &lt/header&gt
+  </pre>
+  
+  <p>Repare que usamos o interpolador para passar as variáveis. Isso é importante para o JSX entender que o que passamos aqui é a variável, não uma string com seu nome. Bom, e agora? Se formos para nosso componente, podemos agora acessar em “elementos” os valores passados em cada um. Por exemplo:</p>
+
+  <pre>
+    const lista = (props) => {
+      console.log("[Lista.js] elementos: ", props.elementos);
+  </pre>
+  
+  <p>Retornará uma chamada de console com os arrays:</p>
+
+  <img src="img/img02.png">
+
+  <p>Assim podemos usar eles dentro do nosso componente para criar as listas de modo independente usando a lógica de repetidores que aprendemos anteriormente:</p>
+
+  <pre>
+    const lista = (props) =&gt {
+      console.log(“[Lista.js] elementos: “,props.elementos);
+      return (
+        &ltdiv&gt
+          &ltul&gt
+            {
+              props.elementos.map((item, index)=&gt{
+                return &ltli key={'lista-item-'+item+'-'+index}&gt{item}&lt/li&gt
+              })
+            }
+          &lt/ul&gt
+        &lt/div&gt
+      )
+    };
+  </pre>
+
+  <p>Com a indentação correta ficaria assim:</p>
+
+  <img src="img/img03.png">
+
+  <p>Resultando em duas listas distintas:</p>
+
+  <img src="img/img04.png">
+
+  <p>Isso cobre como usamos propriedades dentro de componentes funcionais, mas e componentes de classe? Se tentarmos fazer algo parecido teremos erros dizendo que não declaramos essa variável! E de fato, não declaramos. Aqui entra uma diferença muito clara entre essas diferentes categorias de componente: o uso da referência <i>this</i>. Tecnicamente falando, essa variável existe sim em nossa classe. O problema é que como estamos em uma classe e não em uma função o único modo de acessarmos essa propriedade é usando o prefixo <i>this</i>, indicando que é uma referência ao próprio objeto. Assim, podemos lidar com o props desde que o usemos como this.props.&ltpropriedade&gt. Um jeito fácil de averiguar isso é editar o arquivo index.js e, onde chamamos o componente App (sim, ele é um componente!) criar um atributo “título” qualquer:</p>
+
+  <pre>
+    ReactDOM.render(
+      &ltReact.StrictMode&gt
+      &ltApp titulo="App supimpa!" /&gt
+      &lt/React.StrictMode&gt,
+      document.getElementById('root')
+    );
+  </pre>
+
+  <p>Formatado é assim:</p>
+
+  <img src="img/img05.png">
+
+  <p>E usá-lo dentro do App:</p>
+
+    <pre>
+      return (
+        &ltdiv className="App"&gt
+        &ltheader className="App-header"&gt
+        &lth1&gt{this.props.titulo}&lt/h1&gt
+        &ltimg src={logo} className="App-logo" alt="logo" /&gt
+          &ltp>
+    </pre>
+
+  <p>Que formatado será assim:</p>
+
+  <img src="img/img06.png">
+
+  <p>📁 Materiais complementares:</p>
+
+  <p>Lembrando que você pode conferir também alguns exemplos usados nos vídeos anteriores: <a href="https://github.com/newtab-academy/react-exercicios">https://github.com/newtab-academy/react-exercicios</a></p>
+</body>
+</html>
