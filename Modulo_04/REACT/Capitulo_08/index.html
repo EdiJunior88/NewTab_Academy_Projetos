@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>JSX</title>
+</head>
+<body>
+  <h1>JSX</h1>
+
+  <p>Como no caso dos componentes, o JSX será tratado com mais detalhes mais tarde, mas por ser um pouco confuso no início vamos apresentá-lo brevemente.</p>
+
+  <p>O JSX é a sintaxe de <i>templating</i> do React. Um conceito importante no React é que, ao contrário do Vue ou Angular, tudo (com exceção de CSS) é tratado como Javascript. Isso inclui o <i>template</i> visual: nada é feito usando HTML. Em vez disso se usa o JSX: um "açúcar sintático" que permite que escrevamos código JS quase como HTML.</p>
+
+  <p>Exemplificando, em React escrever:</p>
+
+  <pre>
+    &ltdiv&gt
+    &ltp&gtLorem Ipsum&lt/p&gt
+    &lt/div&gt
+  </pre>
+
+  <p>é equivalente a escrever:</p>
+
+  <pre>
+    let div = document.createElement('div'),
+        p = document.createElement('p');
+
+    p.innerHTML = "Lorem Ipsum";
+    div.append(p);
+  </pre>
+
+  <p>A diferença é que, por "traduzir" o código automaticamente, o React nos permite escrever nossas páginas e componentes de maneira mais próxima ao que estamos acostumados: com HTML puro. No entanto, não se engane: a notação JSX possui algumas diferenças cruciais do HTML. Agora vamos ver alguns exemplos mais práticos de como trabalhamos com essa sintaxe para criar nossos elementos no dia a dia e, assim, fixar bem como ele deve ser abordado e no que precisamos prestar atenção. Todos os exemplos podem ser seguidos se forem seguidos também os passos de instalação do <i>react-create-app</i>.</p>
+</body>
+</html>
