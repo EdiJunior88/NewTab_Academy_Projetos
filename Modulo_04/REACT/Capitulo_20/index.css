@@ -1,0 +1,9 @@
+pre {
+  font-weight: bold;
+  background: rgb(224, 224, 224);
+  padding-top: 10px;
+}
+
+img {
+  width: 100%;
+}
