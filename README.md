@@ -56,7 +56,7 @@ E nesses módulos você vai desenvolver alguns outros diferenciais para possíve
 
 <ul>
   <li>
-    <strong>Banco de dados + Busca por oportunidades:</strong> aprenda a construir um banco de dados MySQL e também passe a buscar vagas de acordo com as tecnologias que já aprendeu até aqui.
+    <strong>Banco de dados + Busca por oportunidades:</strong> aprenda a construir um banco de dados MySQL e também passe a buscar vagas de acordo com as tecnologias que já aprendeu até aqui.⏳
   </li>
   
   <li>
