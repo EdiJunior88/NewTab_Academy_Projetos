@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Banco de dados relacional e não relacional</title>
+</head>
+<body>
+  <h1>Banco de dados relacional e não relacional</h1>
+
+  <a href="https://blog.debugeverything.com/pt/diferenca-base-de-dados-relacional-e-nao-relacional/" target="__blank">https://blog.debugeverything.com/pt/diferenca-base-de-dados-relacional-e-nao-relacional/</a>
+
+  <p>OK, então sabemos que você está aqui para pesar as diferenças técnicas entre a base de dados relacional e não relacional. Mas, antes de mergulhar, precisamos definir alguns detalhes importantes. Você precisa determinar qual a prioridade que a escalabilidade representa para o seu modelo em particular.</p>
+
+  <p>Para que seu modelo de dados seja tão preciso quanto possível, você precisa fazer as perguntas certas. Do contrário a sua solução pode acabar não sendo a mais adequada para o seu problema. Se você já tem isso bem definido, siga em frente.</p>
+
+  <h2>O que é uma base de dados relacional?</h2>
+
+  <p>Um <a href="https://en.wikipedia.org/wiki/Relational_database">banco de dados relacional</a> é um banco de dados digital baseado no modelo relacional de dados, como proposto por E. F. Codd em 1970, uma forma intuitiva e direta de representar os <a href="https://www.oracle.com/au/database/what-is-a-relational-database/">dados em tabelas</a>. As bases de dados relacionais armazenam e fornecem acesso a pontos de dados que estão relacionados entre si.</p>
+
+  <img src="img/img01.jpg" alt="">
+
+  <p>Em um banco de dados relacional, cada linha da tabela é um registro com uma identificação única chamada chave primaria. As colunas da tabela contêm os atributos dos dados, e cada registro geralmente tem um valor para cada atributo, facilitando o estabelecimento das relações entre os dados.</p>
+
+  <img src="img/img02.jpg" alt="">
+
+  <p>Existem diversos sistemas que você pode utilizar para gerenciar bancos de dados relacionais, eles são conhecidos como Sistemas de gerenciamento de bancos de dados relacionais (SGBDR). O mais popular entre eles é o <a href="https://www.mysql.com/">MySQL</a>, mas também temos outras opções como, Oracle Database, Microsoft SQL Server, e IBM DB2.</p>
+
+  <p>A grande maioria dos SGBDR oferecem a opção de usar a SQL (Structured Query Language) para consulta e manutenção do banco de dados.</p>
+
+  <p>É um muito comum confundir um banco de dados com um SGBD, mas talvez você fique surpreso em saber que <a href="https://blog.debugeverything.com/pt/mysql-nao-e-um-banco-de-dados/">MySQL não é um banco de dados</a>.</p>
+
+  <h2>Tipos de relação</h2>
+
+  <p>Uma das vantagens de um banco de dados relacional é que, uma vez que você tenha seus dados mantidos em tabelas claramente definidas você pode conectar ou relacionar os dados entre em diferentes tabelas. Para poder identificar essas relações, você precisa examinar os dados e ter um entendimento das regras de negócio que se aplicam aos dados e tabelas.</p>
+
+  <p>Ao criar relações, você sempre trabalha com duas tabelas de cada vez. Uma tabela é chamada de tabela principal ou parent table e a outra é a tabela relacionada ou child table.</p>
+
+  <p>Os três tipos de relação que você vai encontrar nas bases de dados relacionais são, 1 para 1, 1 para muitos e muitos para muitos. As relações estão descritas abaixo.</p>
+
+  <ul>
+    <li>Um para um <code>(1...1)</code>: Ambas as tabelas podem ter apenas um registro em cada lado do relacionamento. Cada valor tabela primária refere-se a apenas um (ou nenhum) registro na tabela relacionada.</li>
+    <li>Um para muitos <code>(1...n)</code>: A tabela primária contém apenas um registro que pode se relacionar a nenhum, um, ou muitos registros na tabela relacionada.</li>
+    <li>Muitos para muitos <code>(n...n)</code>: Cada registro em ambas as tabelas pode se relacionar com qualquer número de registros (ou nenhum registro) na outra tabela. Muitos relacionamentos do tipo <code>n...n</code> requerem uma terceira tabela, conhecida como tabela de ligação ou tabela associada, porque os sistemas relacionais não podem acomodar diretamente o relacionamento.</li>
+  </ul>
+
+  <h2>O que é uma base de dados não relacional?</h2>
+
+  <p>Um banco de dados não relacional é qualquer banco de dados que não segue o modelo relacional fornecido pelos sistemas tradicionais de gerenciamento de bancos de dados relacionais (SGBDR). Esta categoria de bancos de dados, é também conhecida como banco de dados NoSQL.</p>
+
+  <p>Os mais populares sendo <a href="https://blog.debugeverything.com/introduction-to-mongodb/" target="__blank">MongoDB</a>, <a href="https://aws.amazon.com/pt/documentdb/" target="__blank">DocumentDB</a>, <a href="https://cassandra.apache.org/_/index.html" target="__blank">Cassandra</a>, <a href="https://www.couchbase.com/" target="__blank">Couchbase</a>, <a href="https://hbase.apache.org/" target="__blank">HBase</a>, <a href="https://redis.io/" target="__blank">Redis</a>, e <a href="https://neo4j.com/" target="__blank">Neo4j</a>. Estes bancos de dados são geralmente agrupados em quatro categorias: Key-value stores, Graph stores, Column stores, e Document stores.</p>
+
+  <h2>Tipos de banco de dados não relacional</h2>
+
+  <h3>Key-value stores</h3>
+
+  <img src="img/img03.jpg" alt="">
+
+  <p>Como o nome sugere, em uma base de dados do tipo <i>key-values</i>, os dados são representados como uma coleção de pares de valores-chave. Também são conhecidos como arrays associativos, organizados em filas. Essas bases de dados armazenam os dados como uma tabela hash com uma chave única e um ponteiro para um determinado item de dados. Semelhante às tradicionais tabelas hash, esse tipo de base de dados permite o armazenamento e a recuperação de dados através de chaves.</p>
+
+  <p>As bases de dados do tipo <i>key-values</i> são utilizados sempre que os dados são consultados por parâmetros precisos e precisam ser recuperados rapidamente.</p>
+
+  <h2>Graph stores</h2>
+
+  <p>Embora as base de dados do tipo <i>key-value</i> possam lidar com grande quantidade de dados, elas são projetados para uma visão de alto nível (baixa profundidade) dos dados. Os bancos de dados do tipo <i>graph</i> conseguem manter um tamanho de armazenamento mínimo, mesmo com uma profundidade de dados maior do que outros tipos de bancos de dados.</p>
+
+  <img src="img/img04.jpg" alt="">
+
+  <p>O banco de dados NoSQL do tipo <i>graph</i> foi especialmente desenvolvido para lidar com conjuntos muito grandes de dados estruturados, semi-estruturados ou não estruturados. Ele ajuda as organizações a acessar, integrar e analisar dados de várias fontes.</p>
+
+  <p>Muito utilizado quando é necessário analisar dados de redes sociais ,por exemplo.</p>
+
+  <h2>Column stores</h2>
+
+  <p>O armazenamento de dados em coluna, também conhecido como familia de colunas, utiliza colunas para armazenar dados ao invés de linhas como no modelo relacional. Tanto o SGBD baseado em linhas quanto o baseado em colunas utilizam SQL como linguagem de consulta, mas o SGBD orientado a colunas pode oferecer melhor desempenho.</p>
+
+  <img src="img/img05.jpg" alt="">
+
+  <p>Os bancos de dados do tipo <i>column</i> store utilizam um conceito chamado <i>keyspace</i>. Um <i>keyspace</i> é como um esquema no modelo relacional. O <i>keyspace</i> contém todas as famílias de colunas (como as tabelas do modelo relacional), que contêm linhas, que contêm colunas.</p>
+
+  <h2>Document stores</h2>
+
+  <p>A base de dados do tipo <i>document store</i>, também chamadas de SGBD orientado a documentos, são caracterizadas por sua organização de dados sem esquemas.</p>
+
+  <p>Isso significa que os registros não precisam ter uma estrutura uniforme, ou seja, registros diferentes podem ter colunas diferentes. Os tipos dos valores podem ser diferentes para cada registro, as colunas podem ter mais de um valor (arrays) e os registros podem ter uma estrutura aninhada.</p>
+
+  <img src="img/img06.jpg" alt="">
+
+  <p>Os documentos são geralmente armazenados em uma estrutura similar ao JSON, o que deixa a vida do programador mais fácil, sendo que JSON é uma das estruturas de dados mais comuns, especialmente <a href="https://debugeverything.com/javascript-como-acessar-e-processar-objetos-aninhados/">trabalhando com Javascript</a>.</p>
+
+  <h2>Qual a diferença entre base de dados relacional e não relacional?</h2>
+  
+  <p>Bancos de dados relacionais como MySQL, PostgreSQL e SQLite3 representam e armazenam dados em tabelas e filas. Eles são baseados em um ramo da teoria do conjunto algébrico conhecido como álgebra relacional. Bancos de dados não-relacionais como o MongoDB representam dados em coleções de documentos JSON.</p>
+
+  <p>As bases de dados relacionais utilizam Linguagem de Consulta Estruturada (SQL), tornando-as uma boa escolha para aplicações que envolvem o gerenciamento de várias transações. A estrutura de um banco de dados relacional permite vincular informações de diferentes tabelas através do uso de chaves (ou índices) estrangeiras.</p>
+
+  <p>Se você estiver lidando com uma quantidade fenomenal de dados, a complexidade do banco de dados relacional e das queries necessárias também vai crescer na mesma proporção. Nessa situação, talvez você precise considerar a possibilidade de utilizar um base de dados não relacional. Uma base de dados não relacional pode armazenar dados sem uma mecânica explícita e estruturada para vincular dados de diferentes tabelas uns aos outros.</p>
+</body>
+</html>
