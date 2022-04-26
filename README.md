@@ -28,23 +28,23 @@
 
 <ul>
   <li>
-    <strong>Preparatório + Boas vindas ao mundo DEV:</strong> conteúdos básicos de nivelamento sobre arquitetura web, preparação do ambiente de desenvolvimento e Git, e criação do seu primeiro repositório.✔️
+    ✔️<strong>Preparatório + Boas vindas ao mundo DEV:</strong> conteúdos básicos de nivelamento sobre arquitetura web, preparação do ambiente de desenvolvimento e Git, e criação do seu primeiro repositório.
   </li>
 
   <li>
-    <strong>Base de Web + Perfil comportamental e Soft Skills:</strong> você vai conhecer seu perfil comportamental, aprender um pouco sobre soft skills e começar a colocar a mão no código desenvolvendo um projeto com HTML e CSS.✔️
+    ✔️<strong>Base de Web + Perfil comportamental e Soft Skills:</strong> você vai conhecer seu perfil comportamental, aprender um pouco sobre soft skills e começar a colocar a mão no código desenvolvendo um projeto com HTML e CSS.
   </li>
   
   <li>
-   <strong>Linguagem Client Side + Construção do perfil profissional:</strong> você vai aprender como preparar um bom currículo, LinkedIn e GitHub, vai reforçar conhecimentos de algoritmo e lógica de programação e programar em JavaScript, finalizando seu primeiro projeto individual.✔️
+   ✔️<strong>Linguagem Client Side + Construção do perfil profissional:</strong> você vai aprender como preparar um bom currículo, LinkedIn e GitHub, vai reforçar conhecimentos de algoritmo e lógica de programação e programar em JavaScript, finalizando seu primeiro projeto individual.
   </li>
   
   <li>
-    <strong>Biblioteca JS + Preparação para processos seletivos:</strong> você também vai aprender React, uma das bibliotecas JS mais populares do mundo, além de se preparar para processos seletivos com apoio de uma psicóloga/recrutadora.✔️
+    ✔️<strong>Biblioteca JS + Preparação para processos seletivos:</strong> você também vai aprender React, uma das bibliotecas JS mais populares do mundo, além de se preparar para processos seletivos com apoio de uma psicóloga/recrutadora.
   </li>
   
   <li>
-    <strong>Projeto Front-end em time:</strong> após praticar com projetos guiados e individuais, você vai se juntar a outras pessoas em formação para desenvolver um projeto ainda mais completo com tecnologias front-end, inclusive utilizando metodologias ágeis.⏳
+    ⏳<strong>Projeto Front-end em time:</strong> após praticar com projetos guiados e individuais, você vai se juntar a outras pessoas em formação para desenvolver um projeto ainda mais completo com tecnologias front-end, inclusive utilizando metodologias ágeis.
   </li>
 </ul>
 
@@ -56,7 +56,7 @@ E nesses módulos você vai desenvolver alguns outros diferenciais para possíve
 
 <ul>
   <li>
-    <strong>Banco de dados + Busca por oportunidades:</strong> aprenda a construir um banco de dados MySQL e também passe a buscar vagas de acordo com as tecnologias que já aprendeu até aqui.⏳
+    ⏳<strong>Banco de dados + Busca por oportunidades:</strong> aprenda a construir um banco de dados MySQL e também passe a buscar vagas de acordo com as tecnologias que já aprendeu até aqui.
   </li>
   
   <li>
