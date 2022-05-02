@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Execute comandos SQL simples usando o cliente MySQL</title>
+</head>
+<body>
+  <h1>Execute comandos SQL simples usando o cliente MySQL</h1>
+
+  <p>Você pode se conectar ao servidor MySQL por meio do cliente MySQL e usando o comando mysql. Neste momento, você não precisa fornecer nenhuma senha, pois por padrão ela será definida como em branco.</p>
+
+  <p>Você pode apenas usar o seguinte comando:</p>
+  
+  <pre>
+    [root@host]# mysql
+  </pre>
+
+  <p>Deve ser recompensado com um prompt mysql>. Agora, você está conectado ao servidor MySQL e pode executar todos os comandos SQL no prompt mysql> da seguinte maneira:</p>
+  
+  <pre>
+    mysql> SHOW DATABASES;
+    +----------+
+    | Database |
+    +----------+
+    |   mysql  |
+    |   test   |
+    +----------+
+    2 rows in set (0.13 sec)
+  </pre>
+  
+</body>
+</html>
