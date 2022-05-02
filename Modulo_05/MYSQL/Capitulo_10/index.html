@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Configurando uma conta de usuário MySQL</title>
+</head>
+<body>
+  <h1>Configurando uma conta de usuário MySQL</h1>
+
+  <p>Para adicionar um novo usuário ao MySQL, você só precisa adicionar uma nova entrada à tabela do usuário no banco de dados mysql.</p>
+
+  <p>O programa a seguir é um exemplo de adição de um novo usuário convidado com os privilégios SELECT, INSERT e UPDATE com a senha abc123; a consulta SQL é:</p>
+  
+  <pre>
+    root@host# mysql -u root -p
+    Enter password:*******
+    mysql> use mysql;
+    Database changed
+    
+    mysql> INSERT INTO user
+       (host, user, password,
+       select_priv, insert_priv, update_priv)
+       VALUES ('localhost', 'guest',
+       PASSWORD(abc123), 'Y', 'Y', 'Y');
+    Query OK, 1 row affected (0.20 sec)
+    
+    mysql> FLUSH PRIVILEGES;
+    Query OK, 1 row affected (0.01 sec)
+    
+    mysql> SELECT host, user, password FROM user WHERE user = 'guest';
+    +-----------+---------+------------------+
+    |    host   |   user  |     password     |
+    +-----------+---------+------------------+
+    | localhost |  guest  | 6f8c114b58f2ce9e |
+    +-----------+---------+------------------+
+    1 row in set (0.00 sec)
+  </pre>
+
+  <p>Ao adicionar um novo usuário, lembre-se de criptografar a nova senha usando a função PASSWORD () fornecida pelo MySQL. Como você pode ver no exemplo acima, a senha mypass é criptografada para 6f8c114b58f2ce9e.</p>
+  
+  <p>Observe a instrução FLUSH PRIVILEGES. Isso diz ao servidor para recarregar as tabelas de permissões. Se você não o usar, não será capaz de se conectar ao MySQL usando a nova conta de usuário pelo menos até que o servidor seja reinicializado.</p>
+  
+  <p>Você também pode especificar outros privilégios para um novo usuário definindo os valores das seguintes colunas na tabela do usuário como ‘Y’, ao executar a consulta INSERT, ou pode atualizá-los posteriormente usando a consulta UPDATE:</p>
+  
+  <ul>
+    <li>Select_priv</li>
+    <li>Insert_priv</li>
+    <li>Update_priv</li>
+    <li>Delete_priv</li>
+    <li>Create_priv</li>
+    <li>Drop_priv</li>
+    <li>Reload_priv</li>
+    <li>Shutdown_priv</li>
+    <li>Process_priv</li>
+    <li>File_priv</li>
+    <li>Grant_priv</li>
+    <li>References_priv</li>
+    <li>Index_priv</li>
+    <li>Alter_priv</li>
+  </ul>
+
+  <p>Outra maneira de adicionar conta de usuário é usando o comando GRANT SQL. O exemplo a seguir adiciona o usuário newtab com a senha newtab123 para um banco de dados específico.</p>
+  
+  <pre>
+    root@host# mysql -u root -p password;
+    
+    Enter password:*******
+    mysql> use mysql;
+    Database changed
+    
+    mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
+       -> ON Newtab.*
+       -> TO 'newtab'@'localhost'
+       -> IDENTIFIED BY 'newtab123';
+  </pre>
+
+  <p>Isso também criará uma entrada na tabela do banco de dados MySQL, chamada de usuário.</p>
+</body>
+</html>
