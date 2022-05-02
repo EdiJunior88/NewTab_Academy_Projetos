@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Instalando MySQL no Windows</title>
+</head>
+<body>
+  <h1>Instalando MySQL no Windows</h1>
+
+  <p>A instalação padrão em qualquer versão do Windows agora é muito mais fácil do que costumava ser, já que o MySQL agora vem perfeitamente empacotado com um instalador. Basta baixar o pacote do instalador, descompactá-lo em qualquer lugar e executar o arquivo setup.exe.</p>
+
+  <p>O instalador padrão setup.exe irá guiá-lo através do processo trivial e, por padrão, instalará tudo em C: \ mysql.</p>
+
+  <p>Teste o servidor ativando-o no prompt de comando pela primeira vez. Vá para a localização do servidor mysqld, que provavelmente é C: \ mysql \ bin, e digite:</p>
+
+  <pre>
+    mysqld.exe --console
+  </pre>
+
+  <p>Se tudo correr bem, você verá algumas mensagens sobre a inicialização e o InnoDB. Caso contrário, você pode ter um problema de permissão. Certifique-se de que o diretório que contém seus dados seja acessível a qualquer usuário (provavelmente MySQL) sob o qual os processos de banco de dados são executados.</p>
+
+  <p>O MySQL não se adiciona ao menu iniciar e também não há uma maneira particularmente agradável de parar o servidor. Portanto, se você tende a iniciar o servidor clicando duas vezes no executável mysqld, deve se lembrar de interromper o processo manualmente usando mysqladmin, Lista de Tarefas, Gerenciador de Tarefas ou outros meios específicos do Windows.</p>
+</body>
+</html>
