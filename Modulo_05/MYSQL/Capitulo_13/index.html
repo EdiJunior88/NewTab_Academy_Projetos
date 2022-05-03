@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Conexão MySQL usando o binário MySQL</title>
+</head>
+<body>
+  <h1>Conexão MySQL usando o binário MySQL</h1>
+
+  <p>Você pode estabelecer o banco de dados MySQL usando o binário mysql no prompt de comando.</p>
+
+  <p>Exemplo: aqui está um exemplo simples para se conectar ao servidor MySQL a partir do prompt de comando:</p>
+
+  <pre>
+    [root@host]# mysql -u root -p
+    Enter password:******
+  </pre>
+
+  <p>Isso lhe dará o prompt de comando mysql>, onde você poderá executar qualquer comando SQL. A seguir está o resultado do comando acima:</p>
+
+  Welcome to the MySQL monitor.  Commands end with ; or \g.
+  <p>Your MySQL connection id is 2854760 to server version: 5.0.9</p>
+
+  Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+  <p>No exemplo acima, usamos root como usuário, mas você também pode usar qualquer outro usuário. Qualquer usuário poderá realizar todas as operações SQL permitidas a esse usuário.</p>
+
+  <p>Você pode se desconectar do banco de dados MySQL a qualquer momento usando o comando exit no prompt mysql>.</p>
+
+  <pre>
+    mysql> exit
+    Bye
+  </pre>
+</body>
+</html>
