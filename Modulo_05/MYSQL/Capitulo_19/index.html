@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Tipos de dados numéricos</title>
+</head>
+
+<body>
+  <h1>Tipos de dados numéricos</h1>
+
+  <p>O MySQL usa todos os tipos de dados numéricos ANSI SQL padrão, portanto, se você estiver chegando ao MySQL de um sistema de banco de dados diferente, essas definições parecerão familiares para você.</p>
+
+  <p>A lista a seguir mostra os tipos de dados numéricos comuns e suas descrições:</p>
+
+  <ul>
+    <li><strong>INT</strong> – Um inteiro de tamanho normal que pode ser assinado ou não. Se assinado, o intervalo permitido é de -2147483648 a 2147483647. Se não assinado, o intervalo permitido é de 0 a 4294967295. Você pode especificar uma largura de até 11 dígitos;</li>
+    <li><strong>TINYINT</strong> – Um inteiro muito pequeno que pode ser assinado ou não. Se assinado, o intervalo permitido é de -128 a 127. Se não assinado, o intervalo permitido é de 0 a 255. Você pode especificar uma largura de até 4 dígitos;</li>
+    <li><strong>SMALLINT</strong> – Um pequeno número inteiro que pode ser assinado ou não. Se assinado, o intervalo permitido é de -32768 a 32767. Se não for assinado, o intervalo permitido é de 0 a 65535. Você pode especificar uma largura de até 5 dígitos;</li>
+    <li><strong>MEDIUMINT</strong> – Um inteiro de tamanho médio que pode ser assinado ou não. Se assinado, o intervalo permitido é de -8388608 a 8388607. Se não assinado, o intervalo permitido é de 0 a 16777215. Você pode especificar uma largura de até 9 dígitos;</li>
+    <li><strong>BIGINT</strong> – Um grande número inteiro pode ser assinado ou não. Se assinado, o intervalo permitido é de -9223372036854775808 a 9223372036854775807. Se não assinado, o intervalo permitido é de 0 a 18446744073709551615. Você pode especificar uma largura de até 20 dígitos;</li>
+    <li><strong>FLOAT (M, D)</strong> – Um número de ponto flutuante que não pode estar sem sinal. Você pode definir o comprimento de exibição (M) e o número de decimais (D). Isso não é obrigatório e o padrão é 10,2, onde 2 é o número de decimais e 10 é o número total de dígitos (incluindo decimais). A precisão decimal pode chegar a 24 casas para um FLOAT;</li>
+    <li><strong>DOUBLE (M, D)</strong> – Um número de ponto flutuante de precisão dupla que não pode estar sem sinal. Você pode definir o comprimento de exibição (M) e o número de decimais (D). Isso não é obrigatório e o padrão é 16,4, onde 4 é o número de decimais. A precisão decimal pode chegar a 53 casas para um DOUBLE. REAL é sinônimo de DOUBLE;</li>
+    <li><strong>DECIMAL (M, D)</strong> – Um número de ponto flutuante desempacotado que não pode estar sem sinal. Nos decimais não compactados, cada decimal corresponde a um byte. É necessário definir o comprimento de exibição (M) e o número de decimais (D). NUMERIC é sinônimo de DECIMAL.</li>
+  </ul>
+</body>
+
+</html>
