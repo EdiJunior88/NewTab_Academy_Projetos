@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Tipos de string</title>
+</head>
+
+<body>
+  <h1>Tipos de string</h1>
+
+  <p>Embora os tipos numéricos e de data sejam divertidos, a maioria dos dados que você armazenará estarão em formato de string. Esta lista descreve os tipos de dados de string comuns no MySQL:</p>
+
+  <ul>
+    <li><strong>CHAR (M)</strong> – Uma string de comprimento fixo entre 1 e 255 caracteres (por exemplo CHAR (5)), preenchida à direita com espaços para o comprimento especificado quando armazenada. Definir um comprimento não é obrigatório, mas o padrão é 1;</li>
+    <li><strong>VARCHAR (M)</strong> – Uma string de comprimento variável entre 1 e 255 caracteres. Por exemplo, VARCHAR (25). Você deve definir um comprimento ao criar um campo VARCHAR;</li>
+    <li><strong>BLOB ou TEXTO</strong> – Um campo com comprimento máximo de 65535 caracteres. Os BLOBs são “Objetos Binários Grandes” e são usados ​​para armazenar grandes quantidades de dados binários, como imagens ou outros tipos de arquivos. Os campos definidos como TEXTO também contêm grandes quantidades de dados. A diferença entre os dois é que as classificações e comparações nos dados armazenados diferenciam maiúsculas de minúsculas em BLOBs e não diferenciam maiúsculas de minúsculas em campos de texto. Você não especifica um comprimento com BLOB ou TEXT;</li>
+    <li><strong>TINYBLOB ou TINYTEXT</strong> – uma coluna BLOB ou TEXT com um comprimento máximo de 255 caracteres. Você não especifica um comprimento com TINYBLOB ou TINYTEXT;</li>
+    <li><strong>MEDIUMBLOB ou MEDIUMTEXT</strong> – uma coluna BLOB ou TEXT com comprimento máximo de 16777215 caracteres. Você não especifica um comprimento com MEDIUMBLOB ou MEDIUMTEXT;</li>
+    <li><strong>LONGBLOB ou LONGTEXT</strong> – uma coluna BLOB ou TEXT com comprimento máximo de 4294967295 caracteres. Você não especifica um comprimento com LONGBLOB ou LONGTEXT;</li>
+    <li><strong>ENUM</strong> – Uma enumeração, que é um termo chique para lista. Ao definir um ENUM, você está criando uma lista de itens a partir dos quais o valor deve ser selecionado (ou pode ser NULL). Por exemplo, se você quiser que seu campo contenha “A” ou “B” ou “C”, você deve definir seu ENUM como ENUM ('A', 'B', 'C') e apenas esses valores (ou NULL) poderia preencher esse campo.</li>
+  </ul>
+</body>
+
+</html>
