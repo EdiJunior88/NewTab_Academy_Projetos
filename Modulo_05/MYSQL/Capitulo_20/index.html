@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Tipos de data e hora</title>
+</head>
+
+<body>
+  <h1>Tipos de data e hora</h1>
+
+  <p>Os tipos de dados de data e hora do MySQL são os seguintes:</p>
+
+  <ul>
+    <li><strong>DATA</strong> – Uma data no formato AAAA-MM-DD, entre 1000-01-01 e 9999-12-31. Por exemplo, 30 de Dezembro de 1973 seria armazenado como 1973/12/30;</li>
+    <li><strong>DATETIME</strong> – Uma combinação de data e hora no formato AAAA-MM-DD HH: MM: SS, entre 1000-01-01 00:00:00 e 9999-12-31 23:59:59. Por exemplo, 3:30 da tarde de 30 de dezembro de 1973 seria armazenado como 1973/12/30 15:30:00;</li>
+    <li><strong>TIMESTAMP</strong> – Um timestamp entre meia-noite, 01 de janeiro de 1970 e em algum momento de 2037. Isto parece o formato DATETIME anterior, só que sem os hífens entre números; 3:30 da tarde de 30 de dezembro de 1973 seria armazenado como 19731230153000 (YYYYMMDDHHMMSS);</li>
+    <li><strong>HORA</strong> – Armazena a hora no formato HH: MM: SS;</li>
+    <li><strong>ANO (M)</strong> – armazena um ano no formato de 2 ou 4 dígitos. Se o comprimento for especificado como 2 (por exemplo, ANO (2)), ANO pode ser entre 1970 a 2069 (70 a 69). Se o comprimento for especificado como 4, o ANO pode ser de 1901 a 2155. O comprimento padrão é 4.</li>
+  </ul>
+</body>
+
+</html>
