@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Seleção do banco de dados MySQL no prompt de comando</title>
+</head>
+
+<body>
+  <h1>Seleção do banco de dados MySQL no prompt de comando</h1>
+
+  <p>É muito simples selecionar um banco de dados no prompt mysql>. Você pode usar o comando SQL usado para selecionar um banco de dados.</p>
+
+  <p>Exemplo: aqui está um exemplo para selecionar um banco de dados chamado Newtab:</p>
+
+  <pre>
+    [root@host]# mysql -u root -p
+    Enter password:******
+    mysql> use Newtab;
+    Database changed
+    mysql>
+  </pre>
+
+  <p>Agora, você selecionou o banco de dados Newtab e todas as operações subsequentes serão realizadas no banco de dados Newtab.</p>
+
+  <pre>
+    <strong><i>OBSERVAÇÃO</i></strong>:
+
+    <strong><i>Todos os nomes de bancos de dados, nomes de tabelas e nomes de campos de tabelas diferenciam maiúsculas de minúsculas.
+    Portanto, você terá que usar os nomes próprios ao fornecer qualquer comando SQL.</i></strong>
+  </pre>
+</body>
+
+</html>
