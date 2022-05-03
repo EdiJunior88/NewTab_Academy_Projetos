@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Eliminar um banco de dados</title>
+</head>
+<body>
+  <h1>Eliminar um banco de dados</h1>
+
+  <p>Você precisará de privilégios especiais para criar ou excluir um banco de dados MySQL. Portanto, supondo que você tenha acesso ao usuário root, você pode criar qualquer banco de dados usando o binário mysql mysqladmin .</p>
+
+  <p>Tenha cuidado ao excluir qualquer banco de dados, pois você perderá todos os dados disponíveis nele.</p>
+
+  <p>Aqui está um exemplo para excluir um banco de dados (TUTORIAIS) criado no capítulo anterior:</p>
+
+  <pre>
+    [root@host]# mysqladmin -u root -p drop Newtab
+    Enter password:******
+  </pre>
+
+  <p>Isso lhe dará um aviso e confirmará se você realmente deseja excluir este banco de dados ou não.</p>
+
+  <p>Depois de se conectar ao servidor MySQL, é necessário selecionar um banco de dados com o qual trabalhar. Isso ocorre porque pode haver mais de um banco de dados disponível com o servidor MySQL.</p>
+</body>
+</html>
