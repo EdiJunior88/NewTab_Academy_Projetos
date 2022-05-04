@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Delete</title>
+</head>
+
+<body>
+  <h1>Delete</h1>
+
+  <p>Se você quiser deletar um registro de qualquer tabela MySQL, então você pode usar o comando SQL DELETE FROM. Você pode usar este comando no prompt mysql>, bem como em qualquer script como PHP.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>O bloco de código a seguir possui uma sintaxe SQL genérica do comando DELETE para excluir dados de uma tabela MySQL.</p>
+
+  <pre>
+    DELETE FROM table_name [WHERE Clause]
+  </pre>
+
+  <ul>
+    <li>Se a cláusula WHERE não for especificada, todos os registros serão excluídos da tabela MySQL fornecida;</li>
+    <li>Você pode especificar qualquer condição usando a cláusula WHERE;</li>
+    <li>Você pode excluir registros em uma única tabela por vez.</li>
+  </ul>
+
+  <p>A cláusula WHERE é muito útil quando você deseja excluir linhas selecionadas em uma tabela.</p>
+
+  <h2>Exclusão de dados do prompt de comando</h2>
+
+  <p>Isso usará o comando SQL DELETE com a cláusula WHERE para excluir os dados selecionados da tabela MySQL – newtab_tbl.</p>
+
+  <p>O exemplo a seguir excluirá um registro do tbl cujo id é 2.</p>
+
+  <pre>
+    root@host# mysql -u root -p password;
+
+    Enter password:*******
+
+    mysql> use Newtab;
+
+    Database changed
+
+    mysql> DELETE FROM newtab_tbl WHERE id=2;
+
+    Query OK, 1 row affected (0.23 sec)
+
+    mysql>
+  </pre>
+</body>
+
+</html>
