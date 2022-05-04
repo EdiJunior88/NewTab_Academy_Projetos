@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Select</title>
+</head>
+
+<body>
+  <h1>Select</h1>
+
+  <p>O comando SQL SELECT é usado para buscar dados do banco de dados MySQL. Você pode usar este comando no prompt mysql>, bem como em qualquer script como PHP.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>Aqui está a sintaxe SQL genérica do comando SELECT para buscar dados da tabela MySQL:</p>
+
+  <pre>
+    SELECT field1, field2,...fieldN
+
+    FROM table_name1, table_name2...
+
+    [WHERE Clause]
+
+    [OFFSET M ][LIMIT N]
+  </pre>
+
+  <ul>
+    <li>Você pode usar uma ou mais tabelas separadas por vírgula para incluir várias condições usando uma cláusula WHERE, mas a cláusula WHERE é uma parte opcional do comando SELECT;</li>
+    <li>Você pode buscar um ou mais campos em um único comando SELECT.</li>
+    <li>Você pode especificar asterisco (*) no lugar dos campos. Nesse caso, SELECT retornará todos os campos;</li>
+    <li>Você pode especificar qualquer condição usando a cláusula WHERE;</li>
+    <li>Você pode especificar um deslocamento usando OFFSET de onde SELECT começará a retornar registros. Por padrão, o deslocamento começa em zero;</li>
+    <li>Você pode limitar o número de devoluções usando o atributo LIMIT.</li>
+  </ul>
+
+  <h2>Buscando dados de um prompt de comando</h2>
+
+  <p>Isso usará o comando SQL SELECT para buscar dados da tabela newtab_tbl do MySQL.</p>
+
+  <p>O exemplo a seguir retornará todos os registros da tabela newtab_tbl –</p>
+
+  <pre>
+    root@host# mysql -u root -p password;
+    
+    Enter password:*******
+    
+    mysql> use Newtab;
+    
+    Database changed
+    
+    mysql> SELECT * from newtab_tbl
+    
+    +-------------+----------------+-----------------+-----------------+-----+
+    |          id | title                  | author        | submission_date |
+    +-------------+----------------+-----------------+-----------------+-----+
+    |           1 | Meu primeiro insert    | Fernando      | 2020-12-21      |
+    |           2 | Learn MySQL            | Anderson      | 2020-12-21      |
+    +-------------+----------------+-----------------+-----------------+-----+
+    3 rows in set (0.01 sec)
+    
+    mysql>
+  </pre>
+
+</body>
+
+</html>
