@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Insert</title>
+</head>
+
+<body>
+  <h1>Insert</h1>
+
+  <p>Para inserir dados em uma tabela MySQL, você precisa usar o comando SQL INSERT INTO. Você pode inserir dados na tabela MySQL usando o prompt mysql> ou usando qualquer script como PHP.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>Aqui está uma sintaxe SQL genérica do comando INSERT INTO para inserir dados na tabela MySQL:</p>
+
+  <pre>
+    INSERT INTO table_name ( field1, field2,...fieldN )
+      VALUES
+      ( value1, value2,...valueN );
+  </pre>
+
+  <p>Para inserir tipos de dados de string, é necessário manter todos os valores entre aspas duplas ou simples. Por exemplo, “valor” .</p>
+
+  <h2>Inserindo dados do prompt de comando</h2>
+
+  <p>Para inserir dados do prompt de comando, usaremos o comando SQL INSERT INTO para inserir dados na tabela newtab_tbl do MySQL.</p>
+
+  <p>O exemplo a seguir criará 3 registros na tabela newtab_tbl:</p>
+
+  <pre>
+    root@host# mysql -u root -p password;
+
+    Enter password:*******
+
+    mysql> use Newtab;
+
+    Database changed
+
+    mysql> INSERT INTO newtab_tbl
+      ->(title, author, submission_date)
+      ->VALUES
+      ->("Meu primeiro insert", "Fernando", NOW());
+
+    Query OK, 1 row affected (0.01 sec)
+
+    mysql> INSERT INTO newtab_tbl
+      ->(title, title, submission_date)
+      ->VALUES
+      ->("Learn MySQL", "Anderson", NOW());
+
+    Query OK, 1 row affected (0.01 sec)
+  </pre>
+
+  <pre>
+    <strong><i>OBSERVAÇÃO</i></strong>
+
+    <strong><i>Observe que todos os sinais de seta (->) não fazem parte do comando SQL. Eles estão indicando uma nova linha e são criados
+    automaticamente pelo prompt do MySQL ao pressionar a tecla enter sem fornecer um ponto e vírgula no final de cada linha do comando.</i></strong>
+  </pre>
+
+  <p>No exemplo acima não fornecemos um id porque, no momento da criação da tabela, demos a opção AUTO_INCREMENT para este campo. Portanto, o MySQL se encarrega de inserir esses IDs automaticamente. Aqui, NOW () é uma função MySQL, que retorna a data e hora atuais.</p>
+</body>
+
+</html>
