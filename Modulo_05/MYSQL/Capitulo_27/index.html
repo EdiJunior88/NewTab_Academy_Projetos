@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Update</title>
+</head>
+
+<body>
+  <h1>Update</h1>
+
+  <p>Pode haver um requisito em que os dados existentes em uma tabela MySQL precisem ser modificados. Você pode fazer isso usando o comando SQL UPDATE. Isso modificará qualquer valor de campo de qualquer tabela MySQL.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>O bloco de código a seguir tem uma sintaxe SQL genérica do comando UPDATE para modificar os dados na tabela MySQL –</p>
+  
+  <pre>
+    UPDATE table_name SET field1 = new-value1, field2 = new-value2
+
+    [WHERE Clause]
+  </pre>
+
+  <ul>
+    <li>Você pode atualizar um ou mais campos completamente.</li>
+    <li>Você pode especificar qualquer condição usando a cláusula WHERE.</li>
+    <li>Você pode atualizar os valores em uma única tabela por vez.</li>
+  </ul>
+
+  <p>A cláusula WHERE é muito útil quando você deseja atualizar as linhas selecionadas em uma tabela.</p>
+  
+  <h2>Atualização de dados do prompt de comando</h2>
+
+  <p>Isso usará o comando SQL UPDATE com a cláusula WHERE para atualizar os dados selecionados na tabela newtab_tbl do MySQL.</p>
+  
+  <p>O exemplo a seguir atualizará o campo title para um registro com id como 3.</p>
+  
+  <pre>
+    root@host# mysql -u root -p password;
+
+    Enter password:*******
+    
+    mysql> use Newtab;
+
+    Database changed
+    
+    mysql> UPDATE newtab_tbl
+       -> SET title = 'Learning JAVA'
+       -> WHERE id = 2;
+
+    Query OK, 1 row affected (0.04 sec)
+
+    Rows matched: 1  Changed: 1  Warnings: 0
+
+    mysql>
+  </pre>
+</body>
+
+</html>
