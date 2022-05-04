@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Eliminar tabelas MySQL</title>
+</head>
+
+<body>
+  <h1>Eliminar tabelas MySQL</h1>
+
+  <p>É muito fácil eliminar uma tabela MySQL existente, mas você precisa ter muito cuidado ao excluir qualquer tabela existente, pois os dados perdidos não serão recuperados após a exclusão de uma tabela.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>Aqui está uma sintaxe SQL genérica para descartar uma tabela MySQL –</p>
+
+  <pre>
+    DROP TABLE table_name ;
+  </pre>
+
+  <h2>Eliminando tabelas do prompt de comando</h2>
+
+  <p>Para eliminar tabelas do prompt de comando, precisamos executar o comando DROP TABLE SQL no prompt mysql>.</p>
+
+  <p>Exemplo: O programa a seguir é um exemplo que exclui o <strong><i>newtab_tbl</i></strong></p>
+
+  <pre>
+    root@host# mysql -u root -p
+
+    Enter password:*******
+
+    mysql> use Newtab;
+
+    Database changed
+
+    mysql> DROP TABLE newtab_tbl
+
+    Query OK, 0 rows affected (0.8 sec)
+
+    mysql>
+  </pre>
+</body>
+
+</html>
