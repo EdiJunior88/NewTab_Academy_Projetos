@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Criar tabelas MySQL</title>
+</head>
+
+<body>
+  <h1>Criar tabelas MySQL</h1>
+
+  <p>Para começar, o comando de criação de tabela requer os seguintes detalhes –</p>
+
+  <ul>
+    <li>Nome da tabela;</li>
+    <li>Nome dos campos;</li>
+    <li>Definições para cada campo.</li>
+    <li>Sintaxe</li>
+    <li>Aqui está uma sintaxe SQL genérica para criar uma tabela MySQL:</li>
+  </ul>
+
+  <pre>
+    CREATE TABLE table_name (column_name column_type);
+  </pre>
+
+  <p>Agora, vamos criar a seguinte tabela no banco de dados <strong><i>Newtab</i></strong>.</p>
+
+  <pre>
+  create table newtab_tbl(
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(40) NOT NULL,
+    submission_date DATE,
+    PRIMARY KEY ( id )
+  );
+</pre>
+
+  <p>Aqui, alguns itens precisam de explicação:</p>
+
+  <ul>
+    <li>O atributo de campo NOT NULL está sendo usado porque não queremos que este campo seja NULL. Portanto, se um usuário tentar criar um registro com um valor NULL, o MySQL gerará um erro;</li>
+    <li>Atributo de campo AUTO_INCREMENT diz ao MySQL para ir em frente e adicionar o próximo número disponível ao campo id;</li>
+    <li>A palavra-chave PRIMARY KEY é usada para definir uma coluna como uma chave primária. Você pode usar várias colunas separadas por uma vírgula para definir uma chave primária.</li>
+  </ul>
+
+  <h2>Criação de tabelas a partir do prompt de comando</h2>
+
+  <p>É fácil criar uma tabela MySQL a partir do prompt mysql>. Você usará o comando SQL CREATE TABLE para criar uma tabela.</p>
+
+  <p>Exemplo: Aqui está um exemplo, que criará newtab_tbl:</p>
+
+  <pre>
+  root@host# mysql -u root -p
+
+  Enter password:*******
+
+  mysql> use Newtab;
+
+  Database changed
+
+  mysql> create table newtab_tbl(
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(40) NOT NULL,
+    submission_date DATE,
+    PRIMARY KEY ( id )
+  );
+  
+  Query OK, 0 rows affected (0.16 sec)
+
+  mysql>
+</pre>
+
+  <pre>
+    <strong><i>OBSERVAÇÃO</i></strong>
+
+    <i>O MySQL não termina um comando até que você forneça um ponto-e-vírgula (;) no final do comando SQL.</i>
+  </pre>
+</body>
+
+</html>
