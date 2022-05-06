@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Cláusula WHERE</title>
+</head>
+
+<body>
+  <h1>Cláusula WHERE</h1>
+
+  <p>Vimos o comando SQL SELECT para buscar dados de uma tabela MySQL. Podemos usar uma cláusula condicional chamada cláusula WHERE para filtrar os resultados. Usando esta cláusula WHERE, podemos especificar um critério de seleção para selecionar os registros necessários de uma tabela.</p>
+
+  <h2>Sintaxe</h2>
+  
+  <p>O bloco de código a seguir possui uma sintaxe SQL genérica do comando SELECT com a cláusula WHERE para buscar dados da tabela MySQL:</p>
+  
+  <pre>
+    SELECT field1, field2,...fieldN table_name1, table_name2...
+
+    [WHERE condition1 [AND [OR]] condition2.....
+  </pre>
+
+  <ul>
+    <li>Você pode usar uma ou mais tabelas separadas por uma vírgula para incluir várias condições usando uma cláusula WHERE, mas a cláusula WHERE é uma parte opcional do comando SELECT;</li>
+    <li>Você pode especificar qualquer condição usando a cláusula WHERE;</li>
+    <li>Você pode especificar mais de uma condição usando os operadores AND ou OR;</li>
+    <li>Uma cláusula WHERE pode ser usada junto com o comando DELETE ou UPDATE SQL também para especificar uma condição.</li>
+  </ul>
+ 
+  <p>A cláusula WHERE funciona como uma condição if em qualquer linguagem de programação. Esta cláusula é usada para comparar o valor fornecido com o valor do campo disponível em uma tabela MySQL. Se o valor fornecido de fora for igual ao valor do campo disponível na tabela MySQL, ele retornará essa linha.</p>
+  
+  <p>Aqui está a lista de operadores, que podem ser usados ​​com a cláusula WHERE .</p>
+  
+  <p>Suponha que o campo A tenha 10 e o campo B tenha 20, então:</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Operador</th>
+        <th>Descrição</th>
+        <th>Exemplo</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          =
+        </td>
+        <td>
+          Verifica se os valores dos dois operandos são iguais ou não, se sim, a condição torna-se verdadeira.	
+        </td>
+        <td>
+          (A = B) não é verdade.
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          !=
+        </td>
+        <td>
+          Verifica se os valores dos dois operandos são iguais ou não, se os valores não são iguais a condição se torna verdadeira.	
+        </td>
+        <td>
+          (A != B) é verdade.
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          >
+        </td>
+        <td>
+          Verifica se o valor do operador esquerdo é maior que o valor do operando direito, se sim, a condição se torna verdadeira.		
+        </td>
+        <td>
+          (A > B) não é verdade.
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <
+        </td>
+        <td>
+          Verifica se o valor do operador esquerdo é menor que o valor do operando direito, se sim a condição torna-se verdadeira.
+        </td>
+        <td>
+          (A < B) é verdade.
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          >=
+        </td>
+        <td>
+          Verifica se o valor do operador esquerdo é maior ou igual ao valor do operando direito, se sim, a condição se torna verdadeira.	
+        </td>
+        <td>
+          (A >= B) não é verdade.
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <=
+        </td>
+        <td>
+          Verifica se o valor do operador esquerdo é menor ou igual ao valor do operando direito, se sim, a condição se torna verdadeira.		
+        </td>
+        <td>
+          (A <= B) é verdadeiro.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <p>A cláusula WHERE é muito útil quando você deseja obter as linhas selecionadas de uma tabela, especialmente quando você usa o MySQL Join. As junções são discutidas em outro capítulo.</p>
+  
+  <p>É uma prática comum pesquisar registros usando a chave primária para tornar a pesquisa mais rápida.</p>
+  
+  <p>Se a condição fornecida não corresponder a nenhum registro na tabela, a consulta não retornará nenhuma linha.</p>
+  
+  <h2>Buscando dados no prompt de comando</h2>
+
+  <p>Isso usará o comando SQL SELECT com a cláusula WHERE para buscar os dados selecionados da tabela MySQL – newtab_tbl.</p>
+  
+  <p>O exemplo a seguir retorna todos os registros da tabela newtab_tbl para os quais o nome do autor é Sanjay.</p>
+  
+  <pre>
+    root@host# mysql -u root -p password;
+
+    Enter password:*******
+
+    mysql> use Newtab;
+
+    Database changed
+
+    mysql> SELECT * from newtab_tbl WHERE author = 'Anderson';
+
+    +-------------+----------------+-----------------+-----------------+
+    | id          | title          | author          | submission_date |
+    +-------------+----------------+-----------------+-----------------+
+    |      2      | Learn MySQL    | Anderson        |    2020-12-21   |
+    +-------------+----------------+-----------------+-----------------+
+
+    1 rows in set (0.01 sec)
+
+    mysql>
+  </pre>
+
+  <p>A menos que execute uma comparação LIKE em uma string, a comparação não diferencia maiúsculas de minúsculas. Você pode diferenciar maiúsculas de minúsculas em sua pesquisa usando a palavra-chave BINARY da seguinte forma:</p>
+  
+  <pre>
+    root@host# mysql -u root -p password;
+
+    Enter password:*******
+
+    mysql> use Newtab;
+
+    Database changed
+
+    mysql> SELECT * from newtab_tbl \
+      WHERE BINARY author = 'Bruno';
+
+    Empty set (0.02 sec)
+
+    mysql>
+  </pre>
+
+</body>
+
+</html>
