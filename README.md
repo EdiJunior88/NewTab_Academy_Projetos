@@ -3,13 +3,17 @@
 
 <p>
   Nossa trilha é um programa de acompanhamento e preparação para quem busca começar a carreira em programação e conseguir uma vaga júnior. 
-  
+</p>
+ 
+<p>
   Vamos simular experiências comuns do dia a dia da profissão, onde você irá construir projetos baseados nas demandas do mercado, terá o acompanhamento de profissionais experientes na área e desenvolverá as principais habilidades técnicas e comportamentais necessárias para iniciar sua carreira.
 </p>
 
 <p>
   Com esses módulos você poderá buscar atuações em áreas de front-end, back-end, ou full stack, ampliando seu leque de oportunidades.
+</p>
 
+<p>
   A trilha toda é focada em início de carreira, então os conteúdos e desenvolvimento de projetos correspondem a conhecimentos e experiências importantes para assumir vagas juniores.
 </p>
 
