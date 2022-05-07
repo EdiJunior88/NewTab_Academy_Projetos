@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Cláusula LIKE</title>
+</head>
+
+<body>
+  <h1>Cláusula LIKE</h1>
+
+  <p>Vimos o comando SQL SELECT para buscar dados da tabela MySQL. Também podemos usar uma cláusula condicional chamada como cláusula WHERE para selecionar os registros necessários.</p>
+
+  <p>Uma cláusula WHERE com o sinal 'igual a' (=) funciona bem onde queremos fazer uma correspondência exata. Como se "author = 'Anderson'". Mas pode haver um requisito em que queremos filtrar todos os resultados onde o nome do author deve conter “An”. Isso pode ser tratado usando a cláusula SQL LIKE junto com a cláusula WHERE.</p>
+
+  <p>Se a cláusula SQL LIKE for usada junto com o caractere%, ela funcionará como um metacaractere (*) como no UNIX, ao listar todos os arquivos ou diretórios no prompt de comando. Sem um caractere%, a cláusula LIKE é muito semelhante ao sinal de igual junto com a cláusula WHERE.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>O bloco de código a seguir tem uma sintaxe SQL genérica do comando SELECT junto com a cláusula LIKE para buscar dados de uma tabela MySQL.</p>
+
+  <pre>
+    SELECT field1, field2,...fieldN table_name1, table_name2...
+
+    WHERE field1 LIKE condition1 [AND [OR]] filed2 = 'somevalue'
+  </pre>
+
+  <ul>
+    <li>Você pode especificar qualquer condição usando a cláusula WHERE;</li>
+    <li>Você pode usar a cláusula LIKE junto com a cláusula WHERE;</li>
+    <li>Você pode usar a cláusula LIKE no lugar do igual para assinar;</li>
+    <li>Quando LIKE é usado junto com o sinal%, ele funcionará como uma pesquisa de metacaracteres;</li>
+    <li>Você pode especificar mais de uma condição usando os operadores AND ou OR ;</li>
+    <li>Uma cláusula WHERE … LIKE pode ser usada junto com o comando DELETE ou UPDATE SQL também para especificar uma condição.</li>
+  </ul>
+  
+  <h2>Usando a cláusula LIKE no prompt de comando</h2>
+  
+  <p>Isso usará o comando SQL SELECT com a cláusula WHERE … LIKE para buscar os dados selecionados da tabela MySQL – newtab_tbl .</p>
+
+  <p>O exemplo a seguir retorna todos os registros da tabela newtab_tbl para os quais o nome do autor termina com jay:</p>
+
+  <pre>
+    root@host# mysql -u root -p password;
+
+    Enter password:*******
+
+    mysql> use Newtab;
+
+    Database changed
+
+    mysql> SELECT * from newtab_tbl
+      -> WHERE author LIKE '%An';
+
+    +-------------+----------------+-----------------+-----------------+
+    | id          |          title |          author | submission_date |
+    +-------------+----------------+-----------------+-----------------+
+    |      3      |  JAVA Tutorial |     Anderson    |    2020-12-21   |
+    +-------------+----------------+-----------------+-----------------+
+
+    1 rows in set (0.01 sec)
+  </pre>
+
+</body>
+
+</html>
