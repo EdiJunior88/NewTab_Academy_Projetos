@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Classificação de resultados</title>
+</head>
+
+<body>
+  <h1>Classificação de resultados</h1>
+
+  <p>Vimos o comando SQL SELECT para buscar dados de uma tabela MySQL. Quando você seleciona linhas, o servidor MySQL está livre para retorná-las em qualquer ordem, a menos que você instrua de outra forma dizendo como classificar o resultado. Mas, você classifica um conjunto de resultados adicionando uma cláusula ORDER BY que nomeia a coluna ou colunas que você deseja classificar.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>O seguinte bloco de código é uma sintaxe SQL genérica do comando SELECT junto com a cláusula ORDER BY para classificar os dados de uma tabela MySQL.</p>
+
+  <pre>
+    SELECT field1, field2,...fieldN table_name1, table_name2...
+
+    ORDER BY field1, [field2...] [ASC [DESC]]
+  </pre>
+ 
+  <ul>
+    <li>Você pode classificar o resultado retornado em qualquer campo, se esse campo estiver sendo listado;</li>
+    <li>Você pode classificar o resultado em mais de um campo;</li>
+    <li>Você pode usar a palavra-chave ASC ou DESC para obter o resultado em ordem crescente ou decrescente. Por padrão, é a ordem crescente;</li>
+    <li>Você pode usar a cláusula WHERE … LIKE da maneira usual para colocar uma condição.</li>
+  </ul>
+ 
+  <h2>Usando a cláusula ORDER BY no Prompt de Comando</h2>
+
+  <p>Isso usará o comando SQL SELECT com a cláusula ORDER BY para buscar dados da tabela MySQL – newtab_tbl .</p>
+
+  <p>Experimente o exemplo a seguir, que retorna o resultado em ordem crescente.</p>
+
+  <pre>
+    root@host# mysql -u root -p password;
+
+    Enter password:*******
+
+    mysql> use Newtab;
+
+    Database changed
+
+    mysql> SELECT * from newtab_tbl ORDER BY author ASC
+
+    +-------------+----------------+-----------------+-----------------+
+    |          id |          title |          author | submission_date |
+    +-------------+----------------+-----------------+-----------------+
+    |      2      |  Learn MySQL   |     Anderson    |    2020-12-21   |
+    |      1      |  Meu primeiro insert  |    Fernando    |    2020-12-21
+    +-------------+----------------+-----------------+-----------------+
+
+    3 rows in set (0.42 sec)
+    
+    mysql>
+  </pre>
+
+</body>
+
+</html>
