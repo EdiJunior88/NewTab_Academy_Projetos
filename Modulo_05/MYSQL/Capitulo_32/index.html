@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Tratamento de valores NULL</title>
+</head>
+
+<body>
+  <p>Vimos o comando SQL SELECT junto com a cláusula WHERE para buscar dados de uma tabela MySQL, mas quando tentamos fornecer uma condição que compara o valor do campo ou da coluna com NULL , ela não funciona corretamente.</p>
+
+  <p>Para lidar com tal situação, o MySQL fornece três operadores –</p>
+
+  <ul>
+    <li>IS NULL – Este operador retorna verdadeiro, se o valor da coluna for NULL.</li>
+    <li>IS NOT NULL – Este operador retorna verdadeiro, se o valor da coluna não for NULL.</li>
+    <li><=> – Este operador compara valores, que (ao contrário do operador =) é verdadeiro mesmo para dois valores NULL.</li>
+  </ul>
+
+  <p>As condições envolvendo NULL são especiais. Você não pode usar = NULL ou! = NULL para procurar valores NULL nas colunas. Essas comparações sempre falham porque é impossível dizer se são verdadeiras ou não. Às vezes, mesmo NULL = NULL falha.</p>
+
+  <p>Para procurar colunas que são ou não NULL, use IS NULL ou IS NOT NULL .</p>
+
+  <h3>Usando valores NULL no prompt de comando</h3>
+
+  <p>Suponha que haja uma tabela chamada tcount_tbl no banco de dados Newtab e ela contenha duas colunas, a saber author e count, onde um count NULL indica que o valor é desconhecido.</p>
+
+  <p>Experimente os seguintes exemplos:</p>
+
+  <pre>
+    root@host# mysql -u root -p password;
+
+    Enter password:*******
+
+    mysql> use Newtab;
+
+    Database changed
+
+    mysql> create table tcount_tbl
+      -> (
+      -> author varchar(40) NOT NULL,
+      -> count  INT
+      -> );
+
+    Query OK, 0 rows affected (0.05 sec)
+
+    mysql> INSERT INTO tcount_tbl
+      -> (author, count) values ('caue', 20);
+
+    mysql> INSERT INTO tcount_tbl
+      -> (author, count) values ('jessica', NULL);
+
+    mysql> INSERT INTO tcount_tbl
+      -> (author, count) values ('Ana', NULL);
+
+    mysql> INSERT INTO tcount_tbl
+      -> (author, count) values ('Leo', 20);
+
+    mysql> SELECT * from tcount_tbl;
+
+    +-----------------+----------------+
+    | author        | count            |
+    +-----------------+----------------+
+    |     caue      |       20         |
+    |     jessica   |      NULL        |
+    |      Ana      |      NULL        |
+    |     Leo       |       20         |
+    +-----------------+----------------+
+    4 rows in set (0.00 sec)
+
+    mysql>
+  </pre>
+
+  <p>Você pode ver que = e ! = Não funcionam com valores NULL da seguinte maneira –</p>
+
+  <pre>
+    mysql> SELECT * FROM tcount_tbl WHERE count = NULL;
+
+    Empty set (0.00 sec)
+    
+    mysql> SELECT * FROM tcount_tbl WHERE count != NULL;
+
+    Empty set (0.01 sec)
+  </pre>
+
+  <p>Para localizar os registros em que a coluna count é ou não NULL, as consultas devem ser escritas conforme mostrado no programa a seguir.</p>
+
+  <pre>
+    mysql> SELECT * FROM tcount_tbl
+      -> WHERE count IS NULL;
+
+    +-----------------+----------------+
+    | author          |    count       |
+    +-----------------+----------------+
+    |     jessica     |      NULL      |
+    |      Ana        |      NULL      |
+    +-----------------+----------------+
+    2 rows in set (0.00 sec)
+
+    mysql> SELECT * from tcount_tbl
+      -> WHERE count IS NOT NULL;
+
+    +-----------------+----------------+
+    | author          | count          |
+    +-----------------+----------------+
+    |     caue        |       20       |
+    |     Leo         |       20       |
+    +-----------------+----------------+
+
+    2 rows in set (0.00 sec)
+  </pre>
+
+</body>
+
+</html>
