@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Sequências</title>
+</head>
+
+<body>
+  <h1>Sequências</h1>
+
+  <p>Uma sequência é um conjunto de inteiros 1, 2, 3, … que são gerados em ordem em uma demanda específica. As sequências são frequentemente usadas nos bancos de dados porque muitos aplicativos exigem que cada linha de uma tabela contenha um valor exclusivo e as sequências fornecem uma maneira fácil de gerá-los.</p>
+
+  <p>Este capítulo descreve como usar sequências no MySQL.</p>
+
+  <p>Usando a coluna AUTO_INCREMENT</p>
+  <p>A maneira mais simples no MySQL de usar Sequences é definir uma coluna como AUTO_INCREMENT e deixar o restante para o MySQL cuidar.</p>
+
+  <p>Exemplo:</p>
+
+  <p>Experimente o seguinte exemplo. Isso criará a tabela e, depois disso, inserirá algumas linhas nesta tabela onde não é necessário fornecer o ID do registro porque é incrementado automaticamente pelo MySQL.</p>
+
+  <pre>
+    mysql> CREATE TABLE cliente
+
+      -> (
+
+      -> id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+
+      -> PRIMARY KEY (id),
+
+      -> name VARCHAR(30) NOT NULL, # type of cliente
+
+      -> date DATE NOT NULL, # date collected
+
+      -> origin VARCHAR(30) NOT NULL # where collected
+
+    );
+    
+    Query OK, 0 rows affected (0.02 sec)
+    
+    mysql> INSERT INTO cliente (id,name,date,origin) VALUES
+
+      -> (NULL,'housefly','2001-09-10','kitchen'),
+
+      -> (NULL,'millipede','2001-09-10','driveway'),
+
+      -> (NULL,'grasshopper','2001-09-10','front yard');
+
+    Query OK, 3 rows affected (0.02 sec)
+
+    Records: 3  Duplicates: 0  Warnings: 0
+
+    mysql> SELECT * FROM cliente ORDER BY id;
+
+    +----+-------------+------------+------------+
+    | id |    name     |    date    |   origin   |
+    +----+-------------+------------+------------+
+    |  1 |  housefly   | 2001-09-10 |   kitchen  |
+    |  2 |  millipede  | 2001-09-10 |  driveway  |
+    |  3 | grasshopper | 2001-09-10 | front yard |
+    +----+-------------+------------+------------+
+    
+    3 rows in set (0.00 sec)
+  </pre>
+
+</body>
+
+</html>
