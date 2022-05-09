@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Usando junções</title>
+</head>
+
+<body>
+  <h1>Usando junções</h1>
+
+  <p>Nos capítulos anteriores, estávamos obtendo dados de uma tabela por vez. Isso é bom o suficiente para tomadas simples, mas na maioria dos usos do MySQL no mundo real, você frequentemente precisará obter dados de várias tabelas em uma única consulta.</p>
+
+  <p>Você pode usar várias tabelas em sua única consulta SQL. O ato de ingressar no MySQL se refere a quebrar duas ou mais tabelas em uma única tabela.</p>
+
+  <p>Você pode usar JOINS nas instruções SELECT, UPDATE e DELETE para juntar as tabelas do MySQL. Veremos também um exemplo de LEFT JOIN, que é diferente do simples MySQL JOIN.</p>
+
+  <h2>Usando associações no prompt de comando</h2>
+
+  <p>Suponha que temos duas tabelas tcount_tbl e newtab_tbl em Newtab. Agora dê uma olhada nos exemplos fornecidos abaixo –</p>
+
+  <p>Os exemplos a seguir:</p>
+
+  <pre>
+  root@host# mysql -u root -p password;
+
+  Enter password:*******
+
+  mysql> use Newtab;
+
+  Database changed
+
+  mysql> SELECT * FROM tcount_tbl;
+
+  +-----------------+----------------+
+  | author          | count          |
+  +-----------------+----------------+
+  |      Anderson   |       20       |
+  |      Fernando   |      NULL      |
+  |      Karina     |      NULL      |
+  +-----------------+----------------+
+
+  6 rows in set (0.01 sec)
+  
+  mysql> SELECT * from newtab_tbl;
+
+  +-------------+----------------+-----------------+-----------------+---------------+
+  | id          | title                    | author           | submission_date      |
+  +-------------+----------------+-----------------+-----------------+---------------+
+  |      1      |  Meu primeiro insert     |     Fernando     |    2020-12-21        |
+  |      2      |  Learn MySQL             |      Anderson    |    2020-12-21        |
+  +-------------+----------------+-----------------+-----------------+---------------+
+
+  3 rows in set (0.00 sec)
+
+  mysql>
+</pre>
+
+  <p>Agora podemos escrever uma consulta SQL para unir essas duas tabelas. Esta consulta selecionará todos os autores da tabela newtab_tbl e selecionará o número correspondente de tcount_tbl .</p>
+
+  <pre>
+  mysql> SELECT a.id, a.author, b.count
+     -> FROM newtab_tbl a, tcount_tbl b
+     -> WHERE a.author = b.author;
+  +-------------+-----------------+----------------+
+  | id          | author          | count          |
+  +-------------+-----------------+----------------+
+  |      2      |    Anderson     |        20      |
+  |      1      |    Fernando     |        NULL    |
+  +-------------+-----------------+----------------+
+
+  2 rows in set (0.01 sec)
+
+  mysql>
+</pre>
+
+  <p>Aqui, é perceptível que a junção é realizada na cláusula WHERE. Vários operadores podem ser usados para unir tabelas, como =, <,>, <>, <=,> =,! =, BETWEEN, LIKE e NOT; todos eles podem ser usados para unir tabelas. No entanto, o operador mais comum é o símbolo igual a.</p>
+
+  <p>Existem diferentes tipos de junções disponíveis no SQL:</p>
+
+  <p>INNER JOIN – retorna linhas quando há uma correspondência em ambas as tabelas.</p>
+
+  <p>LEFT JOIN – retorna todas as linhas da tabela da esquerda, mesmo se não houver correspondências na tabela da direita.</p>
+
+  <p>RIGHT JOIN – retorna todas as linhas da tabela da direita, mesmo se não houver correspondências na tabela da esquerda.</p>
+
+  <p>FULL JOIN – retorna linhas quando há uma correspondência em uma das tabelas.</p>
+
+</body>
+
+</html>
