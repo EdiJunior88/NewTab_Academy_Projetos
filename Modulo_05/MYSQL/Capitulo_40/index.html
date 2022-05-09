@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>SQL FULL JOINS</title>
+</head>
+
+<body>
+  <h1>SQL FULL JOINS</h1>
+
+  <p>O SQL FULL JOIN combina os resultados das junções externas esquerda e direita.</p>
+
+  <p>A tabela associada conterá todos os registros de ambas as tabelas e preencherá NULLs para correspondências ausentes em ambos os lados.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>A sintaxe básica de um FULL JOIN é a seguinte –</p>
+
+  <pre>
+    SELECT table1.column1, table2.column2...
+
+    FROM table1
+
+    FULL JOIN table2
+
+    ON table1.common_field = table2.common_field;
+  </pre>
+
+  <p>Aqui, a condição fornecida pode ser qualquer expressão com base em seus requisitos.</p>
+
+  <p>Considere as duas tabelas a seguir:</p>
+
+  <p>Tabela 1 – A Tabela de CLIENTES é a seguinte.</p>
+
+  <pre>
+    +----+----------+-----+-----------+----------+
+    | ID | NAME     | AGE | ADDRESS   | SALARY   |
+    +----+----------+-----+-----------+----------+
+    |  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+    |  2 | Khilan   |  25 | Delhi     |  1500.00 |
+    |  3 | kaushik  |  23 | Kota      |  2000.00 |
+    |  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+    |  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+    |  6 | Komal    |  22 | MP        |  4500.00 |
+    |  7 | Muffy    |  24 | Indore    | 10000.00 |
+    +----+----------+-----+-----------+----------+
+  </pre>
+
+  <p>Tabela 2 – Tabela PEDIDOS é a seguinte.</p>
+
+  <pre>
+    +-----+---------------------+-------------+--------+
+    |OID  | DATE                | ID          | AMOUNT |
+    +-----+---------------------+-------------+--------+
+    | 102 | 2009-10-08 00:00:00 |           3 |   3000 |
+    | 100 | 2009-10-08 00:00:00 |           3 |   1500 |
+    | 101 | 2009-11-20 00:00:00 |           2 |   1560 |
+    | 103 | 2008-05-20 00:00:00 |           4 |   2060 |
+    +-----+---------------------+-------------+--------+
+  </pre>
+
+  <p>Agora, vamos juntar essas duas tabelas usando FULL JOIN da seguinte maneira.</p>
+
+  <pre>
+  SQL> SELECT  ID, NAME, AMOUNT, DATE
+
+      FROM CLIENTES
+
+      FULL JOIN PEDIDOS
+
+      ON CLIENTES.ID = PEDIDOS.ID;
+  </pre>
+
+  <p>Isso produziria o seguinte resultado –</p>
+
+  <pre>
+    +------+----------+--------+---------------------+
+    | ID   | NAME     | AMOUNT | DATE                |
+    +------+----------+--------+---------------------+
+    |    1 | Ramesh   |   NULL | NULL                |
+    |    2 | Khilan   |   1560 | 2009-11-20 00:00:00 |
+    |    3 | kaushik  |   3000 | 2009-10-08 00:00:00 |
+    |    3 | kaushik  |   1500 | 2009-10-08 00:00:00 |
+    |    4 | Chaitali |   2060 | 2008-05-20 00:00:00 |
+    |    5 | Hardik   |   NULL | NULL                |
+    |    6 | Komal    |   NULL | NULL                |
+    |    7 | Muffy    |   NULL | NULL                |
+    |    3 | kaushik  |   3000 | 2009-10-08 00:00:00 |
+    |    3 | kaushik  |   1500 | 2009-10-08 00:00:00 |
+    |    2 | Khilan   |   1560 | 2009-11-20 00:00:00 |
+    |    4 | Chaitali |   2060 | 2008-05-20 00:00:00 |
+    +------+----------+--------+---------------------+
+  </pre>
+
+  <p>Se seu banco de dados não suporta FULL JOIN (MySQL não suporta FULL JOIN), então você pode usar a cláusula UNION ALL para combinar esses dois JOINS como mostrado abaixo.</p>
+
+  <pre>
+    SQL> SELECT  ID, NAME, AMOUNT, DATE
+
+      FROM CLIENTES
+
+      LEFT JOIN PEDIDOS
+
+      ON CLIENTES.ID = PEDIDOS.ID
+
+    UNION ALL
+
+      SELECT  ID, NAME, AMOUNT, DATE
+
+      FROM CLIENTES
+
+      RIGHT JOIN PEDIDOS
+      
+      ON CLIENTES.ID = PEDIDOS.ID
+  </pre>
+
+</body>
+
+</html>
