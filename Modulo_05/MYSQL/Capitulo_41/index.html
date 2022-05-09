@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Subconsultas (Subqueries)</title>
+</head>
+
+<body>
+  <h1>Subconsultas (Subqueries)</h1>
+
+  <p>Para reforçar e complementar o conteúdo:</p>
+
+  <p>Uma subquery é uma consulta dentro de outra consulta SQL e incorporada na cláusula WHERE.</p>
+
+  <p>Uma subconsulta é usada para retornar dados que serão usados ​​na consulta principal como uma condição para restringir ainda mais os dados a serem recuperados.</p>
+
+  <p>As subconsultas podem ser usadas com as instruções SELECT, INSERT, UPDATE e DELETE junto com os operadores como =, <,>,> =, <=, IN, BETWEEN, etc.</p>
+  
+  <p>Segundo o portal <a href="https://www.devmedia.com.br/t-sql-subqueries-onde-e-quando-utilizar/32072#:~:text=Toda%20subquery%20deve%20ser%20colocada,conter%20mais%20de%20uma%20subquery." target="_blank">DevMedia</a>, existem algumas regras que as subconsultas devem seguir: </p>
+  
+  <ul>
+    <li>As subconsultas devem ser colocadas entre parênteses Um comando ORDER BY não pode ser usado em uma subconsulta</li>
+    <li>As subconsultas que retornam mais de uma linha só podem ser usadas com vários operadores de valor, como o operador IN.</li>
+    <li>A lista SELECT não pode incluir nenhuma referência a valores que avaliam para um BLOB, ARRAY, CLOB ou NCLOB.</li>
+    <li>Uma subconsulta não pode ser imediatamente incluída em uma função definida.</li>
+    <li>O operador BETWEEN não pode ser usado com uma subconsulta. No entanto, o operador BETWEEN pode ser usado na subconsulta.</li>
+  </ul>
+
+</body>
+
+</html>
