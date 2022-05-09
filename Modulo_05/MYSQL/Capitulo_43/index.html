@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Subconsultas com a instrução SELECT</title>
+</head>
+
+<body>
+  <h1>Subconsultas com a instrução SELECT</h1>
+
+  <p>As subconsultas também podem ser usadas com instruções INSERT. Dessa forma o INSERT utiliza os dados retornados da subconsulta para inserir na tabela.</p>
+
+  <p>A sintaxe básica é a seguinte.</p>
+
+  <pre>
+    INSERT INTO table_name [ (column1 [, column2 ]) ]
+
+      SELECT [ *|column1 [, column2 ]
+
+      FROM table1 [, table2 ]
+
+      [ WHERE VALUE OPERATOR ]
+  </pre>
+
+  <p>Considere uma tabela CLIENTES_BKP com estrutura semelhante à tabela CLIENTES. Agora, para copiar a tabela CLIENTES completa para a tabela CLIENTES_BKP, você pode usar a seguinte sintaxe.</p>
+
+  <pre>
+    SQL> INSERT INTO CLIENTES_BKP
+
+      SELECT * FROM CLIENTES
+
+      WHERE ID IN (SELECT ID
+
+      FROM CLIENTES) ;
+  </pre>
+
+</body>
+
+</html>
