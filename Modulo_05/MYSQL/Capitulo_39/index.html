@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>SQL RIGHT JOIN</title>
+</head>
+
+<body>
+  <h1>SQL RIGHT JOIN</h1>
+
+  <p>O RIGHT JOIN retorna todos os dados da tabela da direita (por isso right), independente da correspondência da tabela da esquerda. Caso não exista essa correspondência da tabela da esquerda, os dados retornados são o NULL em cada coluna da mesma. Ou seja, isso significa que uma junção à direita retorna todos os valores da tabela à direita, mais os valores correspondentes da tabela à esquerda ou NULL no caso de nenhum predicado de junção correspondente.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>A sintaxe básica de um RIGHT JOIN é a seguinte.</p>
+
+  <pre>
+    SELECT table1.column1, table2.column2...
+
+    FROM table1
+
+    RIGHT JOIN table2
+
+    ON table1.common_field = table2.common_field;
+  </pre>
+
+  <p>Considere as duas tabelas a seguir:</p>
+
+  <p>Tabela 1 – A Tabela de CLIENTES é a seguinte.</p>
+
+  <pre>
+    +----+----------+-----+-----------+----------+
+    | ID | NAME     | AGE | ADDRESS   | SALARY   |
+    +----+----------+-----+-----------+----------+
+    |  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+    |  2 | Khilan   |  25 | Delhi     |  1500.00 |
+    |  3 | kaushik  |  23 | Kota      |  2000.00 |
+    |  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+    |  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+    |  6 | Komal    |  22 | MP        |  4500.00 |
+    |  7 | Muffy    |  24 | Indore    | 10000.00 |
+    +----+----------+-----+-----------+----------+
+  </pre>
+
+  <p>Tabela 2 – Tabela PEDIDOS é a seguinte.</p>
+
+  <pre>
+    +-----+---------------------+-------------+--------+
+    |OID  | DATE                | ID          | AMOUNT |
+    +-----+---------------------+-------------+--------+
+    | 102 | 2009-10-08 00:00:00 |           3 |   3000 |
+    | 100 | 2009-10-08 00:00:00 |           3 |   1500 |
+    | 101 | 2009-11-20 00:00:00 |           2 |   1560 |
+    | 103 | 2008-05-20 00:00:00 |           4 |   2060 |
+    +-----+---------------------+-------------+--------+
+  </pre>
+
+  <p>Agora, vamos juntar essas duas tabelas usando o RIGHT JOIN da seguinte maneira.</p>
+
+  <pre>
+  SQL> SELECT  ID, NAME, AMOUNT, DATE
+
+      FROM CLIENTES
+
+      RIGHT JOIN PEDIDOS
+
+      ON CLIENTES.ID = PEDIDOS.ID;
+  </pre>
+
+  <p>Isso produziria o seguinte resultado:</p>
+
+  <pre>
+    +------+----------+--------+---------------------+
+    | ID   | NAME     | AMOUNT | DATE                |
+    +------+----------+--------+---------------------+
+    |    3 | kaushik  |   3000 | 2009-10-08 00:00:00 |
+    |    3 | kaushik  |   1500 | 2009-10-08 00:00:00 |
+    |    2 | Khilan   |   1560 | 2009-11-20 00:00:00 |
+    |    4 | Chaitali |   2060 | 2008-05-20 00:00:00 |
+    +------+----------+--------+---------------------+
+  </pre>
+
+</body>
+
+</html>
