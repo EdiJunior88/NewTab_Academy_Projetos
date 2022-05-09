@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Subconsultas com a instrução UPDATE</title>
+</head>
+
+<body>
+  <h1>Subconsultas com a instrução UPDATE</h1>
+
+  <p>A subconsulta pode ser usada em conjunto com a instrução UPDATE. Uma única coluna ou várias colunas em uma tabela podem ser atualizadas ao usar uma subconsulta com a instrução UPDATE.</p>
+
+  <p>A sintaxe básica é a seguinte.</p>
+
+  <pre>
+    UPDATE table
+
+    SET column_name = new_value
+
+    [ WHERE OPERATOR [ VALUE ]
+
+      (SELECT COLUMN_NAME
+
+      FROM TABLE_NAME)
+
+      [ WHERE) ]
+  </pre>
+
+  <p>Assumindo que temos a tabela CLIENTES_BKP disponível, que é o backup da tabela CLIENTES. O exemplo a seguir atualiza o SALÁRIO em 0,25 vezes na tabela CLIENTES para todos os clientes cuja IDADE seja maior ou igual a 27.</p>
+
+  <pre>
+    SQL> UPDATE CLIENTES
+
+      SET SALARY = SALARY * 0.25
+
+      WHERE AGE IN (SELECT AGE FROM CLIENTES_BKP
+
+          WHERE AGE >= 27 );
+  </pre>
+
+  <p>Isso afetaria duas linhas e, finalmente, a tabela CLIENTES teria os seguintes registros.</p>
+
+  <pre>
+    +----+----------+-----+-----------+----------+
+    | ID | NAME     | AGE | ADDRESS   | SALARY   |
+    +----+----------+-----+-----------+----------+
+    |  1 | Ramesh   |  35 | Ahmedabad |   125.00 |
+    |  2 | Khilan   |  25 | Delhi     |  1500.00 |
+    |  3 | kaushik  |  23 | Kota      |  2000.00 |
+    |  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+    |  5 | Hardik   |  27 | Bhopal    |  2125.00 |
+    |  6 | Komal    |  22 | MP        |  4500.00 |
+    |  7 | Muffy    |  24 | Indore    | 10000.00 |
+    +----+----------+-----+-----------+----------+
+  </pre>
+
+</body>
+
+</html>
