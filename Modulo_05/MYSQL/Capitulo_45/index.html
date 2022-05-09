@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Subconsultas com a instrução DELETE</title>
+</head>
+
+<body>
+  <h1>Subconsultas com a instrução DELETE</h1>
+
+  <p>A subconsulta pode ser usada em conjunto com a instrução DELETE como com qualquer outra instrução mencionada acima.</p>
+
+  <p>A sintaxe básica é a seguinte.</p>
+
+  <pre>
+    DELETE FROM TABLE_NAME
+    
+    [ WHERE OPERATOR [ VALUE ]
+
+       (SELECT COLUMN_NAME
+
+       FROM TABLE_NAME)
+
+       [ WHERE) ]
+  </pre>
+
+  <p>Supondo que temos uma tabela CLIENTES_BKP disponível que é um backup da tabela CLIENTES. O exemplo a seguir exclui os registros da tabela CLIENTES para todos os clientes cuja IDADE seja maior ou igual a 27.</p>
+
+  <pre>
+    SQL> DELETE FROM CLIENTES
+
+       WHERE AGE IN (SELECT AGE FROM CLIENTES_BKP
+
+          WHERE AGE >= 27 );
+  </pre>
+
+  <p>Isso afetaria duas linhas e, finalmente, a tabela CLIENTES teria os seguintes registros.</p>
+
+  <pre>
+    +----+----------+-----+---------+----------+
+    | ID | NAME     | AGE | ADDRESS | SALARY   |
+    +----+----------+-----+---------+----------+
+    |  2 | Khilan   |  25 | Delhi   |  1500.00 |
+    |  3 | kaushik  |  23 | Kota    |  2000.00 |
+    |  4 | Chaitali |  25 | Mumbai  |  6500.00 |
+    |  6 | Komal    |  22 | MP      |  4500.00 |
+    |  7 | Muffy    |  24 | Indore  | 10000.00 |
+    +----+----------+-----+---------+----------+
+  </pre>
+
+</body>
+
+</html>
