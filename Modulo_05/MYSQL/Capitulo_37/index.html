@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>SQL INNER JOINS</title>
+</head>
+
+<body>
+  <h1>SQL INNER JOINS</h1>
+
+  <p>A mais importante e frequentemente usada das junções é INNER JOIN .</p>
+
+  <p>Quando utilizamos o INNER JOIN para junção de 2 ou mais tabelas do nosso banco de dados estamos criando uma nova tabela de resultados, combinando os valores das tabelas. Por exemplo, no comando que está logo abaixo, estamos comparando cada linha da tabela1 com cada linha da tabela2 encontrando todos os pares de linha que satisfazem a junção das tabelas. Quando essa junção é satisfeita, os valores são combinados em uma única linha de resultados.</p>
+
+  <h2>Sintaxe</h2>
+
+  <p>A sintaxe básica do INNER JOIN é a seguinte.</p>
+
+  <pre>
+    SELECT table1.column1, table2.column2...
+
+    FROM table1
+
+    INNER JOIN table2
+
+    ON table1.common_field = table2.common_field;
+  </pre>
+
+  <p>Considere as duas tabelas a seguir.</p>
+
+  <p>Tabela 1 – A Tabela de CLIENTES é a seguinte.</p>
+
+  <pre>
+    +----+----------+-----+----------+-----------+
+    | ID | NAME    | AGE | ADDRESS   | SALARY    |
+    +----+----------+-----+----------+-----------+
+    | 1 | Ramesh   | 32  | Ahmedabad | 2000.00   |
+    | 2 | Khilan   | 25  | Delhi     | 1500.00   |
+    | 3 | kaushik  | 23  | Kota      | 2000.00   |
+    | 4 | Chaitali | 25  | Mumbai    | 6500.00   |
+    | 5 | Hardik   | 27  | Bhopal    | 8500.00   |
+    | 6 | Komal    | 22  | MP        | 4500.00   |
+    | 7 | Muffy    | 24  | Indore    | 10000.00  |
+    +---+----------+-----+-----------+-----------+
+  </pre>
+
+  <p>Tabela 2 – Tabela PEDIDOS é a seguinte.</p>
+
+  <pre>
+    +-----+---------------------+-------------+--------+
+    | OID | DATE                | ID          | AMOUNT |
+    +-----+---------------------+-------------+--------+
+    | 102 | 2009-10-08 00:00:00 | 3           | 3000   |
+    | 100 | 2009-10-08 00:00:00 | 3           | 1500   |
+    | 101 | 2009-11-20 00:00:00 | 2           | 1560   |
+    | 103 | 2008-05-20 00:00:00 | 4           | 2060   |
+    +-----+---------------------+-------------+--------+
+  </pre>
+
+  <p>Agora, vamos juntar essas duas tabelas usando INNER JOIN da seguinte maneira:</p>
+
+  <pre>
+    SQL> SELECT ID, NAME, AMOUNT, DATE
+
+    FROM CLIENTES
+
+    INNER JOIN PEDIDOS
+
+    ON CLIENTES.ID = PEDIDOS.ID;
+  </pre>
+
+  <p>Isso produziria o seguinte resultado.</p>
+
+  <pre>
+    +----+----------+--------+---------------------+
+    | ID | NAME     | AMOUNT | DATE                |
+    +----+----------+--------+---------------------+
+    | 3 | kaushik   | 3000   | 2009-10-08 00:00:00 |
+    | 3 | kaushik   | 1500   | 2009-10-08 00:00:00 |
+    | 2 | Khilan    | 1560   | 2009-11-20 00:00:00 |
+    | 4 | Chaitali  | 2060   | 2008-05-20 00:00:00 |
+    +----+----------+--------+---------------------+
+  </pre>
+
+</body>
+
+</html>
