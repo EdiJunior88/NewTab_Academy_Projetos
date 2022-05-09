@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Subconsultas com a instrução SELECT</title>
+</head>
+
+<body>
+  <h1>Subconsultas com a instrução SELECT</h1>
+
+  <p>As subconsultas são usadas com mais frequência com a instrução SELECT. A sintaxe básica é a seguinte –</p>
+
+  <pre>
+    SELECT column_name [, column_name ]
+
+    FROM   table1 [, table2 ]
+
+    WHERE  column_name OPERATOR
+
+      (SELECT column_name [, column_name ]
+
+      FROM table1 [, table2 ]
+
+      [WHERE])
+  </pre>
+
+  <p>Considere a tabela CLIENTES com os seguintes registros:</p>
+
+  <pre>
+    +----+----------+-----+-----------+----------+
+    | ID | NAME     | AGE | ADDRESS   | SALARY   |
+    +----+----------+-----+-----------+----------+
+    |  1 | Ramesh   |  35 | Ahmedabad |  2000.00 |
+    |  2 | Khilan   |  25 | Delhi     |  1500.00 |
+    |  3 | kaushik  |  23 | Kota      |  2000.00 |
+    |  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+    |  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+    |  6 | Komal    |  22 | MP        |  4500.00 |
+    |  7 | Muffy    |  24 | Indore    | 10000.00 |
+    +----+----------+-----+-----------+----------+
+  </pre>
+
+  <p>Agora, vamos verificar a seguinte subconsulta com uma instrução SELECT.</p>
+
+  <pre>
+    SQL> SELECT *
+
+    FROM CLIENTES
+
+    WHERE ID IN (SELECT ID
+
+    FROM CLIENTES
+
+    WHERE SALARY > 4500);
+  </pre>
+
+  <p>Isso produziria o seguinte resultado.</p>
+
+  <pre>
+    +----+----------+-----+---------+----------+
+    | ID | NAME     | AGE | ADDRESS | SALARY   |
+    +----+----------+-----+---------+----------+
+    |  4 | Chaitali |  25 | Mumbai  |  6500.00 |
+    |  5 | Hardik   |  27 | Bhopal  |  8500.00 |
+    |  7 | Muffy    |  24 | Indore  | 10000.00 |
+    +----+----------+-----+---------+----------+
+  </pre>
+
+</body>
+
+</html>
