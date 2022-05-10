@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Tipos de bancos de dados NoSQL</title>
+</head>
+
+<body>
+  <h1>Tipos de bancos de dados NoSQL</h1>
+
+  <h2>Bancos de dados orientados a documentos</h2>
+
+  <p>Os bancos de dados orientados a documentos tratam um documento como um todo e evitam dividir um documento em seus pares nome / valor constituintes. Em um nível de coleção, isso permite reunir um conjunto diversificado de documentos em uma única coleção. Os bancos de dados de documentos permitem a indexação de documentos com base não apenas em seu identificador primário, mas também em suas propriedades. Diferentes bancos de dados de documentos de código aberto estão disponíveis hoje, mas os mais proeminentes entre as opções disponíveis são MongoDB e CouchDB. Na verdade, o MongoDB se tornou um dos bancos de dados NoSQL mais populares.</p>
+  
+  <h2>Bancos de dados baseados em gráficos</h2>
+
+  <p>Um banco de dados de gráfico usa estruturas de gráfico com nós, arestas e propriedades para representar e armazenar dados. Por definição, um banco de dados gráfico é qualquer sistema de armazenamento que forneça adjacência livre de índice. Isso significa que cada elemento contém um ponteiro direto para seu elemento adjacente e nenhuma pesquisa de índice é necessária. Os bancos de dados gráficos gerais que podem armazenar qualquer gráfico são diferentes dos bancos de dados gráficos especializados, como armazenamentos triplos e bancos de dados de rede. Os índices são usados para percorrer o gráfico.</p>
+  
+  <h2>Bancos de dados com base em colunas</h2>
+
+  <p>O armazenamento orientado por coluna permite que os dados sejam armazenados de forma eficaz. Ele evita consumir espaço ao armazenar nulos, simplesmente não armazenando uma coluna quando não existe um valor para essa coluna. Cada unidade de dados pode ser pensada como um conjunto de pares de chave / valor, onde a própria unidade é identificada com a ajuda de um identificador primário, muitas vezes referido como a chave primária. O Bigtable e seus clones tendem a chamar essa chave primária de chave de linha.</p>
+  
+  <h2>Banco de dados de valores-chave</h2>
+
+  <p>A chave de um par chave / valor é um valor único no conjunto e pode ser facilmente consultada para acessar os dados. Os pares de chave / valor são de tipos variados: alguns mantêm os dados na memória e outros fornecem a capacidade de persistir os dados no disco. Um armazenamento de chave / valor simples, mas poderoso, é o Berkeley DB da Oracle.</p>
+  
+  <h2>Bancos de dados NoSQL populares</h2>
+
+  <p>Vamos listar alguns bancos de dados NoSQL populares que se enquadram nas categorias acima, respectivamente.</p>
+  
+  <ul>
+    <li>Bancos de dados orientados a documentos – MongoDB, HBase, Cassandra, Amazon SimpleDB, Hypertable, etc.</li>
+    <li>Bancos de dados baseados em gráficos – Neo4j, OrientDB, Facebook Open Graph, FlockDB, etc.</li>
+    <li>Bancos de dados baseados em colunas – CouchDB, OrientDB, etc.</li>
+    <li>Banco de dados de valores-chave – Membase, Redis, MemcacheDB, etc.</li>
+  </ul>
+
+</body>
+
+</html>
