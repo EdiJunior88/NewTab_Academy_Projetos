@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Classes e métodos</title>
+</head>
+
+<body>
+  <h1>Classes e métodos</h1>
+
+  <p>Um dos principais recursos que utilizamos no paradigma de orientação a objetos são as classes, com elas podemos abstrair e criar representações do mundo real para o código. Com o TypeScript podemos utilizar as classes com os recursos de tipagem estática que ele oferece, diferente do JavaScript que trabalha com tipagem dinâmica.</p>
+
+  <p>Primeiramente, para criar as classes usamos a palavra reservada class seguida do nome da classe, como: class Pessoa{...}. Lembrando que para as classes é convenção usarmos o padrão PascalCase (todas as palavras iniciam com letra maiúscula).</p>
+
+  <pre>
+    class Pessoa{
+    //propriedades
+    }
+  </pre>
+
+  <h2>Propriedades das Classes no TypeScript</h2>
+
+  <p>Cada classe possui propriedades, ou seja, atributos que correspondem aos dados do que ela representa, no TypeScript nós devemos criar essas propriedades com o tipo respectivo de cada uma, como o exemplo:</p>
+
+  <pre>
+    class Pessoa{
+      nome: string;
+      idade: number;
+      estaVivo; boolean;
+    }
+  </pre>
+
+  <p>Como podemos ver no exemplo acima, declaramos três propriedades: nome, idade e estaVivo. Cada uma com seu respectivo tipo, sendo: string, number e boolean. Desta forma o TypeScript nos obriga a atribuir valores que correspondem ao tipo correto de cada propriedade.</p>
+
+  <p>Agora, após criar a nossa classe, é necessário criar uma instância de “Pessoa”, ou seja, um objeto que irá representar efetivamente uma pessoa. Porém, antes disso, vamos criar o método construtor, ele é que irá criar o nosso objeto com as propriedades necessárias. Podemos criá-lo desta forma:</p>
+
+  <pre>
+    class Pessoa {
+      nome: string;
+      idade: number;
+      estaVivo: boolean;
+    
+      constructor(nome: string, idade: number, estaVivo: boolean){
+        this.nome = nome;
+        this.idade = idade;
+        this.estaVivo = estaVivo;
+      }
+    }
+  </pre>
+
+  <p>Assim, quando for necessário instanciar um objeto Pessoa, vamos passar os dados das propriedades:</p>
+
+  <pre>
+    class Pessoa {
+      nome: string;
+      idade: number;
+      estaVivo: boolean;
+    
+      constructor(nome: string, idade: number, estaVivo: boolean){
+        this.nome = nome;
+        this.idade = idade;
+        this.estaVivo = estaVivo;
+      }
+    }
+    
+    let pessoa = new Pessoa('Paulo', 0, true);
+  </pre>
+
+  <p>Perfeito, temos um objeto instanciado da Classe Pessoa!</p>
+
+  <p>Nós também podemos acessar os atributos do objeto Pessoa diretamente, seguindo a sintaxe “objeto.atributo”:</p>
+
+  <h2>Métodos TypeScript</h2>
+
+  <p>Podemos também ter os métodos, que são basicamente comportamentos da classe.</p>
+
+  <p>Nesta classe teremos os métodos nascer(), crescer(), morrer(), vamos implementá-las:</p>
+
+  <pre>
+    class Pessoa {
+      nome: string;
+      idade: number;
+      estaVivo: boolean;
+    
+      constructor(nome: string, idade: number, estaVivo: boolean){
+        this.nome = nome;
+        this.idade = idade;
+        this.estaVivo = estaVivo;
+      }
+    
+      nascer(): void{
+        console.log(`${this.nome} nasceu!`)
+      }
+    
+      crescer(): void{
+        this.idade++;
+        console.log(`${this.nome} fez ${this.idade} ano(s)!`)
+      }
+    
+      morrer(): void{
+            this.idade = 0;
+        console.log(`${this.nome} morreu!`)
+      }
+    }
+    
+    let pessoa = new Pessoa('Paulo', 0, true);
+  </pre>
+
+  <p>No método além do nome precisamos passar os parâmetros com os tipos respectivos e o retorno. Outro ponto que vale ressaltar, repare que ao utilizar os atributos dos métodos dentro da classe nós utilizamos o 'this', desse modo, para referenciar que são as propriedades da classe.</p>
+
+  <p>Por fim, podemos chamar os métodos e confirmar se o comportamento está correto:</p>
+
+  <pre>
+    class Pessoa {
+      nome: string;
+      idade: number;
+      estaVivo: boolean;
+    
+      constructor(nome: string, idade: number, estaVivo: boolean){
+        this.nome = nome;
+        this.idade = idade;
+        this.estaVivo = estaVivo;
+      }
+    
+      nascer(): void{
+        console.log(`${this.nome} nasceu!`)
+      }
+    
+      crescer(): void{
+        this.idade++;
+        console.log(`${this.nome} fez ${this.idade} ano(s)!`)
+      }
+    
+      morrer(): void{
+            this.idade = 0;
+        console.log(`${this.nome} morreu!`)
+      }
+    }
+    
+    let pessoa = new Pessoa('Paulo', 0, true);
+    
+    pessoa.nascer();
+    pessoa.crescer();
+    pessoa.morrer();
+  </pre>
+</body>
+
+</html>

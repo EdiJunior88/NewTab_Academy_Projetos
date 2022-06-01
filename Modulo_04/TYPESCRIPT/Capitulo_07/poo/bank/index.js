@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var acount_1 = require("./entitys/acount");
+var pedrosAcount = new acount_1.Acount(19007, 'Pedro Lucas', 1550);
+pedrosAcount.consultAmout();
+pedrosAcount.addValueToAmount(5000);
+pedrosAcount.consultAmout();
+pedrosAcount.removeValueOfAmount(10000);
+pedrosAcount.removeValueOfAmount(6550);
+pedrosAcount.removeValueOfAmount(1);
