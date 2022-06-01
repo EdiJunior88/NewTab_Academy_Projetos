@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Loops</title>
+</head>
+
+<body>
+  <h1>Loops</h1>
+
+  <h2>Declarações for..of</h2>
+
+  <p>for..of faz um loop em um objeto iterável, invocando a propriedade Symbol.iterator no objeto. Aqui está um loop for..of em uma matriz:</p>
+
+  <pre>
+  let someArray = [1, "string", false];
+  for (let entry of someArray) {
+    console.log(entry); // 1, "string", false
+  }
+</pre>
+
+  <h2>Declarações for..of vs. for..in</h2>
+
+  <p>Ambas declarações for..of e for..in iteram em listas; os valores iterados são diferentes, porém, for..in retorna uma lista de chaves no objeto que está sendo iterado, enquanto for..of retorna uma lista de valores das propriedades numéricas do objeto que está sendo iterado.</p>
+
+  <p>Aqui está um exemplo que demonstra essa distinção:</p>
+
+  <pre>
+    let list = [4, 5, 6];
+    for (let i in list) {
+      console.log(i); // "0", "1", "2",
+    }
+    for (let i of list) {
+      console.log(i); // 4, 5, 6
+    }
+  </pre>
+
+  <p>Outra distinção é que for..in opera em qualquer objeto; ele serve como uma forma de inspecionar propriedades neste objeto. for..of por outro lado, está principalmente interessado em valores de objetos iteráveis. Objetos integrados como propriedade Map e Set implementam a propriedade Symbol.iterator permitindo acesso a valores armazenados.</p>
+
+  <pre>
+    let pets = new Set(["Cat", "Dog", "Hamster"]);
+    pets["species"] = "mammals";
+
+    for (let pet in pets) {
+      console.log(pet); // "species"
+    }
+    
+    for (let pet of pets) {
+      console.log(pet); // "Cat", "Dog", "Hamster"
+    }
+  </pre>
+
+  <h2>Geração de código </h2>
+
+  <h3>Visando ES5 E ES3</h3>
+
+  <p>Ao direcionar um mecanismo compatível com ES5 ou ES3, os iteradores são permitidos apenas em valores do tipo Array. É um erro usar loops for..of em valores que não sejam Array, mesmo se esses valores não-Array implementarem a propriedade Symbol.iterator.</p>
+
+  <p>O compilador irá gerar um loop for simples para um loop for..of, por exemplo:</p>
+
+  <pre>
+    let numbers = [1, 2, 3];
+    for (let num of numbers) {
+      console.log(num);
+    }
+  </pre>
+
+  <p>será gerado como:</p>
+
+  <pre>
+    var numbers = [1, 2, 3];
+    for (var _i = 0; _i < numbers.length; _i++) {
+      var num = numbers[_i];
+      console.log(num);
+    }
+  </pre>
+
+  <h2>Declaração do...while</h2>
+
+  <p>A instrução do...while repetirá até que a condição especificada seja falsa.</p>
+
+  <pre>
+    do
+      declaracao
+    while (condicao);
+  </pre>
+
+  <p>A instrução será executada uma vez antes da condição ser verificada. </p>
+
+  <p>Para executar múltiplas instruções utilize uma declaração de bloco ({ ... }) para agrupá-las. Caso a condicao seja verdadeira, então o laço será executado novamente. Ao final de cada execução, a condicao é verificada. Quando a condição contida no while for falsa a execução do laço é terminada e o controle é passado para a instrução seguinte a do...while.</p>
+
+  <p><strong>Exemplo</strong></p>
+
+  <p>No exemplo a seguir, o laço é executado pelo menos uma vez e irá executar até que i seja menor que 5.</p>
+
+  <pre>
+    do {
+      i += 1;
+      console.log(i);
+    } while (i < 5);
+  </pre>
+
+  <h2>Declaração while</h2>
+
+  <p>Uma declaração while executa suas instruções, desde que uma condição especificada seja avaliada como verdadeira. Segue uma declaração while: </p>
+
+  <pre>
+    while (condicao)
+      declaracao
+  </pre>
+
+  <p>Se a condição se tornar falsa,  a declaração dentro do laço para a execução e o controle é passado para a instrução após o laço.</p>
+
+  <p>O teste da condição ocorre antes que o laço seja executado. Desta forma se a condição for verdadeira o laço executará e testará a condição novamente. Se a condição for falsa o laço termina e passa o controle para as instruções após o laço.</p>
+
+  <p>Para executar múltiplas declarações, use uma declaração em bloco ({ ... }) para agrupar essas declarações.</p>
+
+  <p><strong>Exemplo 1</strong></p>
+
+  <p>O while a seguir executará enquanto n for menor que três:</p>
+
+  <pre>
+    n = 0;
+    x = 0;
+    while (n < 3) {
+      n++;
+      x += n;
+    }
+  </pre>
+
+  <p>A cada iteração, o laço incrementa n e adiciona este valor para x. Portanto, x e n recebem os seguintes valores:</p>
+
+  <ul>
+    <li>Depois de executar pela primeira vez: n = 1 e x = 1</li>
+    <li>Depois da segunda vez: n = 2 e x = 3</li>
+    <li>Depois da terceira vez: n = 3 e x = 6</li>
+    <li>Depois de executar pela terceira vez, a condição n < 3 não será mais verdadeira, então o laço encerrará.</li>
+  </ul>
+
+  <p><strong>Exemplo 2</strong></p>
+
+  <p>Evite laços infinitos. Tenha certeza que a condição do laço eventualmente será falsa; caso contrário, o laço nunca terminará. O while a seguir executará para sempre pois sua condição nunca será falsa:</p>
+
+  <pre>
+    while (true) {
+      console.log("Olá, mundo");
+    }
+  </pre>
+</body>
+
+</html>
