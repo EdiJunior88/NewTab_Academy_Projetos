@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Funções</title>
+</head>
+
+<body>
+  <h1>Funções</h1>
+
+  <p>Escrever uma função em TypeScript é semelhante a escrevê-la em JavaScript, mas com parâmetros e tipo de retorno adicionados. Observe que qualquer função JavaScript é uma função TypeScript perfeitamente válida. No entanto, podemos fazer melhor adicionando tipo.</p>
+
+  <p>Sintaxe: vamos ver uma sintaxe básica de função TypeScript (com dois argumentos)</p>
+
+  <pre>
+    function functionName(arg1: &ltarg1Type&gt, arg2: &ltarg2Type&gt): &ltreturnType&gt {
+
+      // Function body...
+    }
+  </pre>
+
+  <p>Abaixo estão algumas funções para ajudar a entender melhor.</p>
+
+  <p>Exemplo 1: Neste exemplo, estamos escrevendo uma função para adicionar dois números</p>
+
+  <pre>
+    // TypeScript Code
+    // Following function returns the addition
+    // of it's two parameters
+
+    function addTwo(a: number, b: number): number {
+     return a + b;
+    }
+
+    console.log(addTwo(7, 8)); // logs 15
+  </pre>
+
+  <p><strong>Saída:</strong></p>
+
+  <pre>
+    15
+  </pre>
+
+  <p>Exemplo 2: adicione dois números e retorne uma string hexadecimal equivalente.</p>
+
+  <pre>
+    // Following function adds it's two parameters then
+    // returns it as string form in base 16
+    
+    function getHexAddition(a: number, b: number): string {
+      return (a + b).toString(16);
+    }
+
+    console.log(getHexAddition(10, 16)); // logs '1a'
+  </pre>
+
+  <p><strong>Saída:</strong></p>
+
+  <pre>
+    1a
+  </pre>
+
+  <p>Adicionando Parâmetros Opcionais e Padrão: Adicionar um parâmetro opcional é super simples, basta adicionar? ao final do nome do argumento.</p>
+
+  <p>Exemplo 3: Escreva uma função que registre uma mensagem de bom dia com um nome, se um nome não for passado, registre apenas o bom dia.</p>
+
+  <pre>
+    // Following function returns good morning
+    // message based on value of name passed
+
+    function goodMorning(name?: string): string {
+      // if name exits use it as suffix else ignore name
+
+      const suffix = (name ? `, ${name}.` : '.');
+      return 'Good Morning' + suffix;
+    }
+
+    // logs 'Good Morning.'
+    console.log(goodMorning());
+
+    // logs 'Good Morning, Sam.'
+    console.log(goodMorning('Sam'));
+  </pre>
+
+  <p><strong>Saída:</strong> Para argumento padrão, o sufixo com um sinal de igual e valor padrão (o compilador TS deduzirá automaticamente o tipo do argumento padrão com base no valor fornecido).</p>
+
+  <pre>
+    Good Morning.
+    Good Morning, Sam.
+  </pre>
+
+  <p>Exemplo 4: Escreva uma função que retorna a base ^ {potência}, se a potência não for fornecida, será considerado 1.</p>
+
+  <pre>
+    function pow(base: number, power = 1): number {
+      return Math.pow(base, power);
+    }
+
+    console.log(pow(7)); // logs 7
+    console.log(pow(7, 2)); // logs 49
+  </pre>
+
+  <p><strong>Saída:</strong></p>
+
+  <pre>
+    7
+    49
+  </pre>
+</body>
+
+</html>
