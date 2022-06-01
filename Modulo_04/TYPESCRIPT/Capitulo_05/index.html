@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Condicionais</title>
+</head>
+
+<body>
+  <h1>Condicionais</h1>
+
+  <p>As estruturas condicionais estão ligadas à tomada de decisão de um algoritmo. Ao utilizar expressões que retornam verdadeiro ou falso, o algoritmo executa o bloco de comandos relativos a este resultado.</p>
+
+  <p>Já no caso das estruturas de repetição, elas são úteis quando precisamos repetir N vezes a execução de um bloco de comandos até que uma condição seja atendida.</p>
+
+  <p>Caso você não esteja familiarizado com os conceitos de estruturas condicionais e estruturas de repetição, aconselho a leitura de nosso artigo Estruturas condicionais e de repetição.</p>
+
+  <p>Os exemplos serão executados utilizando o console do navegador, caso você não saiba executar um código JavaScript, leia nosso artigo Executando seu primeiro código com JavaScript.</p>
+
+  <h2>Estruturas condicionais no JavaScript</h2>
+
+  <h3>Como utilizar a estrutura condicional 'if(se)' no JavaScript</h3>
+
+  <p>Vamos aprender a utilizar as estruturas condicionais no JavaScript, começando pelo uso do if(se), else if e else(senão).</p>
+
+  <p>Primeiramente precisamos entender a sintaxe, podemos simplificar com o exemplo abaixo:</p>
+
+  <per>
+    if (idade > 18){
+    console.log("Você é obrigado a votar");
+    }
+  </per>
+
+  <p>No exemplo nós utilizamos a palavra if seguido da condição idade > 18 . Ou seja, caso a variável idade seja maior que 18 (verdadeiro), os comandos que estarão no bloco serão executados, se tratando do exemplo, será executado o comando console.log("Você é obrigado a votar").</p>
+
+  <p>Porém este exemplo não está completo, afinal, há quem não pode votar e também o voto opcional. Podemos utilizar os operadores lógicos na condição para deixar mais robusto o nosso exemplo:</p>
+
+  <pre>
+    if (idade > 15 && idade < 18 || idade > 70){
+      console.log("O voto é opcional");
+    }
+  </pre>
+
+  <p>Agora nós criamos uma estrutura condicional utilizando if e os operadores lógicos && (E) e ||(OU), mas ainda podemos deixar mais completo o nosso exemplo utilizando a estrutura else if :</p>
+
+  <pre>
+    if (idade > 15 && idade < 18 || idade > 70) {
+      console.log("O voto é opcional")
+    } else if (idade < 16) {
+        console.log("Você não pode votar");
+    }
+  </pre>
+
+  <p>Contudo, para finalizar o nosso exemplo, precisamos também informar quando o voto é obrigatório. Percebe-se que é, justamente, o intervalo de idade que as condições que estão em nosso if / else if não estão abrangendo, portanto, podemos somente adicionar um else, ficando desta forma:</p>
+
+  <pre>
+    if (idade > 15 && idade < 18 || idade > 70) {
+      console.log("O voto é opcional")
+    } else if (idade < 16) {
+      console.log("Você não pode votar");
+    } else {
+      console.log("Você é obrigado a votar");
+    }
+  </pre>
+
+  <p>Neste exemplo mostramos como é possível atribuir um comportamento de tomada de decisão utilizando as estruturas condicionais if, else if e else no JavaScript.</p>
+
+  <p>Em algumas situações onde trabalhamos com inúmeros if / else e com valores pré-definidos nas condições, podemos utilizar a instrução Switch Case.</p>
+
+  <h2>Como utilizar Switch Case no JavaScript</h2>
+
+  <p>Outra estrutura condicional do JavaScript que podemos utilizar é o Switch Case. O Switch Case é uma instrução que se comporta de forma semelhante ao if / else, porém possui uma estrutura mais organizada e de fácil compreensão. Lembrando que só é aceito valores pré-definidos e não expressões condicionais.</p>
+
+  <p>Podemos analisar a estrutura do Switch Case no seguinte exemplo:</p>
+
+  <pre>
+    let signo = 'Leão';
+    
+    switch (signo) {
+      case 'Áries':
+        console.log("De 21 março a 20 abril");
+        break;
+      case 'Touro':
+        console.log("de 21 abril a 20 maio");
+        break;
+      case 'Gêmeos':
+        console.log("de 21 maio a 20 junho");
+        break;
+      case 'Câncer':
+        console.log("de 21 junho a 22 julho");
+        break;
+      case 'Leão':
+        console.log("de 23 julho a 22 agosto");
+        break;
+      case 'Virgem':
+        console.log("de 23 agosto a 22 setembro");
+        break;
+      default:
+        console.log("Signo não registrado");
+        break;
+    }
+  </pre>
+
+  <p>Neste caso nós temos uma variável que recebe um signo, e então, devemos exibir qual o intervalo de nascimento referente a esse signo. Seria muito mais complexo utilizar if / else para este exemplo do que o switch case.</p>
+
+  <p>Ao analisar o exemplo, ao lado do switch atribuímos a variável signo, neste caso ele pede a expressão que será comparada a cada case. Sendo verdadeiro com alguma das opções, os comandos do bloco são executados até atingir a palavra-chave break. Caso nenhuma das opções seja verdadeira, a instrução irá executar os comandos que estarão na opção default.</p>
+
+  <h2>Estruturas de repetição no JavaScript</h2>
+
+  <p>Agora vamos aprender a utilizar as estruturas de repetição no JavaScript, como: while, for, for…in e for…of.</p>
+
+  Como utilizar while(enquanto) no JavaScript
+  <p>Podemos utilizar a estrutura de repetição while caso seja necessário repetir um bloco de comandos por N vezes.</p>
+
+  <pre>
+    let i = 0;
+    while(i < 11){
+        console.log('5 x ' + i + ' = ' + 5*i);
+        i++;
+    }
+  </pre>
+
+  <p>A sintaxe do while, como vemos no exemplo acima, é bem simples. Utilizamos a palavra reservada while , logo em seguida precisamos passar uma condição que será atendida enquanto ela retornar true, ou seja, verdadeiro.</p>
+
+  <p>Neste caso, simulamos a tabuada do 5, a variável i é o nosso contador, iniciamos ela com o valor 0 , portanto a condição será verdadeira até que ela atinja o valor 11, e por isso ela é iterada a cada repetição - i++, ao atingir tal valor o laço é quebrado.</p>
+
+  <h2>Utilizando Do-While</h2>
+
+  <p>O do-while tem o mesmo conceito que o while com uma única diferença, a condição é verificada após os comandos do bloco serem executados, ou seja, mesmo que a condição seja falsa, é garantia que o bloco será executado ao menos uma vez.</p>
+
+  <p>Podemos testar da seguinte forma:</p>
+
+  <pre>
+    let contador = 0;
+    
+    do {
+      console.log("O contador vale: " + contador);
+      contador++;
+    } while(contador == 1)
+  </pre>
+
+  <p>A variável contador foi inicializada com o valor 0 e o while está com a condição contador == 1 ou seja, a condição é falsa e utilizando o while nosso bloco de comandos não seria executado. Porém podemos perceber que ao utilizar do-while, o bloco vem antes da verificação da condição, com isso ele garante que o bloco de comandos seja executado ao menos uma vez.</p>
+
+  <h2>Como utilizar For(para) no JavaScript</h2>
+
+  <p>A estrutura de repetição for no JavaScript segue o mesmo princípio que o while, porém este recurso é mais utilizado quando se sabe o número de iterações da repetição, como ao percorrer um vetor, por exemplo.</p>
+
+  <p>Podemos replicar o exemplo acima da tabuada, porém utilizando for:</p>
+
+  <pre>
+    for(let i = 0; i < 11; i++){
+        console.log("5 x " + i + " = " + 5*i);
+    }
+  </pre>
+
+  <p>Para utilizar o for, usamos a palavra-chave for seguida de três declarações, primeiramente iniciamos a variável que será o controlador do nosso laço de repetição, logo em seguida precisamos informar a condição a ser atendida e, por último, uma expressão que será executado ao final de cada iteração do for, normalmente utilizamos para incrementar a variável que será utilizada como controlador do nosso laço.</p>
+
+  <p><strong>OBS:</strong> Vale ressaltar que o while é mais indicado para situações onde não temos conhecimento do número de iterações do laço, já o for é mais adequado para situações que o número de iterações está definido previamente.*</p>
+
+  <h2>Utilizando for…in e for…of</h2>
+
+  <p>No JavaScript, nós temos mais duas variações da utilização do for, o for…in e for…of.</p>
+
+  <p>O for…in é utilizado para percorrer as propriedades de um objeto, por exemplo:</p>
+
+  <pre>
+    let carro = {
+      marca: 'ford',
+      modelo: 'fiesta',
+      cor: 'prata',
+    }
+    
+    for (propriedade in carro) {
+      console.log(propriedade);
+    }
+  </pre>
+
+  <p>Criamos uma instância do objeto carro, onde temos como propriedade a marca, modelo e cor.</p>
+
+  <p>Ao utilizar o for, passamos a variável que irá percorrer as propriedades do objeto e logo em seguida, de qual objeto.</p>
+
+  <p>Também podemos acessar os atributos de cada propriedade, para isso basta usarmos propriedade como índice do nosso objeto, desta maneira:</p>
+
+  <pre>
+    for (propriedade in carro) {
+        console.log(carro[propriedade]);
+    }
+  </pre>
+
+  <p>E por fim, podemos exibir o objeto por completo somente usando o for…in:</p>
+
+  <pre>
+    for (propriedade in carro) {
+        console.log(propriedade + ': ' + carro[propriedade]);
+    }
+  </pre>
+
+  <p>O for…of nós podemos utilizar para percorrer objetos iteráveis como Maps, Sets e Vetores de forma simples e eficaz, da seguinte forma:</p>
+
+  <pre>
+    let carros = [ 'fiesta', 'ônix', 'fusca', 'saveiro' ];
+    
+    for (let carro of carros) {
+        console.log(carro);
+    }
+  </pre>
+
+  <p>Também é possível exibir o índice referente a cada item usando o método entries()da seguinte forma:</p>
+
+  <pre>
+    for (let [index, carro] of carros.entries()) {
+        console.log(index, carro);
+    }
+  </pre>
+</body>
+
+</html>
