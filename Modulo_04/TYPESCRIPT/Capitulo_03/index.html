@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Funções de arrays</title>
+</head>
+
+<body>
+  <h1>Funções de arrays</h1>
+
+  <h2>Tipagem no TypeScript: arrays.</h2>
+
+  <p>Quando vamos trabalhar com arrays no TypeScript é preciso se atentar para algumas particularidades, primeiramente, podemos trabalhar com os arrays que recebem dados de apenas um tipo, da seguinte forma:</p>
+
+  <pre>
+    let carros: string[] = [];
+    carros.push('Gol');
+    carros.push('Fiesta');
+  </pre>
+
+  <p>Ou podemos inicializar o array com os valores:</p>
+
+  <pre>
+    let animais: string[] = ['Cachorro', 'Gato'];
+  </pre>
+
+  <h2>Array com mais de um tipo</h2>
+
+  <p>O TypeScript traz este recurso, onde podemos trabalhar com arrays que recebem mais de um tipo, neste caso ao declarar o array é necessário passar quais tipos de dados que esse array estará apto a receber:</p>
+
+  <pre>
+    let carros: (string | number)[] = ['Gol', 2014,'Fiesta', 2018];
+  </pre>
+
+  <p>Também é possível definir exatamente qual o conteúdo que o array estará apto a receber, além do tipo:</p>
+
+  <pre>
+    let cursos: ('TreinaWeb' | number)[] = ['TreinaWeb', 2018];
+  </pre>
+
+  <h2>Criando tipos personalizados</h2>
+
+  <p>Existe a possibilidade de criarmos tipos para trabalhar com a nossa aplicação. Seguindo o exemplo dos arrays, podemos criar um array com tipo para usá-lo quantas vezes quisermos, facilitando o desenvolvimento:</p>
+
+  <pre>
+    type Cursos = ('TreinaWeb' | number)[];
+
+    let curso: Cursos = ['TreinaWeb', 200];
+    let curso2: Cursos = ['TreinaWeb', 700, 'TreinaWeb', 800];
+  </pre>
+
+  <p>Podemos criar tipos para trabalhar com objetos também, da seguinte forma:</p>
+
+  <pre>
+    type Animal = {
+      nome: string;
+      idade: number;
+    }
+
+    let cachorro: Animal = {
+      nome: 'Rex',
+      idade: 3
+    }
+  </pre>
+</body>
+
+</html>
