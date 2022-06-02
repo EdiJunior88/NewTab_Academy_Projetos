@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Classes abstratas</title>
+</head>
+
+<body>
+  <h1>Classes abstratas</h1>
+
+  <h2>Classes Abstratas: o melhor dos mundos</h2>
+
+  <p>Uma classe abstrata é uma espécie de meio-termo entre interfaces tradicionais e classes, no sentido em que, assim como uma interface, você não pode inicializa-la utilizando o comando <code>new</code>, como também pode definir métodos tanto abstratos (que não contém implementação, apenas definição, assim como nas interfaces), como também incluindo uma implementação "básica" do método, que pode ou não ser substituída depois.</p>
+
+  <p>Qualquer classe que extende uma classe abstrata segue as regras de herança de classes tradicionais (ou seja, só pode possuir uma classe base), além também das regras de implementação de interfaces (ou seja, precisa implementar todas funções marcadas como abstratas).</p>
+
+  <p>Vamos para um exemplo prático e imaginar que estamos criando uma classe base chamada <code>Foguete</code>, que será uma classe abstrata e será base para implementação de nossos foguetes para Lua e para Marte. Nesta classe, apenas duas funções estão implementadas, uma sendo <code>iniciar_sequencia_lancamento()</code>, que define toda sequência de lançamento dos foguetes, e <code>contagem()</code>, que faz a contagem regressiva para o lançamento:</p>
+
+  <pre>
+    abstract class Foguete {
+    
+      // Função tradicional e implementada na classe abstrata
+      iniciar_sequencia_lancamento () {
+    
+        // Inicia contagem regressiva
+        this.contagem()
+    
+        // Informa sobre o lançamento do foguete
+        console.log(`Lançando o foguete ${this.pegar_nome()} com destino ${this.pegar_destino()}!`)
+    
+        // Faz o lançamento!
+        this.lancar()
+      }
+    
+      // Função que vai fazer a contagem regressiva do lançamento
+      contagem () {
+        console.log(`10... 9... 8... 7... 6... 5... 4... 3... 2... 1...`)
+      }
+    
+      // Função abstrata que deve retornar o nome do foguete, sem nenhum tipo de retorno
+      abstract lancar ()
+    
+      // Função abstrata que deve retornar o nome do foguete, com tipo de retorno "string"
+      abstract pegar_nome () : string
+    
+      // Função abstrata que deve retornar o destino do foguete, com tipo de retorno "string"
+      abstract pegar_destino () : string
+    }
+  </pre>
+
+  <p>Como você pode ver, temos algumas funções abstratas separadas que deverão ser implementadas por nossos foguetes antes deles serem lançados, como <code>lancar()</code>, <code>pegar_nome()</code> e <code>pegar_destino()</code>. Algumas destas funções possuem um tipo de retorno, denominado pelo <code>: string</code> nas definições. Isto indica que estas funções deverão retornar um valor do tipo <code>string</code> e também, quando as utilizarmos, nos garante que este será o tipo que a função irá nos retornar. Definições sem anotação alguma podem retornar tanto nenhum como qualquer tipo de valor.</p>
+
+  <p>Abaixo, vamos criar então o foguete Saturn V, que vai levar nossos astronautas para a Lua:</p>
+
+  <pre>
+    class SaturnV extends Foguete {
+    
+      // Implementamos a função "lancar"
+      lancar () {
+        console.log('Foguete lançado!')
+      }
+    
+      // Implementamos a função "pegar_nome"
+      pegar_nome () : string {
+        return 'Saturn V'
+      }
+    
+      // Implementamos a função "pegar_nome"
+      pegar_destino () : string {
+        return 'Lua'
+      }
+    }
+  </pre>
+
+  <p>Nossa implementação é bem simples, apenas declaramos que nosso foguete irá para a Lua, que possui o nome "Saturn V" e que, ao ser lançado, irá imprimir na tela o texto "Foguete lançado!". Vamos também implementar o foguete Falcon 9, desta vez com uma contagem regressiva um pouco mais reduzida:</p>
+
+  <pre>
+    class Falcon9 extends Foguete {
+    
+      // Modificamos a função "contagem" para algo mais curto
+      contagem () {
+        console.log(`5... 4... 3... 2... 1...`)
+      }
+    
+      // Implementamos a função "lancar"
+      lancar () {
+        console.log('Foguete lançado!')
+      }
+    
+      // Implementamos a função "pegar_nome"
+      pegar_nome () : string {
+        return 'Falcon 9'
+      }
+    
+      // Implementamos a função "pegar_nome"
+      pegar_destino () : string {
+        return 'Marte'
+      }
+    }
+  </pre>
+
+  <p>Como você pode ver, a implementação é similar à do foguete Saturn V, porém estamos sobrescrevendo a função <code>contagem()</code> com nossa própria implementação. Com isto, ao executar o programa, nossa nova implementação será utilizada sempre que a função <code>contagem()</code> for chamada para um foguete do tipo Falcon9, independente se a função estiver sendo chamada de dentro da classe abstrata <code>Foguete</code> ou da classe final <code>Falcon9</code></p>
+
+  <p>Por fim, vamos criar uma função bem simples que recebe um objeto do tipo <code>Foguete</code> e inicia sua sequência de lançamento, assim como lançar nossos dois foguetes! \õ/</p>
+
+  <pre>
+    // Nossa função que vai lançar uma missão, precisamos passar um foguete como argumento
+    function lancar_missao_espacial (foguete : Foguete) {
+    
+      // Lançamos o foguete!
+      foguete.iniciar_sequencia_lancamento()
+    
+    }
+    
+    // Vamos lançar o Saturn V com destino Lua!
+    lancar_missao_espacial(new SaturnV)
+    
+    // Vamos lançar o Saturn V com destino Marte!
+    
+    lancar_missao_espacial(new Falcon9)
+  </pre>
+
+  <p>Pronto! Nossos foguetes foram lançados e estamos prontos para explorar a Lua e Marte! 🚀</p>
+
+</body>
+
+</html>
