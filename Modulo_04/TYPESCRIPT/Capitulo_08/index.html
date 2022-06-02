@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Valores privados e uso do Get</title>
+</head>
+
+<body>
+  <h1>Valores privados e uso do Get</h1>
+
+  <h2>Modificadores de acesso no TypeScript</h2>
+
+  <p>Seguindo o exemplo do artigo classes no TypeScript temos a classe Pessoa com 3 propriedades, nome, idade e estaVivo:</p>
+
+  class Pessoa{
+    nome: string;
+    idade: number;
+    estaVivo; boolean;
+  }
+
+  <p>Perceba que não há nenhuma palavra antes das propriedades, isso significa que elas irão receber o modificador “public” por padrão, ou seja, elas são públicas e podem ser acessadas e alteradas tanto dentro da classe ou fora dela, não tendo um escopo de “segurança”.</p>
+
+  <p>Para ter esse controle, há os modificadores de acesso, são eles:</p>
+
+  <h2>Public</h2>
+
+  <p>Pode ser acessado tanto pela mesma classe, classes filhas e outras classes.</p>
+
+  <pre>
+    class Pessoa{
+      nome: string = "TreinaWeb";
+      idade: number = 12
+      estaVivo: boolean = true;
+    }
+    
+    let pessoa = new Pessoa();
+    
+    pessoa.nome = "Paulo"; //com o modificador public podemos acessar e alterar o valor da //propriedade nome fora da classe
+  </pre>
+
+  <h2>Private</h2>
+
+  <p>Pode ser acessada somente pela própria classe.</p>
+
+  <pre>
+    class Pessoa{
+      private nome: string = "TreinaWeb";
+      idade: number = 12
+      estaVivo: boolean = true;
+    }
+    
+    let pessoa = new Pessoa();
+    pessoa.nome = "Paulo"; //Utilizando private não podemos mais acessar desta forma
+  </pre>
+
+  <h2>Protected</h2>
+
+  <p>Pode ser acessado pela mesma classe e classes filhas, não pode ser acessado por outras classes.</p>
+
+  <pre>
+    class Pessoa{
+      nome: string;
+      idade: number;
+      protected estaVivo: boolean;
+    
+      constructor(nome: string, idade: number, estaVivo: boolean){
+          this.nome = nome;
+          this.idade = idade;
+          this.estaVivo = estaVivo;
+      }
+    }
+    
+    class PessoaFisica extends Pessoa{
+      cnpj: number;
+    
+      constructor(nome: string, idade: number, estaVivo: boolean, cnpj: number){
+      super(nome, idade, estaVivo); //ao utilizar protected, podemos acessar por classes
+      this.cnpj = cnpj; //filhas e pela própria classe;
+      }
+    }
+  </pre>
+  
+  <h2>Readonly</h2>
+
+  <p>Pode ser acessado fora da classe, mas não é possível alterar o seu valor.</p>
+
+  <pre>
+    class Pessoa{
+      nome: string = "TreinaWeb";
+      idade: number = 12
+      readonly estaVivo: boolean = true;
+    }
+    
+    let pessoa = new Pessoa();
+    
+    console.log(pessoa.estaVivo); //a propriedade estaVivo será exibida com sucesso.
+    pessoa.estaVivo = false; //Mas não podemos alterar essa propriedade.
+  </pre>
+
+  <p>Ao usar os modificadores nós adicionamos camadas de segurança de acesso para a nossa aplicação. Desta forma, para auxiliar na manipulação destes dados, contamos com os métodos assessores Get e Set. com eles nós podemos acessar e alterar propriedades private/protected.</p>
+
+  <h2>Métodos Get e Set</h2>
+
+  <p>Agora podemos criar os métodos Get e Set da seguinte maneira:</p>
+
+  <pre>
+    class Pessoa{
+      private nome: string = "TreinaWeb";
+      private idade: number = 12
+      readonly estaVivo: boolean = true;
+    
+      setNome(nome: string){
+        this.nome = nome;
+      }
+    
+      getNome(): string{
+        return this.nome;
+      }
+    }
+    
+    let pessoa = new Pessoa();
+    pessoa.setNome('TW');
+
+    console.log(pessoa.getNome());
+  </pre>
+
+  <p>Perceba que utilizamos o pessoa.setNome('TW') para alterar a propriedade nome, logo em seguida, utilizamos o método pessoa.getNome(); para acessar a propriedade.</p>
+
+  <p>No TypeScript nós temos outra maneira de usar o Get e Set, que é utilizando a palavra-chave respectiva de cada método, da seguinte forma:</p>
+
+  <pre>
+    class Pessoa{
+      private _nome: string = "TreinaWeb";
+      private idade: number = 12
+      readonly estaVivo: boolean = true;
+    
+      set nome(nome: string){
+        this._nome = nome;
+      }
+    
+      get nome(): string{
+        return this._nome;
+      }
+    }
+    
+    let pessoa = new Pessoa();
+    pessoa.nome = 'TW'
+    
+    console.log(pessoa.nome);
+  </pre>
+
+  <p>Neste caso podemos utilizar as palavras chave “get” e “set” diretamente, e por padrão, o nome do método é o mesmo da propriedade, que ganha o prefixo '_' como podemos ver em _nome.</p>
+
+  <p>Assim, quando vamos utilizar os métodos Get e Set desta forma, passamos o objeto e a propriedade de forma similar como se estivéssemos acessando diretamente a propriedade.</p>
+</body>
+
+</html>
