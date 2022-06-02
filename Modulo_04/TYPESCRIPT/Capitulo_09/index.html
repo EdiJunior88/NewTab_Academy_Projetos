@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Herança e polimorfismo</title>
+</head>
+
+<body>
+  <h1>Herança e polimorfismo</h1>
+
+  <h2>Herança</h2>
+
+  <p>A palavra-chave class, introduzida no ECMAScript 2015, nos permite definir uma classe em JavaScript. O TypeScript também tem suporte ao paradigma. Um dos elementos da programação orientada à objetos é a herança de classes para reutilizar o código. No JavaScript tradicional, a herança é feita através de protótipos. Já com a palavra-chave class, podemos fazer a herança através da palavra-chave extends.</p>
+
+  <p>Vamos supor que temos uma base classe chamada Individuo. Vamos simplificar o nosso exemplo e considerar mais duas classes: um individuo poderia ser um estudante ou um funcionário de uma empresa. Por causa disso, podemos usar herança e definir que:</p>
+
+  <pre>
+    Um Estudante é um Individuo
+    Um Funcionario é um Individuo
+  </pre>
+
+  <p>Então a base classe é Individuo e as classes derivadas são Estudante e Funcionario. O primeiro é também chamado de superclasse e os segundos são subclasses.</p>
+
+  <p>Vamos aprender com um código. Primeiro definimos a base classe:</p>
+
+  <pre>
+    class Individuo {
+      nome: string;
+      constructor(oNome: string) {
+        this.nome = oNome;
+      }
+    }
+  </pre>
+
+  <p>Agora, para herdarmos da base classe, usamos a palavra-chave extends logo após o nome dela. Depois segue com o nome da classe derivada:</p>
+
+  <pre>
+    class Estudante extends Individuo {
+    }
+    
+    class Funcionario extends Individuo {
+    }
+  </pre>
+
+  <p>Não definimos nenhum membro para as classes derivadas, mas ambas irão herdar a propriedade nome e o constructor de Individuo.</p>
+
+  <p>Podemos então adicionar propriedades e métodos específicos para cada subclasse. Por exemplo, um Estudante tem uma disciplina de estudo e um funcionário tem um salario.</p>
+
+  <pre>
+    class Estudante extends Individuo {
+      disciplina: string;
+    
+      constructor(oNome: string, aDisciplina: string) {
+        super(oNome);
+        this.disciplina = aDisciplina;
+      }
+    }
+    
+    class Funcionario extends Individuo {
+      salario: number;
+    
+      constructor(oNome: string, oSalario: number) {
+        super(oNome);
+        this.salario = oSalario;
+      }
+    }
+  </pre>
+
+  <p>No exemplo acima, precisamos adicionar um novo constructor à cada classe derivada para poder iniciar as propriedades específicas de cada classe. Note que podemos reutilizar o código do constructor da base classe Individuo com a chamada de super.</p>
+
+  <p>É importante ressaltar que super deve ser chamado para iniciar os valores compartilhados através da base classe e que não se deve referenciar this. no corpo do constructor antes da chamada de super().</p>
+
+  <p>Vamos testar nossas classes:</p>
+
+  <pre>
+    let fJoao: Funcionario = new Funcionario("Joao", 123);
+    let eAna: Estudante = new Estudante("Ana", "Arquitetura");
+  </pre>
+
+  <p>Note que também podemos criar uma variável do tipo da base classe e ainda armazenar tanto um Estudante como um Funcionario:</p>
+
+  <pre>
+    let individuo: Individuo = fJoao;
+    individuo = eAna;
+  </pre>
+
+  <p>O código acima funciona porque um Funcionario é um Individuo e um Estudante também é um Individuo.</p>
+
+  <h2>Polimorfismo</h2>
+
+  <p>Na programação, o Polimorfismo remete a capacidade de alterar o comportamento de determinado método de uma Super Classe em qualquer uma das Sub Classes que à herdem.</p>
+
+  <h3>O que faz?</h3>
+
+  <p>Como dito em sua definição, permite a alteração de comportamentos de um determinado método sem alterar sua assinatura, dessa forma podemos ter o mesmo método com diferentes comportamentos a depender da classe que o implementa.</p>
+
+  <p>Um exemplo disso seria os métodos de ciclo de vida no React, ao trabalharmos o React com classes definimos os métodos de ciclo de vida com diferentes comportamentos dependendo do componente, porém esses métodos continuam a ter o mesmo nome, parâmetros e tipo de retorno.</p>
+
+  <h3>Tipos</h3>
+
+  <p>Existem diferentes tipos de Polimorfismo dentro da POO (Programação Orientada a Objetos), porém nesse artigo iremos abordar apenas a Sobrescrita de Métodos com TypeScript.</p>
+
+  <h3>Sobrescrita de Métodos</h3>
+
+  <p>É a alteração do comportamento padrão de um método da Super Classe para um comportamento mais específico de uma Sub Classe, sendo que, se não o sobrescrevermos o método manterá o comportamento definido na Super Classe.</p>
+
+  <h3>Sintaxe</h3>
+  <p>Para sobrescrevermos um determinado método, tudo que precisamos fazer é instanciá-lo na Sub Classe e definirmos uma nova lógica.</p>
+
+  <p>Uma obervação, os parâmetros e o tipo de retorno do método a ser sobrescrito podem ser mantidos, no intuito de padronizar o método, sendo a única alteração, a lógica interna.</p>
+
+  <pre>
+    class Person {
+      constructor(public name: string) {}
+    
+      move(): void {
+        console.log(`${this.name} se move`);
+      }
+    }
+    class Runner extends Person {
+      move() {
+        console.log(`${this.name} corre`);
+      }
+    }
+    
+    class Lazy extends Person {
+      move() {
+        console.log(`${this.name} anda devagar`);
+      }
+    }
+    
+    const john = new Person('John');
+    const runnerJohn = new Runner('John');
+    const lazyJohn = new Lazy('John');
+    
+    john.move();  // John se move
+    runnerJohn.move();  // John corre
+    lazyJohn.move();  // John anda devagar
+  </pre>
+
+  <h2>Classes Abstratas</h2>
+
+  <p>São classes que atuam de forma similar a Interfaces, isso porque elas não podem ser instanciadas, apenas herdadas, possibilitando ainda a criação de métodos abstratos, esses que por sua vez só podem existir em Classes Abstratas e devem ser implementados em qualquer Sub Classe de uma Super Classe Abstrata.</p>
+
+  <p>A diferença de Classes Abstratas e Interfaces, é que nas classes podemos definir outros métodos e atributos que não são abstratos, ou seja, podem receber funcionalidade e valores.</p>
+
+  <h3>Sintaxe</h3>
+  <p>Para definirmos Classes/Métodos Abstratos utilizamos a palavra reservada abstract antes de suas definições.</p>
+
+  <p>Lembrando que tudo que for abstrato, não pode ser implementado, apenas definido, e nada nos impede de criarmos métodos comuns dentro de Classes Abstratas.</p>
+
+  <pre>
+    abstract class Person {
+      constructor(public name: string) {}
+    
+      /*
+      mesmo estando em uma classe abstrata, ainda podemos criar métodos comuns
+      que não precisam ser obrigatoriamente implementados nas Sub Classes.
+      */
+      greetings() {
+        console.log(`Eu me chamo ${this.name}`);
+      }
+    
+      abstract move(): void;
+    }
+    class Runner extends Person {
+      move() {  // o método abstrato precisa ser implementado nas Sub Classes
+        console.log(`${this.name} corre`);
+      }
+    }
+    
+    class Lazy extends Person {
+      move() {
+        console.log(`${this.name} anda devagar`);
+      }
+    }
+    const runnerJohn = new Runner('John');
+    const lazyJohn = new Lazy('John');
+    
+    runnerJohn.move();  // John corre
+    runnerJohn.greetings();  // Eu me chamo John
+    
+    lazyJohn.move();  // John anda devagar
+    lazyJohn.greetings();  // Eu me chamo John
+  </pre>
+
+  <h2>Métodos Estáticos</h2>
+
+  <p>São métodos que não interagem com as instancias da classe, ou seja, manipulam as informações ligadas a classe em si, não a instância.</p>
+
+  Também existem os atributos estáticos que assim como os métodos estão vinculados a classe e não as instâncias.
+
+  <h3>Sintaxe</h3>
+
+  <p>Para definirmos Métodos/Atributos Estáticos utilizamos a palavra reservada static antes de suas definições.</p>
+
+  <pre>
+    class GroupMember {
+      private static groupSize = 0;
+    
+      constructor(public newPerson: string) {
+        Group.addMember();
+      }
+    
+      private static addMember() {
+        this.groupSize += 1;
+      }
+    
+      static get size() {
+        return this.groupSize;
+      }
+    }
+    console.log(GroupMember.size);  // 0
+    const member1 = new GroupMember('John');
+    
+    console.log(GroupMember.size);  // 1
+    const member2 = new GroupMember('John');
+    
+    console.log(GroupMember.size);  // 2
+  </pre>
+
+  <h2>Polimorfismo em Interfaces</h2>
+
+  <p>Assim como nas classes, as Interfaces também podem ser polimorfas, ou seja, ter diferentes comportamentos a depender da implementação. Esse é o comportamento padrão de toda a Interface, afinal só definimos a assinatura, parâmetros e retorno do método, enquanto a lógica interna fica por nossa conta.</p>
+
+  <p>Porém podemos ainda utilizar das Generics criar classes e até funções ainda mais dinâmicas, dessa forma o tipo será determinado no momento de sua criação e não na definição.</p>
+
+  <h3>Sintaxe</h3>
+
+  <p>Como dito acima, o comportamento padrão de métodos definidos na Interface é serem polimórficos, logo sua definição continua a mesma.</p>
+
+  <p>Já para utilizarmos Generics, tudo que precisamos fazer é nós utilizar dos símbolos de maior e menor <>, colocando entre eles uma letra por convenção em maiúsculo.</p>
+
+  <pre>
+    interface IGame&ltT&gt {
+      title: string;
+      platform: string;
+      controls: T;
+    }
+    
+    type FPSControls = {
+      W: 'up',
+      A: 'left',
+      S: 'down',
+      D: 'right',
+    }
+    
+    class FPSGame extends IGame&ltFPSControls&gt {
+      constructor(
+        public title: string,
+        public platform: string,
+        public controls: FPSControls
+      ) {}
+    }
+    
+    type MOBAControls = {
+      Q: 'firstAbility',
+      W: 'secondAbility',
+      E: 'thirdAbility',
+      R: 'ultimate',
+    }
+    
+    class MOBAGame extends IGame&ltMOBAControls&gt {
+      constructor(
+        public title: string,
+        public platform: string,
+        public controls: MOBAControls
+      ) {}
+    }
+  </pre>
+
+</body>
+
+</html>
