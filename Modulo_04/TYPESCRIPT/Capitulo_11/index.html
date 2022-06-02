@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Interfaces</title>
+</head>
+
+<body>
+  <h1>Interfaces</h1>
+
+  <p>O TypeScript nós permite trabalhar com tipos complexos, como funções e objetos para que sejam definidos e usados como restrições de tipo. Assim como os objetos literais são a raiz da definição de objeto no JavaScript, os tipos literais de objeto são as definições de um tipo de objeto no TypeScript.</p>
+
+  <p>A seguir, você tem um exemplo demonstrando a definição de uma variável chamada ticket, que aceita qualquer objeto com as propriedades symbol, company e exchange.</p>
+
+  <pre>
+    let ticket: {
+      symbol: string;
+      company: string;
+      exchange: string;
+    }
+  </pre>
+
+  <p>Note que, diferente de um objeto literal do JavaScript, o tipo literal de objeto separa os campos usando ponto e vírgula, e não vírgulas.</p>
+
+  <p>Quando o TypeScript compara dois tipos de objeto para decidir se eles correspondem ou não, isso é feito estruturalmente. Isso significa que, em vez de comparar os tipos verificando se os dois herdam o mesmo objeto de restrição de base, ele compara as propriedades de cada um dos objetos.</p>
+
+  <p>Caso um objeto tenha todas as propriedades que foram definidas no momento da definição da variável, elas são consideradas compatíveis. Para ficar mais claro, vamos a um exemplo prático:</p>
+
+  <pre>
+    let ticket: {
+      symbol: string;
+      company: string;
+      exchange: string;
+    };
+    
+    ticket = {
+      symbol: 'ATVI',
+      company: 'Activision Blizzard Inc.',
+      exchange: 'NAS'
+    };
+    // Compatíveis, pois esse objeto contém as mesmas propriedades
+  </pre>
+
+  <p>Caso alguma das propriedades não seja compatível ou uma de suas definições esteja faltando, o tipo de objeto será considerado não compatível e o compilador deve gerar um erro.</p>
+
+  <p>Agora que nós já entendemos como funciona um tipo de objeto, como podemos definir outra variável com os mesmos tipos que foram definidos para ticket sem repetir todas as propriedades?</p>
+
+  <pre>
+    //Exemplo duplicando as propriedades 
+    let ticket: {
+      symbol: string;
+      company: string;
+      exchange: string;
+    };
+    
+    let ticket2: {
+      symbol: string;
+      company: string;
+      exchange: string;
+    };
+  </pre>
+
+  <p>Uma solução seria utilizar o operador typeof para definir uma restrição de tipo.</p>
+
+  <pre>
+    let ticket: {
+    symbol: string;
+    company: string;
+    exchange: string;
+    };let ticket2: typeof ticket;
+  </pre>
+
+  <p>Esse mecanismo ajuda a reduzir a quantidade de código necessário para fazer referências ao mesmo tipo, mas existe outra abstração ainda mais poderosa no TypeScript para a reutilização de tipos de objetos: as interfaces.</p>
+
+  <p>A interface é a essência de um tipo literal de objeto. Ela é um conjunto de métodos e propriedades que descrevem um objeto, porém não inicializa nem os implementa. Para ficar mais claro, vamos alterar o exemplo anterior utilizando uma interface:</p>
+
+  <pre>
+    interface Ticket {
+      symbol: string;
+      company: string;
+      exchange: string;
+    };
+  </pre>
+
+  <p>Agora nós podemos passar o tipo Ticket para outras variáveis sem a necessidade de duplicar as suas propriedades:</p>
+
+  <pre>
+    let ticket: Ticket;
+    let ticket2: Ticket;
+  </pre>
+
+  <p>Como você pode observar no exemplo anterior, essa alteração permite que o tipo Ticket seja utilizado em vários locais dentro do código sem a necessidade de redefinir seus detalhes repetidas vezes. As interfaces também podem estender outras interfaces ou classes usando a palavra reservada extends para compor tipos mais complexos a partir de tipos simples:</p>
+
+  <pre>
+    interface TicketDetail extends Ticket {
+      open: string;
+      beta: number;
+      yield: number;
+    };
+  </pre>
+
+  <p>Neste exemplo, o tipo TicketDetail estende as propriedades symbol, company, e exchange da interface Ticket, e declara três novas propriedades: open, beta e yield.</p>
+
+  <p>As propriedades podem ser especificadas como opcionais e, para isso, basta adicionar o operador ? ao final do nome da propriedade:</p>
+
+  <pre>
+    interface Ticket {
+      symbol: string;
+      company: string;
+      exchange?: string;
+    };
+  </pre>
+
+  <p>Até agora só criamos tipos de objeto com propriedades, mas não demonstramos como adicionar um método a um objeto. O TypeScript nos fornece uma sintaxe abreviada para especificá-los:</p>
+
+  <pre>
+    interface TicketDetail extends Ticket {
+      open: string;
+      beta: number;
+      yield: number;
+      getDividend(symbol: string): number;
+    };
+  </pre>
+
+  <p>Nesse exemplo, adicionamos o método getDividend() na interface TicketDetail, que aceita um argumento e retorna um number .</p>
+
+  <p>Como as propriedades, os métodos também podem ser opcionais, basta adicionar o operador ? depois do nome do método:</p>
+
+  <pre>
+    interface TicketDetail extends Ticket {
+      open: string;
+      beta: number;
+      yield: number;
+      getDividend?(symbol: string): number;
+    };
+  </pre>
+
+  <p>O código fica bem mais organizado né?</p>
+
+</body>
+
+</html>
