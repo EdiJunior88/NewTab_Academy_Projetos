@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
-  <title>Introdução ao React</title>
+  <title>Iniciando a primeira aplicação</title>
 </head>
+
 <body>
-  <h1>Introdução ao React</h1>
+  <h1>Iniciando a primeira aplicação</h1>
 
-  <p>📍 Para reforçar:</p>
+  <h2>📂 Materiais complementares:</h2>
 
-  <p>O TypeScript começou a ser desenvolvido pela <a href="https://tecnoblog.net/sobre/microsoft/">Microsoft</a> em 2012, com o objetivo de adicionar recursos e ferramentas que não estão presentes nativamente na linguagem (ou que seriam muito mais complexos de serem implementados), como tipagem estática (ou seja, os tipos das variáveis são definidos explicitamente no código) e orientação a objetos.</p>
+  <p>Documentação oficial apresentada no vídeo: <a href="https://pt-br.reactjs.org/docs/getting-started.html">https://pt-br.reactjs.org/docs/getting-started.html</a></p>
 
-  <p>Por isso, ele não é usualmente considerado como uma nova linguagem de programação, mas sim como um superconjunto de JavaScript, pois o código é “transformado” (no termo técnico: transcompilado) em JavaScript “puro” antes de ser executado.</p>
+  <p>É recomendado que se use um gerenciador de pacotes (como <code>npm</code> ou <code>yarn</code>) para criar projetos em React. Além disso, o próprio time de desenvolvimento criou um pacote que cria um ambiente de desenvolvimento rápida e facilmente: o <a href="https://github.com/facebook/create-react-app">create-react-app</a>.</p>
 
-  <p>Um arquivo TypeScript geralmente tem a extensão “.ts”. Por, no fundo, ainda ser JavaScript, qualquer código nativo da linguagem pode ser adicionado em um arquivo desse formato, e programas escritos em JavaScript também podem ser considerados programas TypeScript válidos. Há, também, suporte a várias bibliotecas JavaScript populares, como <a href="https://tecnoblog.net/responde/o-que-e-node-js-guia-para-iniciantes/">Angular</a>, <a href="https://vuejs.org/">Vue.js</a>, <a href="https://d3js.org/">D3.js</a>, entre outras.</p>
+  <p>Então, para instalá-lo (obs.: a versão do NPM deve ser >= 5.6 e do NodeJS >= 8.10) basta executar:</p>
 
-  <p>Sites e aplicativos criados com TypeScript podem ser executados tanto no lado do cliente (diretamente no navegador do usuário, por exemplo) quanto no lado do servidor (com <a href="https://tecnoblog.net/responde/o-que-e-node-js-guia-para-iniciantes/">Node.js</a>). O próprio compilador TypeScript padrão foi escrito em TypeScript e transcompilado para JavaScript.</p>
+  <pre>
+    npx create-react-app my-app
+    cd my-app
+    npm start
+  </pre>
 
-  <p><strong>Fonte</strong>: <a href="https://tecnoblog.net/responde/o-que-e-typescript-guia-para-iniciantes/">https://tecnoblog.net/responde/o-que-e-typescript-guia-para-iniciantes/</a></p>
+  <p>Nesse exemplo, <code>my-app</code> é o nome do seu projeto. O <code>script</code> criará uma pasta com o mesmo e já vai gerar uma estrutura básica do projeto com alguns arquivos e (mais importante) todas as dependências do projeto já instaladas. A partir daí, basta dentro da pasta executar npm start e será servido um servidor local com o seu projeto.</p>
+
 </body>
+
 </html>
