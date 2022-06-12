@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Exibindo conteúdo</title>
+</head>
+
+<body>
+  <h1>Exibindo conteúdo</h1>
+
+  <p>Como mostramos no vídeo, dentro de sua pasta você deve ter visto uma outra pasta chamada "src", certo? É nessa pasta que ficam os arquivos que iremos de fato trabalhar. Lembra do servidor local que o instalador criou para nós? Basicamente, quando rodarmos npm start ele vai começar a ler o que tem nessa pasta e vai atualizando na hora o que aparece. Para nossas lições que não envolvem componentes vamos usar um arquivo que já deve existir nessa pasta: o App.js.</p>
+
+  <p>Ele é uma espécie de "agregador", onde podemos amarrar o resto de nossa aplicação (por isso o nome). Dentro dele você vai ver que já existem tags criadas. Aqui é um código JSX que já veio pré-pronto com a instalação (você pode até ver a página gerada por ele no seu navegador ao acessar a porta <code>localhost</code> que o servidor expôs), dentro de um método chamado render. Esse método indica que o valor retornado é o que será renderizado na página.</p>
+  
+  <p>Você deve ter percebido alguma coisa estranha com certos nomes de atributos… por exemplo, o que é um <code>className</code>? Esse é um dos melhores exemplos de diferenças entre JSX e HTML. Tudo que o JSX retorna é uma sintaxe em Javascript puro no final. Isso quer dizer que, se usarmos palavras reservadas do Javascript, como por exemplo class, o código retornado pode apresentar erros, pois o JS por baixo dos panos vai tentar fazer algo relativo àquele termo reservado (no caso, criar uma classe). Em casos como o que acabamos de ver, o React contorna o problema simplesmente renomeando o atributo: por isso ao invés de class temos className. Esse é provavelmente o exemplo mais notável, mas vale a pena prestar atenção a ele e a outros que possam aparecer. O importante a gravar é que (e é sério, grave isso), mesmo parecendo HTML, TUDO É JAVASCRIPT.</p>
+  
+  <p>Com isso fora do caminho, podemos notar uma outra coisa um pouco fora do que conhecemos até agora: <code>&ltimg src={logo} className="App-logo" alt="logo" /&gt</code>. O que exatamente está acontecendo nesse src? No caso, ele está usando o valor de uma variável (a importada aqui: import logo from './logo.svg';) para declarar o caminho da imagem.</p>
+  
+  <p>Um último detalhe que não falamos, antes de prosseguir: nomenclatura. Porque esse arquivo (dentre outros) e certas classes estão sendo declarados com letra maiúscula? Bom, lembra que às vezes o JSX tem dificuldade de distinguir JS de HTML? Em certos casos isso se aplica também a componentes que criamos. Assim, se a gente criar um componente chamado "div" e importá-lo, o JSX vai ficar perdido toda vez que a gente abrir ou fechar uma div no código. O modo como contornamos isso é declarando-os com letra maiúscula. O JSX por padrão mantém que elementos e tags começando em letra minúscula são para serem interpretados como HTML, enquanto os capitalizados são lidos já como componentes. Isso tudo será mais importante mais para frente, mas mantenha esse padrão bem claro, pois pode gerar bastante dor de cabeça.</p>
+  
+  <p>Um último detalhe importante: Todos os nossos retornos de código JSX DEVEM estar encapsulados (ou numa "tag mãe) em um único elemento raiz (uma div, ul, etc.). Caso tentemos voltar elementos soltos o React irá detectar um problema e não irá renderizar. Essa é uma exigência da ferramenta, e pode parecer arbitrária, mas é bem simples de seguir, então não se preocupe, ok?</p>
+
+</body>
+
+</html>
