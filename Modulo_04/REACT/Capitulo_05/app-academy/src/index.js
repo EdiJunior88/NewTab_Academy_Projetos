@@ -6,7 +6,7 @@ var conteudo = (
   <div>
     {texto}
     <div style={{ backgroundColor: 'blue' }}>Exemplo 1</div>
-    <div>Exemplo 2</div>
+    <div className='exemplo'>Exemplo 2</div>
   </div>
 );
 
