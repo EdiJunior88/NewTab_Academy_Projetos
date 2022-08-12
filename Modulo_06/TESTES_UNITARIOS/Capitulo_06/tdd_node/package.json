@@ -1,0 +1,14 @@
+{
+  "name": "tdd_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node src/server/server.js",
+    "test": "node src/tests/unit_test.test.js",
+    "test:server": "node src/tests/server_http.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
