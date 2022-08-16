@@ -1,0 +1,26 @@
+{
+  "name": "tdd_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node src/server/server.js",
+    "test": "node tests/unit_test.test.js",
+    "test:server": "node tests/server_http.test.js",
+    "mocha": "node_modules/mocha/bin/mocha.js tests/",
+    "jest": "jest --env=jsdom __tests__/",
+    "jest:watch": "jest --env=jsdom --watch __tests__/",
+    "jest:coverage": "jest --env=jsdom --coverage __tests__/",
+    "jest:memory": "jest --env=node --logHeapUsage __tests__/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.0.0"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3"
+  }
+}
