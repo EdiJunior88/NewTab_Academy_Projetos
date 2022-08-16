@@ -48,7 +48,7 @@
   </li>
   
   <li>
-    ⏳<strong>Projeto Front-end em time:</strong> após praticar com projetos guiados e individuais, você vai se juntar a outras pessoas em formação para desenvolver um projeto ainda mais completo com tecnologias front-end, inclusive utilizando metodologias ágeis.
+    ✔️<strong>Projeto Front-end em time:</strong> após praticar com projetos guiados e individuais, você vai se juntar a outras pessoas em formação para desenvolver um projeto ainda mais completo com tecnologias front-end, inclusive utilizando metodologias ágeis.
   </li>
 </ul>
 
@@ -60,11 +60,11 @@ E nesses módulos você vai desenvolver alguns outros diferenciais para possíve
 
 <ul>
   <li>
-    ⏳<strong>Banco de dados + Busca por oportunidades:</strong> aprenda a construir um banco de dados MySQL e também passe a buscar vagas de acordo com as tecnologias que já aprendeu até aqui.
+    ✔️<strong>Banco de dados + Busca por oportunidades:</strong> aprenda a construir um banco de dados MySQL e também passe a buscar vagas de acordo com as tecnologias que já aprendeu até aqui.
   </li>
   
   <li>
-    <strong>Linguagem Server Side + Framework:</strong> desenvolva um projeto com a primeira linguagem server side, o PHP, e também aprenda Laravel para ter ainda mais opções de vagas para se candidatar.
+    ⏳<strong>Linguagem Server Side + Framework:</strong> desenvolva um projeto com a primeira linguagem server side, o PHP, e também aprenda Laravel para ter ainda mais opções de vagas para se candidatar.
   </li>
   
   <li>
