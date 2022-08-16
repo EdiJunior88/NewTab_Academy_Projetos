@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Opção 1 – Método raiz</title>
+</head>
+
+<body>
+  <h1>Opção 1 – Método raiz</h1>
+
+  <p>A ideia é prepararmos um ambiente (no Windows) partindo do marco zero para melhor controle e entendimento do funcionamento da ferramenta.</p>
+
+  <p>Para fazer o download do PHP, acesse <a href="http://php.net/downloads.php">http://php.net/downloads.php</a></p>
+
+  <p>Na nossa formação, utilizaremos a versão 7.4. Encontre <a href="https://windows.php.net/download#php-7.4">aqui</a>.</p>
+
+  <p><strong>Importante</strong>: Você deverá saber a arquitetura do seu sistema Windows (<a href="https://tecnoblog.net/293900/como-saber-se-o-seu-pc-com-windows-e-32-ou-64-bits/">86x ou 64x</a>)</p>
+
+  <p>Para 86x: Baixe o <a href="https://windows.php.net/downloads/releases/php-7.4.14-nts-Win32-vc15-x64.zip">zip</a> de <strong>VC15 x64 Non Thread Safe (2021-Jan-05 18:10:13)</strong></p>
+
+  <p>Para 74x: Baixe o <a href="https://windows.php.net/downloads/releases/php-7.4.14-nts-Win32-vc15-x86.zip">zip</a> de <strong>VC15 x86 Non Thread Safe (2021-Jan-05 18:10:14)</strong></p>
+
+  <ul>
+    <li>Com o arquivo baixado, mova ele para <strong>C:</strong>, extraia e renomeie a pasta para php;</li>
+    <li>Renomeie o arquivo php.ini-development para php.ini</li>
+    <li>Crie a 9580 de ambiente no sistema;</li>
+    <li>Busque por “variáveis de ambiente” clicando na tecla do windows;</li>
+    <li>Escolha Editar as variáveis de ambiente do sistema;</li>
+    <li>Na aba Avançado, clique em Variáveis de Ambiente;</li>
+    <li>Em Variáveis do Sistema, selecione o valor Path e clique em Editar;</li>
+    <li>Crie um novo campo e adicione o valor da variável. No nosso caso, colocamos a pasta (php) na partição principal (C:). Se você seguiu a mesma estrutura, o valor deverá ser “<strong>C:\php</strong>” (sem as aspas);</li>
+    <li>Inicie seu editor de texto favorito como administrador (clicando no ícone com o botão direito do mouse);</li>
+    <li>Abra o arquivo C:\Windows\System32\drivers\etc;</li>
+    <li>Caso a instrução “127.0.0.1 localhost” (sem as aspas) não exista, adicione no final do arquivo e salve;</li>
+    <li>Reinicie seu computador;</li>
+    <li>Abra a linha de comando e digite: php –version.</li>
+    <li>Caso você tenha realizado todas as etapas, o resultado será esse:</li>
+  </ul>
+
+  <img src="img/img01.png" alt="">
+
+</body>
+
+</html>
