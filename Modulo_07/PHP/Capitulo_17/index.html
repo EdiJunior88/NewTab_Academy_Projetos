@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>For, Foreach, While e DoWhile</title>
+</head>
+
+<body>
+  <h1>For, Foreach, While e DoWhile</h1>
+
+  <h2>For</h2>
+
+  <p>A estrutura for nos permite fazer um loop para repetir um determinado trecho de código, definindo um ponto inicial e final. Observe a sintaxe abaixo:</p>
+
+  <img src="img/01.png" alt="">
+
+  <p>$expressao1 representa o ponto de partida do laço, que será executado apenas na primeira iteração;</p>
+
+  <p>$expressao2 será uma expressão booleana, que caso resulte em TRUE, prosseguirá com a execução do trecho de código a ser repetido;</p>
+
+  <p>$expressao3 é uma expressão executada ao fim de cada iteração e geralmente atualiza o valor da variável utilizada na $expressao2.</p>
+
+  <img src="img/02.png" alt="">
+
+  <h2>Foreach</h2>
+
+  <p>A estrutura foreach é mais indicada para percorrer arrays e objetos:</p>
+
+  <img src="img/03.png" alt="">
+
+  <p>A cada iteração, o elemento atual será atribuído a variável $produto e ao fim da iteração, caso exista mais um elemento, o loop continuará sendo executado.</p>
+
+  <p>Para resgatar o índice do elemento atual, utilizamos essa sintaxe:</p>
+
+  <img src="img/04.png" alt="">
+
+  <h2>While</h2>
+
+  <p>Considerado o mais simples, o laço while executa um trecho de código enquanto a expressão avaliada resultar TRUE.</p>
+
+  <img src="img/05.png" alt="">
+
+  <p><strong>NOTA</strong>: Visto que o while valida a expressão antes de tudo, se a primeira expressão resultar em FALSE, o trecho de código dentro do laço nunca será executado.</p>
+
+  <h2>DoWhile</h2>
+
+  <p>Já o laço de repetição dowhile, valida a expressão apenas ao final da iteração. Dessa forma, o código a ser repetido será executado pelo menos uma vez. Exemplo:</p>
+
+  <img src="img/06.png" alt="">
+
+  <p>A próxima iteração do código acima não existirá, pois a validação do dowhile resultou em FALSE.</p>
+
+  <p><strong>NOTAS</strong>:</p>
+
+  <ul>
+    <li>A instrução break finaliza a execução de estruturas de repetição for, foreach, while e dowhile;</li>
+    <li>A instrução continue pula o restante do código a ser executado dentro da estrutura de repetição, e continua a execução para validação da expressão.</li>
+  </ul>
+  
+  <p>No exemplo abaixo, o $produto de valor “coxinha” não será impresso:</p>
+
+  <img src="img/07.png" alt="">
+
+</body>
+
+</html>
