@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Tags, instruções e comentários</title>
+</head>
+
+<body>
+  <h1>Tags, instruções e comentários</h1>
+
+  <h2>Tags</h2>
+  
+  <p>Ao interpretar um arquivo, o PHP procurará pelas tags de abertura <?php e fechamento ?>, que indicarão ao interpretador quando ele deverá começar e finalizar de ler o código. Dessa forma conseguimos utilizar o php em diversos tipos de arquivos, já que tudo que estiver fora das tags será ignorado pelo interpretador do PHP.</p>
+
+  <p>Em arquivos PHP puro, com a extensão .php, a documentação recomenda que não utilize a tag de fechamento para que não tenha linhas ou espaços em branco após a tag, fazendo com que seu script tenha um efeito indesejável.</p>
+
+  <h2>Separação de instruções</h2>
+
+  <p>Nosso código é formado por diversas instruções (também conhecidas como comandos) e precisamos informar ao interpretador a hora de finalizar uma instrução. O PHP necessita que os comandos sejam finalizados com o caractere ; (ponto e vírgula).</p>
+
+  <p>Alguns exemplos:</p>
+
+  <ol>
+    <li>O trecho abaixo poderia fazer parte de um arquivo misto, no qual indicamos o início e o final do código a ser interpretado com as tags de abertura e fechamento. Utilizamos a instrução echo para exibir um valor e adicionamos o ponto e vírgula no final para finalizar.</li>
+
+    <p><img src="img/01.png" alt=""></p>
+
+    <li>Quando queremos executar apenas um comando, podemos resumi-lo com apenas 1 linha de código. Nesse caso, o interpretador identifica o fim da instrução no fechamento da tag PHP. Percebam que, com o fechamento da tag PHP, esse código poderia fazer parte de um arquivo misto.</li>
+
+    <p><img src="img/02.png" alt=""></p>
+
+    <li>Em scripts puros, omitimos a tag de fechamento PHP e, como sempre, finalizamos o comando echo por meio do ponto e vírgula.</li>
+
+    <p><img src="img/03.png" alt=""></p>
+  </ol>
+
+  <h2>Comentários</h2>
+
+  <p>No mundo da programação, seguimos algumas regrinhas consideradas boas práticas na escrita do código. Isso porque no mercado de trabalho, dificilmente desenvolvemos algo sozinhos. Utilizado para documentar o código, os comentários devem ser aplicados com cautela para que não cause efeito contrário. Comentar comandos inutilizados e explicações óbvias podem prejudicar a leitura do código por outros profissionais. Vejamos os tipos de comentários nos exemplos abaixo:</p>
+
+  <p>Comentários de uma linha podem ser feitos após o fim da instrução ou ocupando a própria linha, com o caracteres // ou #.</p>
+
+  <img src="img/04.png" alt="">
+
+  <p>Para comentários com múltiplas linhas, devemos indicar o início com /* e o final */</p>
+
+  <img src="img/05.png" alt="">
+
+</body>
+
+</html>
