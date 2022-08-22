@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>MManipulação de dados</title>
+</head>
+
+<body>
+  <h1>MManipulação de dados</h1>
+
+  <p>Arquivos podem substituir o banco de dados para o armazenamento de dados que não precisamos nos preocupar com questões de segurança. Criar um arquivo de logs para a aplicação ou relatórios de vendas para análise, por exemplo, podem ser tarefas corriqueiras. Por esse motivo várias linguagens possuem suporte para manipulação de arquivos, inclusive o PHP.</p>
+
+  <h2>Touch</h2>
+  <p>A função touch cria um arquivo vazio, basta passar como parâmetro o nome do arquivo a ser criado.</p>
+
+  <p>
+    <code>
+      <strong>NOTA:</strong>
+      não existe uma forma de checar a extensão do arquivo. Se tivéssemos passado touch('arquivo.qualquer_extensao'), o arquivo teria sido criado da mesma forma.
+    </code>
+  </p>
+
+  <img src="img/01.png" alt="">
+
+  <h2>Fopen</h2>
+  <p>Abre um arquivo. A função é utilizada com dois parâmetros: o primeiro passando o nome do arquivo a ser manipulado, e o segundo é o modo de manipulação, onde definimos as permissões de acesso para leitura ou escrita. Na documentação podemos encontrar todos os modos disponíveis.</p>
+
+  <img src="img/02.png" alt="">
+
+  <p>Fonte: <a href="https://www.php.net/manual/pt_BR/function.fopen.php">https://www.php.net/manual/pt_BR/function.fopen.php</a></p>
+
+  <p>
+    <code>
+      <strong>NOTA:</strong>
+      muita atenção ao utilizar modos de escrita que indicam a inserção do ponteiro no começo do arquivo. Nesses casos, se o arquivo já existir ele será sobrescrito e seu conteúdo zerado!
+    </code>
+  </p>
+
+  <img src="img/03.png" alt="">
+
+  <h2>Fwrite</h2>
+  <p>Escreve no arquivo apontado aberto por fopen().</p>
+
+  <img src="img/04.png" alt="">
+
+  <p>No exemplo acima, será criado o arquivo.txt no mesmo nível de diretório do nosso script, e seu conteúdo será “estou escrevendo neste arquivo” (sem as aspas).</p>
+
+  <h2>Fgets</h2>
+  <p>Lê a linha do ponteiro atual</p>
+
+  <img src="img/05.png" alt="">
+
+  <p>
+    <code>
+      <strong>NOTA:</strong>
+      Neste exemplo, utilizamos a função feof() para testar o fim do arquivo.
+    </code>
+  </p>
+
+  <h2>Fclose</h2>
+  <p>Fecha o arquivo apontado (aberto por fopen()) anteriormente.</p>
+
+  <img src="img/06.png" alt="">
+
+  <h2>Unlink</h2>
+  <p>Serve para apagar um arquivo</p>
+
+  <img src="img/07.png" alt="">
+
+  <h2>File_exists</h2>
+  <p>Função checa se um arquivo existe. Também funciona para diretórios.</p>
+
+  <img src="img/08.png" alt="">
+
+</body>
+
+</html>
