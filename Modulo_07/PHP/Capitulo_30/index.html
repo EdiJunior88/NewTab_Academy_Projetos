@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>PDO</title>
+</head>
+
+<body>
+  <h1>PDO</h1>
+
+  <p>PDO (PHP Data Object) é uma extensão da linguagem PHP para acesso ao banco de dados. Possui suporte a vários drivers de banco, além de preparedstatement que valida a query antes de ser executada a fim de prevenir ataques SQL injection.</p>
+
+  <h2>Abrir conexão</h2>
+
+  <p>Para abrir uma conexão, precisamos passar as credenciais de acesso e indicar o host do respectivo banco de dados para a instância do PDO. Como estamos trabalhando localmente (ferramentas instaladas na própria máquina), definimos o host como <i>localhost</i> mas também poderia ser <i>127.0.0.1</i>.</p>
+
+  <img src="img/01.png" alt="">
+
+  <p>
+    <code>
+      <strong>NOTA:</strong>
+      Os atributos PDO::ATTR_ERRMODE e PDO::ERRMODE_EXCEPTION são utilizados para apresentação de relatório de erros e exceções, respectivamente.
+    </code>
+  </p>
+
+  <h2>Inserir registro</h2>
+
+  <p>Para inserir um registro, precisamos abrir a conexão referente ao banco de dados que queremos manipular, e executar a query de <i>INSERT</i>.</p>
+
+  <img src="img/02.png" alt="">
+
+  <p>
+    <code>
+      <strong>NOTA:</strong>
+      como essa abordagem é menos utilizada atualmente devido às opções de ORMs existentes nos frameworks da linguagem, não entraremos em detalhes (não se preocupe com o termo ORM agora, abordaremos em breve). Caso tenha curiosidade e queira conhecer mais sobre PDO, confira sua documentação no site oficial do PHP: <a href="https://www.php.net/manual/pt_BR/intro.pdo.php">https://www.php.net/manual/pt_BR/intro.pdo.php</a> e e um guia de comandos na W3S: <a href="https://www.w3schools.com/php/php_mysql_intro.asp">https://www.w3schools.com/php/php_mysql_intro.asp</a>
+    </code>
+  </p>
+
+</body>
+
+</html>
