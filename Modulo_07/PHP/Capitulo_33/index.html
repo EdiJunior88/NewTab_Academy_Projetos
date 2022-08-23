@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Instalação e aquisição de pacotes</title>
+</head>
+
+<body>
+  <h1>Instalação e aquisição de pacotes</h1>
+
+  <p>O Composer é um gerenciador de dependências em PHP. Com ele é possível instalar e atualizar bibliotecas, deixando-as prontas para uso dentro do projeto. O repositório padrão utilizado pelo composer para download das bibliotecas/pacotes é o <a href="https://packagist.org/">Packagist</a>: qualquer desenvolvedor pode publicar uma biblioteca lá! Mas também podemos indicar um repositório do github, por exemplo.</p>
+
+  <p>Instalação em Linux/MacOS: <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos</a></p>
+
+  <p>Instalação Windows: <a href="https://getcomposer.org/doc/00-intro.md#installation-windows">https://getcomposer.org/doc/00-intro.md#installation-windows</a></p>
+
+  <p><strong>Adquirindo um pacote</strong>: <i>composer require nome-desenvolvedor/nome-do-pacote</i></p>
+
+  <p><strong>NOTA</strong>: Convenciona-se que os pacotes sejam disponibilizados da seguinte forma:</p>
+
+  <p><strong>nome-desenvolvedor/nome-do-pacote</strong>.</p>
+
+  <p>No exemplo abaixo, criamos o diretório <strong>meu-projeto</strong> e executei o comando <strong>composer require monolog/monolog</strong> (pacote para registro de logs).</p>
+
+  <p>A seguinte estrutura foi criada:</p>
+
+  <img src="img/01.png" alt="">
+
+  <ul>
+    <li>composer.json</li>
+  </ul>
+  <p>Arquivo que lista os pacotes;</p>
+
+  <ul>
+    <li>composer.lock</li>
+  </ul>
+  <p>Arquivo que lista os pacotes, suas respectivas versões, dependências (sim, um pacote pode depender de vários outros);</p>
+
+  <ul>
+    <li>/vendor</li>
+  </ul>
+  <p>Diretório com todos os arquivos baixados pelo composer;</p>
+
+  <ul>
+    <li>autoload.php</li>
+  </ul>
+  <p>Ao importar esse arquivo, todos os pacotes instalados estarão prontos para uso.</p>
+
+  <img src="img/02.png" alt="">
+
+</body>
+
+</html>
