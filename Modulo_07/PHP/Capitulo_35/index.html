@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Pilares da Programação Orientada a Objetos</title>
+</head>
+
+<body>
+  <h1>Pilares da Programação Orientada a Objetos</h1>
+
+  <p>4 pilares da Programação Orientada a Objetos:</p>
+
+  <h2>Abstração</h2>
+
+  <p>É responsável por definir um modelo para que outras classes possam seguir. Exemplos:</p>
+
+  <p>Forma de pagamento -> Cartão, transferência, dinheiro;</p>
+
+  <p>Animais -> Elefante, girafa, leão;</p>
+
+  <p>Pessoa -> Física e Jurídica.</p>
+
+  <p>No exemplo abaixo, as classes <i>PessoaFisica</i> e <i>PessoaJuridica</i> estendem da classe abstrata Pessoa. Sendo assim, além de PessoaFisica ter acesso aos seus próprios atributos, terá acesso aos atributos da classe abstrata <i>Pessoa</i>. O mesmo acontece com a classe <i>PessoaJuridica</i>.</p>
+
+  <p><strong>NOTA</strong>: A palavra chave <i>private</i> indica que esse atributo só poderá ser manipulado apenas dentro da própria classe.</p>
+
+  <p>Utilizando <i>protected</i>, o atributo pode ser manipulado na superclasse e subclasse. Com <i>public</i>, o atributo pode ser manipulado a partir de qualquer classe. Exemplo:</p>
+
+  <img src="img/01.png" alt="">
+
+  <h2>Encapsulamento</h2>
+
+  <p>Esse pilar deve garantir a segurança dos dados que estão dentro de uma classe, para que suas variáveis sejam manipuladas apenas por seus métodos, e nunca diretamente. Como em:</p>
+
+  <img src="img/02.png" alt="">
+
+  <h2>Herança</h2>
+
+  <p>Para criar uma nova classe (também chamada de subclasse) baseada em uma já existente (superclasse). Dessa forma, a subclasse herda as características da superclasse sem a necessidade de duplicar o código.</p>
+
+  <img src="img/03.png" alt="">
+
+  <p>No exemplo acima, vemos que a classe PessoaFisica herdou os métodos da superclasse <i>Pessoa</i> (setNome e getNome). Não se preocupe se não entender completamente o código. Logo entraremos em detalhes sobre a palavra chave <i>new</i>.</p>
+
+  <h2>Polimorfismo</h2>
+
+  <p>Esse pilar nos permite sobrepor a funcionalidade de um método da superclasse na subclasse. Nesse exemplo, o método <i>alimentacao</i> teve sua funcionalidade sobreposta. Além disso, ao estender uma superclasse que contenha um método abstrato, somos obrigados a implementá-lo na subclasse.</p>
+
+  <img src="img/04.png" alt="">
+
+  <p><strong>Classes</strong>: Conjunto de atributos e métodos especificará um objeto.</p>
+
+  <p><strong>Objetos</strong>: O objeto é resultado da instância de uma classe quando utilizamos a palavra reservada <i>new</i>.</p>
+
+  <img src="img/05.png" alt="">
+
+  <p><strong>Namespaces</strong>: Funciona como um agrupador de classes, a fim de organizar e evitar conflitos com os nomes dos arquivos dentro do projeto. Assim podemos ter arquivos com o mesmo nome em diretórios diferentes, mas nunca no mesmo. Exemplo:</p>
+
+  <img src="img/06.png" alt="">
+
+  <p><strong>Método construtor</strong>: O método construtor é chamado de forma implícita logo após a classe ser instanciada.</p>
+
+  <img src="img/07.png" alt="">
+
+</body>
+
+</html>
