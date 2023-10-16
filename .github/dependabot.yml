@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: ""
+  - package-ecosystem: "npm"
     directory: "/" #Caminho para o diretório onde está o arquivo do gerenciador de pacotes (package.json, composer.json, etc.)
     schedule:
       interval: "weekly" #Intervalo de verificação das atualizações (diário, semanal, mensal)
