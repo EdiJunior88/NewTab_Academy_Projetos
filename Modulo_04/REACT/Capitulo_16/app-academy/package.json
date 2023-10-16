@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "css-select": "^5.1.0",
     "postcss": "^8.4.31"
   }
 }
