@@ -1,10 +1,12 @@
+![Monolog](logo.jpg)
+
 # Monolog - Logging for PHP [![Continuous Integration](https://github.com/Seldaek/monolog/workflows/Continuous%20Integration/badge.svg?branch=main)](https://github.com/Seldaek/monolog/actions)
 
 [![Total Downloads](https://img.shields.io/packagist/dt/monolog/monolog.svg)](https://packagist.org/packages/monolog/monolog)
 [![Latest Stable Version](https://img.shields.io/packagist/v/monolog/monolog.svg)](https://packagist.org/packages/monolog/monolog)
 
-> ⚠ This is the **documentation for Monolog 3.x**, if you are using older releases
-> see the documentation for [Monolog 2.x](https://github.com/Seldaek/monolog/blob/2.x/README.md) or [Monolog 1.x](https://github.com/Seldaek/monolog/blob/1.x/README.md) ⚠
+>**Note** This is the **documentation for Monolog 3.x**, if you are using older releases
+>see the documentation for [Monolog 2.x](https://github.com/Seldaek/monolog/blob/2.x/README.md) or [Monolog 1.x](https://github.com/Seldaek/monolog/blob/1.x/README.md)
 
 Monolog sends your logs to files, sockets, inboxes, databases and various
 web services. See the complete list of handlers below. Special handlers
@@ -101,6 +103,7 @@ Bugs and feature request are tracked on [GitHub](https://github.com/Seldaek/mono
 - [Drupal](https://www.drupal.org/) is usable with Monolog via the [monolog](https://www.drupal.org/project/monolog) module.
 - [Aimeos ecommerce framework](https://aimeos.org/) is usable with Monolog via the [ai-monolog](https://github.com/aimeos/ai-monolog) extension.
 - [Magento](https://magento.com/) comes out of the box with Monolog.
+- [Spiral Framework](https://spiral.dev) comes out of the box with Monolog bridge.
 
 ### Author
 

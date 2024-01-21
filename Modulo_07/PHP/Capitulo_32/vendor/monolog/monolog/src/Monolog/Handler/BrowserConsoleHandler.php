@@ -15,6 +15,7 @@ use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Utils;
 use Monolog\LogRecord;
+use Monolog\Level;
 
 use function count;
 use function headers_list;
@@ -173,7 +174,7 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
             $extra = self::dump('Extra', $record->extra);
 
             if (\count($context) === 0 && \count($extra) === 0) {
-                $script[] = self::call_array('log', self::handleStyles($record->formatted));
+                $script[] = self::call_array(self::getConsoleMethodForLevel($record->level), self::handleStyles($record->formatted));
             } else {
                 $script = array_merge(
                     $script,
@@ -186,6 +187,16 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
         }
 
         return "(function (c) {if (c && c.groupCollapsed) {\n" . implode("\n", $script) . "\n}})(console);";
+    }
+
+    private static function getConsoleMethodForLevel(Level $level): string
+    {
+        return match ($level) {
+            Level::Debug => 'debug',
+            Level::Info, Level::Notice => 'info',
+            Level::Warning => 'warn',
+            Level::Error, Level::Critical, Level::Alert, Level::Emergency => 'error',
+        };
     }
 
     /**
@@ -253,7 +264,7 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
         $script[] = self::call('log', self::quote('%c%s'), self::quote('font-weight: bold'), self::quote($title));
         foreach ($dict as $key => $value) {
             $value = json_encode($value);
-            if (empty($value)) {
+            if (false === $value) {
                 $value = self::quote('');
             }
             $script[] = self::call('log', self::quote('%s: %o'), self::quote((string) $key), $value);

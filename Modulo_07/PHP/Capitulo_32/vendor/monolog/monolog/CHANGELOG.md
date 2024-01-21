@@ -1,3 +1,43 @@
+### 3.5.0 (2023-10-27)
+
+  * Added ability to indent stack traces in LineFormatter via e.g. `indentStacktraces('  ')` (#1835)
+  * Added ability to configure a max level name length in LineFormatter via e.g. `setMaxLevelNameLength(3)` (#1850)
+  * Added support for indexed arrays (i.e. `[]` and not `{}` arrays once json serialized) containing inline linebreaks in LineFormatter (#1818)
+  * Added `WithMonologChannel` attribute for integrators to use to configure autowiring (#1847)
+  * Fixed log record `extra` data leaking between handlers that have handler-specific processors set (#1819)
+  * Fixed LogglyHandler issue with record level filtering (#1841)
+  * Fixed display_errors parsing in ErrorHandler which did not support string values (#1804)
+  * Fixed bug where the previous error handler would not be restored in some cases where StreamHandler fails (#1815)
+  * Fixed normalization error when normalizing incomplete classes (#1833)
+
+### 3.4.0 (2023-06-21)
+
+  * Added `LoadAverageProcessor` to track one of the 1, 5 or 15min load averages (#1803)
+  * Added support for priority to the `AsMonologProcessor` attribute (#1797)
+  * Added `TelegramBotHandler` `topic`/`message_thread_id` support (#1802)
+  * Fixed `FingersCrossedHandler` passthruLevel checking (#1801)
+  * Fixed support of yearly and monthly rotation log file to rotate only once a month/year (#1805)
+  * Fixed `TestHandler` method docs (#1794)
+  * Fixed handling of falsey `display_errors` string values (#1804)
+
+### 3.3.1 (2023-02-06)
+
+  * Fixed Logger not being serializable anymore (#1792)
+
+### 3.3.0 (2023-02-06)
+
+  * Deprecated FlowdockHandler & Formatter as the flowdock service was shutdown (#1748)
+  * Added `ClosureContextProcessor` to allow delaying the creation of context data by setting a Closure in context which is called when the log record is used (#1745)
+  * Added an ElasticsearchHandler option to set the `op_type` to `create` instead of the default `index` (#1766)
+  * Added support for enum context values in PsrLogMessageProcessor (#1773)
+  * Added graylog2/gelf-php 2.x support (#1747)
+  * Improved `BrowserConsoleHandler` logging to use more appropriate methods than just console.log in the browser (#1739)
+  * Fixed GitProcessor not filtering correctly based on Level (#1749)
+  * Fixed `WhatFailureGroupHandler` not catching errors happening inside `close()` (#1791)
+  * Fixed datetime field in `GoogleCloudLoggingFormatter` (#1758)
+  * Fixed infinite loop detection within Fibers (#1753)
+  * Fixed `AmqpHandler->setExtraAttributes` not working with buffering handler wrappers (#1781)
+
 ### 3.2.0 (2022-07-24)
 
   * Deprecated `CubeHandler` and `PHPConsoleHandler` as both projects are abandoned and those should not be used anymore (#1734)
@@ -65,6 +105,27 @@ New deprecations:
   to Monolog or one of its handlers, or `Level::Warning->value` if you need the integer
   value equal to what `Logger::WARNING` was giving you.
 - `Logger::getLevelName()` is now deprecated.
+
+### 2.9.2 (2023-10-27)
+
+  * Fixed display_errors parsing in ErrorHandler which did not support string values (#1804)
+  * Fixed bug where the previous error handler would not be restored in some cases where StreamHandler fails (#1815)
+  * Fixed normalization error when normalizing incomplete classes (#1833)
+
+### 2.9.1 (2023-02-06)
+
+  * Fixed Logger not being serializable anymore (#1792)
+
+### 2.9.0 (2023-02-05)
+
+  * Deprecated FlowdockHandler & Formatter as the flowdock service was shutdown (#1748)
+  * Added support for enum context values in PsrLogMessageProcessor (#1773)
+  * Added graylog2/gelf-php 2.x support (#1747)
+  * Improved `BrowserConsoleHandler` logging to use more appropriate methods than just console.log in the browser (#1739)
+  * Fixed `WhatFailureGroupHandler` not catching errors happening inside `close()` (#1791)
+  * Fixed datetime field in `GoogleCloudLoggingFormatter` (#1758)
+  * Fixed infinite loop detection within Fibers (#1753)
+  * Fixed `AmqpHandler->setExtraAttributes` not working with buffering handler wrappers (#1781)
 
 ### 2.8.0 (2022-07-24)
 
