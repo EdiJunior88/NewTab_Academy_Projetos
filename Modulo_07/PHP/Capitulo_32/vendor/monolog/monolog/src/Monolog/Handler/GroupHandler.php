@@ -31,6 +31,8 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
     /**
      * @param HandlerInterface[] $handlers Array of Handlers.
      * @param bool               $bubble   Whether the messages that are handled can bubble up the stack or not
+     *
+     * @throws \InvalidArgumentException if an unsupported handler is set
      */
     public function __construct(array $handlers, bool $bubble = true)
     {
@@ -68,7 +70,7 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
         }
 
         foreach ($this->handlers as $handler) {
-            $handler->handle($record);
+            $handler->handle(clone $record);
         }
 
         return false === $this->bubble;
@@ -88,7 +90,7 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
         }
 
         foreach ($this->handlers as $handler) {
-            $handler->handleBatch($records);
+            $handler->handleBatch(array_map(fn ($record) => clone $record, $records));
         }
     }
 

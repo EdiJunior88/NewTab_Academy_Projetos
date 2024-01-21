@@ -33,7 +33,7 @@ class WhatFailureGroupHandler extends GroupHandler
 
         foreach ($this->handlers as $handler) {
             try {
-                $handler->handle($record);
+                $handler->handle(clone $record);
             } catch (Throwable) {
                 // What failure?
             }
@@ -57,8 +57,22 @@ class WhatFailureGroupHandler extends GroupHandler
 
         foreach ($this->handlers as $handler) {
             try {
-                $handler->handleBatch($records);
+                $handler->handleBatch(array_map(fn ($record) => clone $record, $records));
             } catch (Throwable) {
+                // What failure?
+            }
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function close(): void
+    {
+        foreach ($this->handlers as $handler) {
+            try {
+                $handler->close();
+            } catch (\Throwable $e) {
                 // What failure?
             }
         }

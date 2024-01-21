@@ -13,6 +13,7 @@ namespace Monolog;
 
 use Closure;
 use DateTimeZone;
+use Fiber;
 use Monolog\Handler\HandlerInterface;
 use Monolog\Processor\ProcessorInterface;
 use Psr\Log\LoggerInterface;
@@ -20,6 +21,7 @@ use Psr\Log\InvalidArgumentException;
 use Psr\Log\LogLevel;
 use Throwable;
 use Stringable;
+use WeakMap;
 
 /**
  * Monolog log channel
@@ -152,8 +154,12 @@ class Logger implements LoggerInterface, ResettableInterface
     private int $logDepth = 0;
 
     /**
+     * @var WeakMap<Fiber<mixed, mixed, mixed, mixed>, int> Keeps track of depth inside fibers to prevent infinite logging loops
+     */
+    private WeakMap $fiberLogDepth;
+
+    /**
      * Whether to detect infinite logging loops
-     *
      * This can be disabled via {@see useLoggingLoopDetection} if you have async handlers that do not play well with this
      */
     private bool $detectCycles = true;
@@ -172,6 +178,7 @@ class Logger implements LoggerInterface, ResettableInterface
         $this->setHandlers($handlers);
         $this->processors = $processors;
         $this->timezone = $timezone ?? new DateTimeZone(date_default_timezone_get());
+        $this->fiberLogDepth = new \WeakMap();
     }
 
     public function getName(): string
@@ -181,6 +188,8 @@ class Logger implements LoggerInterface, ResettableInterface
 
     /**
      * Return a new cloned instance with the name changed
+     *
+     * @return static
      */
     public function withName(string $name): self
     {
@@ -192,6 +201,8 @@ class Logger implements LoggerInterface, ResettableInterface
 
     /**
      * Pushes a handler on to the stack.
+     *
+     * @return $this
      */
     public function pushHandler(HandlerInterface $handler): self
     {
@@ -220,6 +231,7 @@ class Logger implements LoggerInterface, ResettableInterface
      * If a map is passed, keys will be ignored.
      *
      * @param list<HandlerInterface> $handlers
+     * @return $this
      */
     public function setHandlers(array $handlers): self
     {
@@ -243,6 +255,7 @@ class Logger implements LoggerInterface, ResettableInterface
      * Adds a processor on to the stack.
      *
      * @phpstan-param ProcessorInterface|(callable(LogRecord): LogRecord) $callback
+     * @return $this
      */
     public function pushProcessor(ProcessorInterface|callable $callback): self
     {
@@ -285,6 +298,7 @@ class Logger implements LoggerInterface, ResettableInterface
      * to suppress microseconds from the output.
      *
      * @param bool $micro True to use microtime() to create timestamps
+     * @return $this
      */
     public function useMicrosecondTimestamps(bool $micro): self
     {
@@ -293,6 +307,9 @@ class Logger implements LoggerInterface, ResettableInterface
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function useLoggingLoopDetection(bool $detectCycles): self
     {
         $this->detectCycles = $detectCycles;
@@ -318,12 +335,19 @@ class Logger implements LoggerInterface, ResettableInterface
         }
 
         if ($this->detectCycles) {
-            $this->logDepth += 1;
+            if (null !== ($fiber = Fiber::getCurrent())) {
+                $logDepth = $this->fiberLogDepth[$fiber] = ($this->fiberLogDepth[$fiber] ?? 0) + 1;
+            } else {
+                $logDepth = ++$this->logDepth;
+            }
+        } else {
+            $logDepth = 0;
         }
-        if ($this->logDepth === 3) {
+
+        if ($logDepth === 3) {
             $this->warning('A possible infinite logging loop was detected and aborted. It appears some of your handler code is triggering logging, see the previous log record for a hint as to what may be the cause.');
             return false;
-        } elseif ($this->logDepth >= 5) { // log depth 4 is let through so we can log the warning above
+        } elseif ($logDepth >= 5) { // log depth 4 is let through, so we can log the warning above
             return false;
         }
 
@@ -331,11 +355,11 @@ class Logger implements LoggerInterface, ResettableInterface
             $recordInitialized = count($this->processors) === 0;
 
             $record = new LogRecord(
+                datetime: $datetime ?? new DateTimeImmutable($this->microsecondTimestamps, $this->timezone),
+                channel: $this->name,
+                level: self::toMonologLevel($level),
                 message: $message,
                 context: $context,
-                level: self::toMonologLevel($level),
-                channel: $this->name,
-                datetime: $datetime ?? new DateTimeImmutable($this->microsecondTimestamps, $this->timezone),
                 extra: [],
             );
             $handled = false;
@@ -362,7 +386,7 @@ class Logger implements LoggerInterface, ResettableInterface
                 // once the record is initialized, send it to all handlers as long as the bubbling chain is not interrupted
                 try {
                     $handled = true;
-                    if (true === $handler->handle($record)) {
+                    if (true === $handler->handle(clone $record)) {
                         break;
                     }
                 } catch (Throwable $e) {
@@ -375,7 +399,11 @@ class Logger implements LoggerInterface, ResettableInterface
             return $handled;
         } finally {
             if ($this->detectCycles) {
-                $this->logDepth--;
+                if (isset($fiber)) {
+                    $this->fiberLogDepth[$fiber]--;
+                } else {
+                    $this->logDepth--;
+                }
             }
         }
     }
@@ -508,6 +536,8 @@ class Logger implements LoggerInterface, ResettableInterface
      * Set a custom exception handler that will be called if adding a new record fails
      *
      * The Closure will receive an exception object and the record that failed to be logged
+     *
+     * @return $this
      */
     public function setExceptionHandler(Closure|null $callback): self
     {
@@ -655,6 +685,8 @@ class Logger implements LoggerInterface, ResettableInterface
 
     /**
      * Sets the timezone to be used for the timestamp of log records.
+     *
+     * @return $this
      */
     public function setTimezone(DateTimeZone $tz): self
     {
@@ -682,5 +714,36 @@ class Logger implements LoggerInterface, ResettableInterface
         }
 
         ($this->exceptionHandler)($e, $record);
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function __serialize(): array
+    {
+        return [
+            'name' => $this->name,
+            'handlers' => $this->handlers,
+            'processors' => $this->processors,
+            'microsecondTimestamps' => $this->microsecondTimestamps,
+            'timezone' => $this->timezone,
+            'exceptionHandler' => $this->exceptionHandler,
+            'logDepth' => $this->logDepth,
+            'detectCycles' => $this->detectCycles,
+        ];
+    }
+
+    /**
+     * @param array<string, mixed> $data
+     */
+    public function __unserialize(array $data): void
+    {
+        foreach (['name', 'handlers', 'processors', 'microsecondTimestamps', 'timezone', 'exceptionHandler', 'logDepth', 'detectCycles'] as $property) {
+            if (isset($data[$property])) {
+                $this->$property = $data[$property];
+            }
+        }
+
+        $this->fiberLogDepth = new \WeakMap();
     }
 }

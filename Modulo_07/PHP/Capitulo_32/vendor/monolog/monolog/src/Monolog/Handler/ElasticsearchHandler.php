@@ -47,12 +47,14 @@ use Elastic\Elasticsearch\Client as Client8;
  * @phpstan-type Options array{
  *     index: string,
  *     type: string,
- *     ignore_error: bool
+ *     ignore_error: bool,
+ *     op_type: 'index'|'create'
  * }
  * @phpstan-type InputOptions array{
  *     index?: string,
  *     type?: string,
- *     ignore_error?: bool
+ *     ignore_error?: bool,
+ *     op_type?: 'index'|'create'
  * }
  */
 class ElasticsearchHandler extends AbstractProcessingHandler
@@ -85,6 +87,7 @@ class ElasticsearchHandler extends AbstractProcessingHandler
                 'index'        => 'monolog', // Elastic index name
                 'type'         => '_doc',    // Elastic document type
                 'ignore_error' => false,     // Suppress Elasticsearch exceptions
+                'op_type'      => 'index',   // Elastic op_type (index or create) (https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-index_.html#docs-index-api-op_type)
             ],
             $options
         );
@@ -162,7 +165,7 @@ class ElasticsearchHandler extends AbstractProcessingHandler
 
             foreach ($records as $record) {
                 $params['body'][] = [
-                    'index' => $this->needsType ? [
+                    $this->options['op_type'] => $this->needsType ? [
                         '_index' => $record['_index'],
                         '_type'  => $record['_type'],
                     ] : [
