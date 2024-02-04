@@ -1,0 +1,573 @@
+repo_name: EdiJunior88/NewTab_Academy_Projetos
+report_id: 16c9483a61faebc2585b0505b2c4f6ea
+version: 0.1
+repo_type: Public
+timestamp: '2024-02-04T14:35:42+00:00'
+requested_by: EdiJunior88
+provider: github
+branch: main
+detected_tools_count: 44
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos
+  detection_source: Repo Metadata
+- name: PHP
+  description: A popular general-purpose scripting language that is especially suited
+    to web development
+  website_url: http://www.php.net/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/991/hwUcGZ41_400x400.jpg
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos
+  detection_source: Repo Metadata
+- name: SQL
+  description: It is a domain-specific language used in programming
+  website_url: https://en.wikipedia.org/wiki/SQL
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_05/MYSQL/Capitulo_56/Exercicio_01/exercicio_01.sql
+  detection_source: Modulo_05/MYSQL/Capitulo_56/Exercicio_01/exercicio_01.sql
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-05-10 23:30:49.000000000 Z
+- name: TypeScript
+  description: A superset of JavaScript that compiles to clean JavaScript output
+  website_url: http://www.typescriptlang.org
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos
+  detection_source: Repo Metadata
+- name: Guzzle
+  description: PHP HTTP client that makes it easy to send HTTP requests and trivial
+    to integrate with web services
+  website_url: http://guzzlephp.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Microframeworks (Backend)
+  image_url: https://img.stackshare.io/service/2350/638632.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: PostCSS
+  description: Transform CSS with JS plugins
+  website_url: https://github.com/postcss/postcss
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/3339/rlFcjEdI.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_04/REACT/Capitulo_16/app-academy/package.json
+  detection_source: Modulo_04/REACT/Capitulo_16/app-academy/package.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-06-14 01:23:52.000000000 Z
+- name: React
+  description: A JavaScript library for building user interfaces
+  website_url: https://reactjs.org/
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_04/REACT/Capitulo_03/app-academy/package-lock.json
+  detection_source: Modulo_04/REACT/Capitulo_03/app-academy/package.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 16:15:46.000000000 Z
+- name: CouchDB
+  description: HTTP + JSON document database with Map Reduce views and peer-based
+    replication
+  website_url: http://couchdb.apache.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1042/default_86434292d1c55e5f3a3256ca2bc6e2ea62eaca83.jpg
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: MongoDB
+  description: The database for giant ideas
+  website_url: http://www.mongodb.com/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1030/leaf-360x360.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: Redis
+  description: Open source (BSD licensed), in-memory data structure store
+  website_url: http://redis.io/
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: In-Memory Databases
+  image_url: https://img.stackshare.io/service/1031/default_cbce472cd134adc6688572f999e9122b9657d4ba.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos
+  detection_source: Repo Metadata
+- name: Graylog
+  description: Open source log management that actually works
+  website_url: https://www.graylog.org/
+  open_source: true
+  hosted_saas: true
+  category: Monitoring
+  sub_category: Log Management
+  image_url: https://img.stackshare.io/service/4392/_HU28D42.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: Jest
+  description: Painless JavaScript Unit Testing
+  website_url: http://facebook.github.io/jest/
+  version: 29.7.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/830/jest.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_04/REACT/Capitulo_03/app-academy/package-lock.json
+  detection_source: Modulo_06/TESTES_UNITARIOS/Capitulo_09/tdd_node/package.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-16 00:12:30.000000000 Z
+- name: Logstash
+  description: Collect, Parse, &amp; Enrich Data
+  website_url: http://logstash.net/
+  open_source: true
+  hosted_saas: false
+  category: Monitoring
+  sub_category: Log Management
+  image_url: https://img.stackshare.io/service/1683/preview.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: Mocha
+  description: Simple, flexible, fun javascript test framework for node.js &amp; the
+    browser
+  website_url: http://mochajs.org/
+  version: 10.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/832/mocha.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_06/TESTES_UNITARIOS/Capitulo_07/tdd_node/package-lock.json
+  detection_source: Modulo_06/TESTES_UNITARIOS/Capitulo_07/tdd_node/package.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-15 20:49:09.000000000 Z
+- name: PHPStan
+  description: PHP Static Analysis Tool - discover bugs in your code without running
+    it!
+  website_url: https://github.com/phpstan/phpstan
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/8333/phpst.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: PHPUnit
+  description: Testing framework for PHP
+  website_url: https://phpunit.de/
+  version: '10.1'
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Testing Frameworks
+  image_url: https://img.stackshare.io/service/1616/1_WsEnddd5Y4EgEHsT054kUQ.jpeg
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_06/TESTES_UNITARIOS/Capitulo_09/tdd_node/package.json
+  detection_source: Modulo_06/TESTES_UNITARIOS/Capitulo_09/tdd_node/package.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-16 00:12:30.000000000 Z
+- name: ElasticHosts Cloud Servers
+  description: Cloud hosting that's easy to use when you need scalable, flexible VPS
+    capacity on demand
+  website_url: https://www.elastichosts.com
+  open_source: false
+  hosted_saas: true
+  category: Application Hosting
+  sub_category: Cloud Hosting
+  image_url: https://img.stackshare.io/service/21/Br4cEBV6.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: Monolog
+  website_url: https://github.com/Seldaek/monolog
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/9170/183678.jpeg
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: aws/aws-sdk-php
+  description: AWS SDK for PHP - Use Amazon Web Services in your PHP project
+  package_url: https://packagist.org/aws/aws-sdk-php
+  version: '3.0'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: doctrine/couchdb
+  description: CouchDB Client
+  package_url: https://packagist.org/doctrine/couchdb
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: elasticsearch/elasticsearch
+  description: PHP Client for Elasticsearch
+  package_url: https://packagist.org/elasticsearch/elasticsearch
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: graylog2/gelf-php
+  description: A php implementation to send log-messages to a GELF compatible backend
+    like Graylog2
+  package_url: https://packagist.org/graylog2/gelf-php
+  version: 1.4.2
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: guzzlehttp/guzzle
+  description: Guzzle is a PHP HTTP client library
+  package_url: https://packagist.org/guzzlehttp/guzzle
+  version: 7.4.5
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: guzzlehttp/psr7
+  description: PSR-7 message implementation that also provides common utility methods
+  package_url: https://packagist.org/guzzlehttp/psr7
+  version: '2.2'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: mongodb/mongodb
+  description: MongoDB driver library
+  package_url: https://packagist.org/mongodb/mongodb
+  version: '1.8'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: monolog/monolog
+  description: Sends your logs to files
+  package_url: https://packagist.org/monolog/monolog
+  version: 3.5.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/composer.lock
+  detection_source: Modulo_07/PHP/Capitulo_32/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: php-amqplib/php-amqplib
+  description: Formerly videlalvaro/php-amqplib
+  package_url: https://packagist.org/php-amqplib/php-amqplib
+  version: '2.4'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: phpstan/phpstan
+  description: PHPStan - PHP Static Analysis Tool
+  package_url: https://packagist.org/phpstan/phpstan
+  version: '1.9'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: phpstan/phpstan-deprecation-rules
+  description: PHPStan rules for detecting usage of deprecated classes
+  package_url: https://packagist.org/phpstan/phpstan-deprecation-rules
+  version: '1.0'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: phpstan/phpstan-strict-rules
+  description: Extra strict and opinionated rules for PHPStan
+  package_url: https://packagist.org/phpstan/phpstan-strict-rules
+  version: '1.4'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: phpunit/phpunit
+  description: The PHP Unit Testing framework
+  package_url: https://packagist.org/phpunit/phpunit
+  version: '10.1'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: predis/predis
+  description: A flexible and feature-complete Redis client for PHP
+  package_url: https://packagist.org/predis/predis
+  version: '1.1'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 15:55:41.000000000 Z
+- name: psr/log
+  description: Common interface for logging libraries
+  package_url: https://packagist.org/psr/log
+  version: 3.0.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/composer.lock
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: ruflin/elastica
+  description: Elasticsearch Client
+  package_url: https://packagist.org/ruflin/elastica
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: symfony/mailer
+  description: Helps sending emails
+  package_url: https://packagist.org/symfony/mailer
+  version: '5.4'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: symfony/mime
+  description: Allows manipulating MIME messages
+  package_url: https://packagist.org/symfony/mime
+  version: '5.4'
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/packagist/image.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  detection_source: Modulo_07/PHP/Capitulo_32/vendor/monolog/monolog/composer.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2022-08-23 01:06:26.000000000 Z
+- name: "@testing-library/jest-dom"
+  description: Custom jest matchers to test the state of the DOM
+  package_url: https://www.npmjs.com/@testing-library/jest-dom
+  version: 6.2.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17424/default_1cdcda15ebb7caed879f8340bc212b44c4ec9dac.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_04/REACT/Capitulo_03/app-academy/package-lock.json
+  detection_source: Modulo_04/REACT/Capitulo_03/app-academy/package.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 16:15:46.000000000 Z
+- name: "@testing-library/react"
+  description: Simple and complete React DOM testing utilities that encourage good
+    testing practices
+  package_url: https://www.npmjs.com/@testing-library/react
+  version: 14.1.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16549/default_d522554c6a41cb28d922d6d3ad32ad4afa0e3bb5.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_04/REACT/Capitulo_03/app-academy/package-lock.json
+  detection_source: Modulo_04/REACT/Capitulo_03/app-academy/package.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 16:15:46.000000000 Z
+- name: jest-environment-jsdom
+  description: Delightful JavaScript Testing
+  package_url: https://www.npmjs.com/jest-environment-jsdom
+  version: 27.5.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18413/default_867ef7396016341fd213fa568d6de11cc98fefff.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_04/REACT/Capitulo_03/app-academy/package-lock.json
+  detection_source: Modulo_06/TESTES_UNITARIOS/Capitulo_09/tdd_node/package.json
+  last_updated_by: EdiJunior88
+  last_updated_on: 2023-03-13 20:48:21.000000000 Z
+- name: react-dom
+  description: React package for working with the DOM
+  package_url: https://www.npmjs.com/react-dom
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_04/REACT/Capitulo_03/app-academy/package-lock.json
+  detection_source: Modulo_04/REACT/Capitulo_03/app-academy/package.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 16:15:46.000000000 Z
+- name: react-scripts
+  description: Configuration and scripts for Create React App
+  package_url: https://www.npmjs.com/react-scripts
+  version: 5.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15985/default_8b5680d4e916298d08363c291a0d6e34c07ceb15.png
+  detection_source_url: https://github.com/EdiJunior88/NewTab_Academy_Projetos/blob/main/Modulo_04/REACT/Capitulo_03/app-academy/package-lock.json
+  detection_source: Modulo_04/REACT/Capitulo_03/app-academy/package.json
+  last_updated_by: renovate[bot]
+  last_updated_on: 2024-01-21 16:15:46.000000000 Z
